@@ -6,13 +6,13 @@
     --primary-color: #df0713;
     --background-color: #f9f5f0;
     --dark-color: #151515;
-
+    --pequi-color:  #e63128 ;
 }
 
 html{
-    font-size: 10px;
+    font-size: 62.5%; /** Reset para REMS 1 - 62.5% = 10PX */
+    box-sizing: border-box;
     font-family: 'Poppins' , sans-serif;
-
 }
 
 *{
@@ -305,7 +305,7 @@ html{
 
 .container-categories{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
 }
 
@@ -319,22 +319,29 @@ html{
     gap: 2rem;
 }
 
-.category-literatura{
-    background-image: linear-gradient(#00000080, #00000080),url(../imagenes/literatura.jpg);
+.category-amoniaco{
+    background-image: linear-gradient(#00000080, #00000080),url(./css/img/Inician\ pruebas\ en\ Planta\ de\ Urea\ y\ Amoniaco.jpg);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
 }
 
-.category-consulta{
-    background-image: linear-gradient(#00000080, #00000080),url(../imagenes/complementario_2.jpg);
+.category-urea{
+    background-image: linear-gradient(#00000080, #00000080),url(./css/img/Fertilizantes-Pequiven-Urea-800x480.jpg);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
 }
 
-.category-ilustrado{
-    background-image: linear-gradient(#00000080, #00000080),url(../imagenes/libros-ilustrados.jpg);
+.category-fertilizantes{
+    background-image: linear-gradient(#00000080, #00000080),url(./css/img/03-02-2016-petroquimica-de-venezuela-foto-moises-sayet0024.jpg);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.category-servicios{
+    background-image: linear-gradient(#00000080, #00000080),url(./css/img/PEQUIVEN-FACHADA.jpg);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -759,4 +766,6 @@ html{
 
 }
 
-
+.form-registro{
+    font-size: 1.5rem;
+}

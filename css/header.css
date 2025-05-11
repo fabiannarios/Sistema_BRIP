@@ -1,0 +1,60 @@
+
+a{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+.header-pequiven i{
+    font-size: 3rem;
+    align-self: center;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #03030300;
+    border-radius: 50%;
+}
+
+
+.header-pequiven{
+    background-color:  #e63128 ;
+    max-width: 100%;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 95%;
+}
+
+.logo-pequiven{
+    width: 80px;
+    margin-right: 20px;
+}
+
+.navbar-pequiven{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.navbar-pequiven a{
+color: rgb(0, 0, 0);
+text-align: center;
+font-size: 2.2rem;
+align-self: center;
+padding: 10px 20px;
+background-color: rgb(245, 245, 245);
+border: 1px solid #03030300;
+border-radius: 10px;
+}
+
+.navbar-pequiven a:hover{
+    transition: .2s;
+   transform: scale(1.3) ;
+-webkit-transform: scale(1.3) ;
+-moz-transform: scale(1.3) ;
+}
