@@ -1,0 +1,65 @@
+/* Estilo general de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Fondo blanco */
+    margin: 20px;
+    color: #333;
+}
+
+/* Título central ajustado al estilo de Pequiven */
+h2 {
+    text-align: center;
+    color: #ff0000; /* Rojo corporativo */
+    margin-bottom: 20px;
+}
+
+/* Estilo de la tabla para Pequiven */
+table.pequiven-table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Encabezado de la tabla */
+.pequiven-table thead {
+    background-color: #ff0000; /* Rojo */
+    color: #ffffff; /* Texto blanco */
+}
+
+.pequiven-table th, 
+.pequiven-table td {
+    border: 1px solid #ff0000;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Filas alternadas: blanco y un ligero tono rosado */
+.pequiven-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.pequiven-table tbody tr:nth-child(even) {
+    background-color: #ffe6e6; /* Sutil tono rosa claro */
+}
+
+/* Efecto hover para resaltar la fila al pasar el mouse */
+.pequiven-table tbody tr:hover {
+    background-color: #ffcccc; /* Tono rojo claro */
+}
+
+/* Estilo para los botones (opcional, si tienes acciones tipo Editar/Eliminar) */
+.btn {
+    padding: 8px 12px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.btn:hover {
+    background-color: #cc0000;
+}
