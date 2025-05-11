@@ -55,7 +55,7 @@
 </html>
 
 <?php
-include('conexion_registro.php');
+include('../Sistema_BRIP/config/conexion_registro.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener y sanitizar los datos
