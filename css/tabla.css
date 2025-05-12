@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff; /* Fondo blanco */
-    margin: 20px;
+    margin: 2rem;
     color: #333;
 }
 
@@ -32,6 +32,7 @@ table.pequiven-table {
     border: 1px solid #ff0000;
     padding: 10px;
     text-align: left;
+    font-size: 1.5rem;
 }
 
 /* Filas alternadas: blanco y un ligero tono rosado */

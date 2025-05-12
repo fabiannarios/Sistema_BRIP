@@ -14,12 +14,12 @@ if ($conn->connect_error) {
 // Validar que los datos fueron enviados correctamente
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener y sanitizar los datos del formulario
-    $codigo = $conn->real_escape_string($_POST['codigo']);
-    $nombre = $conn->real_escape_string($_POST['nombre']);
-    $id_proceso = $conn->real_escape_string($_POST['proceso']);
-    $observacion = $conn->real_escape_string($_POST['observacion']);
-    $estado = $conn->real_escape_string($_POST['estado']);
-    $fecha_revision = $conn->real_escape_string($_POST['fecha_revision']);
+    $codigo = $_POST['codigo'];
+    $nombre = $_POST['nombre'];
+    $id_proceso = $_POST['proceso'];
+    $observacion = $_POST['observacion'];
+    $estado = $_POST['estado'];
+    $fecha_revision = $_POST['fecha_revision'];
 
     // Verificar que no haya campos vacíos
     if (empty($codigo) || empty($nombre) || empty($id_proceso) || empty($estado) || empty($fecha_revision)) {
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 VALUES ('$codigo', '$nombre', '$id_proceso', '$observacion', '$estado', '$fecha_revision')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Componente registrado con éxito.";
+            header("Location:../tabla.php");
         } else {
             echo "Error al registrar el componente: " . $conn->error;
         }

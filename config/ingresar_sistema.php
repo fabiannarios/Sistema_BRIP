@@ -14,8 +14,7 @@ if(isset($_GET["iniciar"])){
     $conexion=mysqli_connect($server,$user,$password,$bd);
     
 
-
-    // $sql="SELECT * FROM USUARIO WHERE usuario='$id_usuario' AND contraseña='$nombre' AND rol=1";
+        // $sql="SELECT * FROM USUARIO WHERE usuario='$id_usuario' AND contraseña='$nombre' AND rol=1";
     $sql="SELECT * FROM usuarios, roles where usuarios.id_usuario = '$cedula' AND usuarios.nombre= '$nombre' AND usuarios.id_rol= roles.id_rol";//Sirve para guardar la informacion de la consulta de la tabla (usuario) y se almacena en la variable $sql
     $resultado=mysqli_query($conexion, $sql);
 
@@ -26,7 +25,8 @@ if(isset($_GET["iniciar"])){
         while(($fila=mysqli_fetch_assoc($resultado))==true) {
 
                 if ($fila["id_rol"]==1) {
-                  
+                    
+                    header("Location:../inicio.php");
                     echo "ingresaste como admin";
                 
                 }elseif ($fila["id_rol"]==2) {
