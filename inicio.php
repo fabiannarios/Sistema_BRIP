@@ -51,7 +51,7 @@
             <h1 class="heading-1">Plantas en Nitrogenado</h1>
             <div class="container-categories">
                 <div class="card-category category-amoniaco">
-                    <p>Aweboniaco</p>
+                    <p>Amoniaco</p>
                     <span>Ver más</span>
                 </div>
                 <div class="card-category category-urea">
