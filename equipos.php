@@ -20,7 +20,10 @@
 
 <body>
     <?php include('./header.php') ?>
-    <h1 class="text-center  mt-4">Registro de Componentes</h2>
+    <h1 class="text-center  mt-4 border-bottom-4">EQUIPOS</h1>
+
+
+
         <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="./config/procesar.php" method="POST">
 
             <div class="col-md-6">
@@ -61,13 +64,13 @@
             <label for="fecha_revision">Última Revisión:</label>
             <input type="date" id="fecha_revision" name="fecha_revision">
 
-            <div class="col-12">
-                <button type="submit" class="btn btn-success fs-4">Guardar Componente</button>
+            <div class="col-12 my-3 text-center">
+                <button type="submit" class="btn btn-success fs-4 rounded-pill">Guardar Componente</button>
             </div>
         </form>
 
-        <section>
-
+        <section >
+        <div class="container-fluid">
             <?php
             include("../Sistema_BRIP/config/conecxion_bd.php");
             if ($conexion->connect_error) {
@@ -76,7 +79,8 @@
             $sql = "SELECT * FROM equipos";
             $result = $conexion->query($sql);
             if ($result->num_rows > 0) {
-                echo "<table id='tabla' class='pequiven-table'>
+                ?>
+                <table id='tabla' class='pequiven-table'>
                     <thead>
                     <tr>
                     <th scope='col'>Codigo</th>
@@ -85,32 +89,41 @@
                     <th scope='col'>Observaciones</th>
                     <th scope='col'>Estado</th>
                     <th scope='col'>Fecha de la ultima revision</th>
+                    <th scope='col'></th>
                     </tr>
                 </thead>
 
-                <tbody class='table-group-divider'>";
-
+                <tbody class='table-group-divider'>
+                <?php
                 while ($row = $result->fetch_assoc()) {
+                    ?>
+                    <tr>
+                    <td><?php echo $row['id_equipo'] ?> </td>
+                        <td><?php echo $row['nombre']?></td>
+                        <td><?php
+                        $sql1 = "SELECT * FROM procesos WHERE id_proceso =". $row['id_proceso'];
+                        $resultado1 = $conexion->query($sql1);
 
-                    echo
-
-                    "<tr>
-                    <td>" . $row['id_equipo'] . "</td>" .
-                        "<td>" . $row['nombre'] . "</td>" .
-                        "<td>" . $row['id_proceso'] . "</td>" .
-                        "<td>" . $row['observacion'] . "</td>" .
-                        "<td>" . $row['estado'] . "</td>" .
-                        "<td>" . $row['ultima_revision'] . "</td>" .
-                        "
-                        </tr>";
-                        
-                }
-                      echo  "</tbody>";
-                echo "</table>";
+                        $row1 = $resultado1->fetch_assoc();
+                        echo $row1['nombre_proceso']?></td>
+                        <td><?php echo $row['observacion']?> </td>
+                        <td><?php echo $row['estado']?></td>
+                        <td><?php echo $row['ultima_revision']?></td>
+                        <td> 
+                            <a href="./config/actualizarequipo.php?id_equipo=<?php echo $row['id_equipo'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
+                            <a href="./config/eliminarequipo.php?id_equipo=<?php echo $row['id_equipo'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
+                        </td>
+                        </tr>
+                  <?php      
+                }?>
+                     </tbody>
+                
+            <?php    
             }
             $conexion->close();
             ?>
-
+            </table>
+</div>
 
         </section>
 

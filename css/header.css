@@ -1,11 +1,15 @@
 
-a{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
 
 img{
     max-width: 100%;
 }
+
+.header-pequiven{
+    background-color:  #e63128 ;
+    max-width: 100%;
+}
+
+
 
 .header-pequiven i{
     font-size: 3rem;
@@ -16,28 +20,67 @@ img{
     border-radius: 50%;
 }
 
-
-.header-pequiven{
-    background-color:  #e63128 ;
-    max-width: 100%;
-}
-
-.contenedor{
+.contenedor-header{
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     max-width: 95%;
 }
 
+
+@media (max-width: 1144px) {
+    .contenedor-header{
+        display: block;
+        align-content: center;
+    }
+   }
+
 .logo-pequiven{
+    display: flex;
+   width: 12%;
+}
+
+@media (max-width: 1144px) {
+    .logo-pequiven{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+   }
+
+
+.logo-pequiven a{
+ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none !important; 
+    display: flex;
+}
+
+.logo-pequiven h2{
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+   align-self: center;
+}
+
+.logo-pequiven img{
     width: 80px;
-    margin-right: 20px;
+    
 }
 
 .navbar-pequiven{
     width: 80%;
     display: flex;
     justify-content: space-around;
+    
+    
+}
+
+@media (max-width: 1144px) {
+    .navbar-pequiven{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
     
 }
 
@@ -57,4 +100,8 @@ border-radius: 10px;
    transform: scale(1.3) ;
 -webkit-transform: scale(1.3) ;
 -moz-transform: scale(1.3) ;
+}
+
+.titulo-header{
+    color: black;
 }

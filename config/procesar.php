@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 VALUES ('$codigo', '$nombre', '$id_proceso', '$observacion', '$estado', '$fecha_revision')";
 
         if ($conn->query($sql) === TRUE) {
-            header("Location:../tabla.php");
+            header("Location:../equipos.php");
         } else {
             echo "Error al registrar el componente: " . $conn->error;
         }

@@ -15,7 +15,7 @@ h2 {
 
 /* Estilo de la tabla para Pequiven */
 table.pequiven-table {
-    width: 90%;
+    width: 90% !important;
     margin: 0 auto;
     border-collapse: collapse;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);

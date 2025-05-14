@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
+    
     <link rel="icon" href="./css/img/favicon.ico" sizes="any" />
     <link href='./inicio.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./css/header.css">
     <link href='./css/bootstrap.css' rel='stylesheet'>
     <link href='./css/boxicons-2.1.4/css/boxicons.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/header.css">
 </head>
 
 <body>
