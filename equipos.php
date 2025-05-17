@@ -37,6 +37,25 @@
             </div>
 
             <div class="col-md-4">
+            <label for="proceso">Planta:</label>
+            <select class="form-select fs-4" id="planta" name="planta">
+                <?php
+                 include("../Sistema_BRIP/config/conecxion_bd.php");
+                if ($conexion->connect_error) {
+                die("Falló la conexión a la base de datos: " . $conexion->connect_error);
+            }
+                $sql2 = "SELECT * FROM plantas";
+                $resultado2 = $conexion->query($sql2);
+                while ($fila = $resultado2->fetch_assoc()) {
+                    echo "<option value='" . $fila['nombre_planta'] . "'>" . $fila['nombre_planta'] . "</option>";
+                }
+
+
+                ?>
+            </select>
+            </div>
+
+            <div class="col-md-4">
                 <label for="proceso">Proceso:</label>
                 <select class="form-select fs-4" id="proceso" name="proceso">
                     <option value="1">HIDRO DESULFURACION</option>
@@ -85,6 +104,7 @@
                     <tr>
                     <th scope='col'>Codigo</th>
                     <th scope='col'>Nombre</th>
+                    <th scope='col'>Planta</th>
                     <th scope='col'>Proceso</th>
                     <th scope='col'>Observaciones</th>
                     <th scope='col'>Estado</th>
@@ -106,6 +126,7 @@
 
                         $row1 = $resultado1->fetch_assoc();
                         echo $row1['nombre_proceso']?></td>
+                        <td><?php                   ?></td>        
                         <td><?php echo $row['observacion']?> </td>
                         <td><?php echo $row['estado']?></td>
                         <td><?php echo $row['ultima_revision']?></td>
