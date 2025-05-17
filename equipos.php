@@ -37,7 +37,7 @@
             </div>
 
             <div class="col-md-4">
-            <label for="proceso">Planta:</label>
+            <label for="planta">Planta:</label>
             <select class="form-select fs-4" id="planta" name="planta">
                 <?php
                  include("../Sistema_BRIP/config/conecxion_bd.php");
@@ -49,7 +49,7 @@
                 while ($fila = $resultado2->fetch_assoc()) {
                     echo "<option value='" . $fila['nombre_planta'] . "'>" . $fila['nombre_planta'] . "</option>";
                 }
-
+                    echo json_encode($fila, JSON_UNESCAPED_UNICODE);
 
                 ?>
             </select>
