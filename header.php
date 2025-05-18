@@ -5,7 +5,7 @@
 
             <div class="logo-pequiven">
             <a href="./inicio.php">    
-            <img src="./css/img/pequiven_logo.jpg" alt="">
+            <img src="./css/img/logo.png" alt="">
                 <h2 class="titulo-header">Monitoreo de Incidencias</h2>
                 </a>
             </div>

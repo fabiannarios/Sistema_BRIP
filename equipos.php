@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar componente</title>
+    
     <link rel="icon" href="./css/img/favicon.ico" sizes="any" />
     <link rel="stylesheet" href="./datatable/datatables1.css">
     <link href="./css/tabla.css" rel="stylesheet">
@@ -39,36 +40,34 @@
             <div class="col-md-4">
             <label for="planta">Planta:</label>
             <select class="form-select fs-4" id="planta" name="planta">
+                <option value="">Seleccionar</option>
+
                 <?php
                  include("../Sistema_BRIP/config/conecxion_bd.php");
-                if ($conexion->connect_error) {
-                die("Falló la conexión a la base de datos: " . $conexion->connect_error);
-            }
-                $sql2 = "SELECT * FROM plantas";
+
+                $sql2 = "SELECT id_planta, nombre_planta FROM plantas";
                 $resultado2 = $conexion->query($sql2);
                 while ($fila = $resultado2->fetch_assoc()) {
-                    echo "<option value='" . $fila['nombre_planta'] . "'>" . $fila['nombre_planta'] . "</option>";
+                    echo "<option value='" . $fila['id_planta'] . "'>" . $fila['nombre_planta'] . "</option>";
                 }
-                    echo json_encode($fila, JSON_UNESCAPED_UNICODE);
+                   
 
                 ?>
+
             </select>
             </div>
 
             <div class="col-md-4">
                 <label for="proceso">Proceso:</label>
                 <select class="form-select fs-4" id="proceso" name="proceso">
-                    <option value="1">HIDRO DESULFURACION</option>
-                    <option value="2">REFORMACION PRIMARIA</option>
-                    <option value="3">REFORMACION SECUNDARIA</option>
-                    <option value="4">CONVERSION DE ALTA Y BAJA TEMPERATURA</option>
-                    <option value="5">REMOCION DE CO2</option>
-                    <option value="6">METANACION</option>
-                    <option value="7">COMPRESION Y SINTESIS</option>
-                    <option value="8">SISTEMA DE REFRIGERACION DE AMONIACO (NH3)</option>
+                <option value="">Seleccionar</option>
+
+                
                 </select>
 
             </div>
+
+
             <label for="observacion">Observación:</label>
             <textarea id="observacion" name="observacion"></textarea>
 
@@ -92,9 +91,8 @@
         <div class="container-fluid">
             <?php
             include("../Sistema_BRIP/config/conecxion_bd.php");
-            if ($conexion->connect_error) {
-                die("Falló la conexión a la base de datos: " . $conexion->connect_error);
-            }
+       
+
             $sql = "SELECT * FROM equipos";
             $result = $conexion->query($sql);
             if ($result->num_rows > 0) {
@@ -120,18 +118,23 @@
                     <tr>
                     <td><?php echo $row['id_equipo'] ?> </td>
                         <td><?php echo $row['nombre']?></td>
-                        <td><?php
-                        $sql1 = "SELECT * FROM procesos WHERE id_proceso =". $row['id_proceso'];
-                        $resultado1 = $conexion->query($sql1);
+                        <td><?php   $sql1 = "SELECT * FROM plantas WHERE id_planta =". $row['id_planta'];          
+                            $resultado = $conexion->query($sql1);
 
-                        $row1 = $resultado1->fetch_assoc();
-                        echo $row1['nombre_proceso']?></td>
-                        <td><?php                   ?></td>        
+                            $row1 = $resultado->fetch_assoc();
+                        
+                            echo $row1['nombre_planta']            ?></td>  
+                        <td><?php
+                        $sql2 = "SELECT * FROM procesos WHERE id_proceso =". $row['id_proceso'];
+                        $resultado2 = $conexion->query($sql2);
+
+                        $row2 = $resultado2->fetch_assoc();
+                        echo $row2['nombre_proceso']?></td>
                         <td><?php echo $row['observacion']?> </td>
                         <td><?php echo $row['estado']?></td>
                         <td><?php echo $row['ultima_revision']?></td>
                         <td> 
-                            <a href="./config/actualizarequipo.php?id_equipo=<?php echo $row['id_equipo'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
+                            <a href="editarequipo.php?id_equipo=<?php echo $row['id_equipo'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
                             <a href="./config/eliminarequipo.php?id_equipo=<?php echo $row['id_equipo'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
                         </td>
                         </tr>
@@ -149,7 +152,7 @@
         </section>
 
 
-
+        <script src="./js/peticiones.js"></script>
         <script src="./jquery/jquery.js"></script>
         <script src="./datatable/datatables1.js"></script>
         <script>
@@ -172,6 +175,7 @@
                 });
             });
         </script>
+        
 </body>
 
 </html>

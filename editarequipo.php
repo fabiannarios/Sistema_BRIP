@@ -48,25 +48,29 @@
         </div>
 
         <div class="col-md-4">
-            <label for="proceso">Proceso:</label>
-            <select class="form-select fs-4" id="proceso" name="proceso">
+            <label for="planta">Planta:</label>
+            <select class="form-select fs-4" id="planta" name="planta">
+                <option value="<?php echo $row['id_planta'] ?>" selected></option>
+
                 <?php
-                $sql1 = "SELECT * FROM procesos WHERE id_proceso =" . $row['id_proceso'];
-                $resultado1 = $conexion->query($sql1);
+                 include("../Sistema_BRIP/config/conecxion_bd.php");
 
-                $row1 = $resultado1->fetch_assoc();
-
-                echo "<option selected value='" . $row1['id_proceso'] . "'>" . $row1['nombre_proceso'] . "</option>";
-
-                $sql2 = "SELECT * FROM procesos";
+                $sql2 = "SELECT id_planta, nombre_planta FROM plantas";
                 $resultado2 = $conexion->query($sql2);
-
-                while ($fila = $resultado2->fetch_array()) {
-                    echo "<option value='" . $fila['id_proceso'] . "'>" . $fila['nombre_proceso'] . "</option>";
+                while ($fila = $resultado2->fetch_assoc()) {
+                    echo "<option value='" . $fila['id_planta'] . "'>" . $fila['nombre_planta'] . "</option>";
                 }
-
+                   
 
                 ?>
+
+            </select>
+            </div>
+
+        <div class="col-md-4">
+            <label for="proceso">Proceso:</label>
+            <select class="form-select fs-4" id="proceso" name="proceso">
+                
             </select>
 
         </div>
@@ -91,7 +95,7 @@
 
     </form>
 
-
+<script src="./js/peticiones.js"></script>
 </body>
 
 </html>

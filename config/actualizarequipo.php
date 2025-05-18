@@ -1,9 +1,10 @@
 <?php
-include('./config/conecxion_bd.php');
+include('./conecxion_bd.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id             = $_POST['codigo'];
     $nombre         = $_POST['nombre'];
+    $planta         = $_POST['planta'];
     $proceso        = $_POST['proceso'];
     $observacion    = $_POST['observacion'];
     $estado         = $_POST['estado'];
@@ -11,7 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "UPDATE equipos 
             SET id_equipo = '".$id."', 
-                nombre = '".$nombre."', 
+                nombre = '".$nombre."',
+                id_planta = '".$planta."', 
                 id_proceso = '".$proceso."', 
                 observacion = '".$observacion."', 
                 estado = '".$estado."', 
@@ -19,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             WHERE id_equipo = '".$id."'";
 
     if ($conexion->query($sql) === TRUE) {
-        header("Location: equipos.php");
+        header("Location: ../equipos.php");
        
     } else {
         echo "Error al actualizar: " . $conexion->error;
@@ -28,5 +30,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Método de solicitud no válido.";
 }
 
-$conn->close();
+$conexion->close();
 ?>
