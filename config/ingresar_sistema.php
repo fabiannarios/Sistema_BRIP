@@ -32,6 +32,7 @@ if(isset($_GET["iniciar"])){
                 }elseif ($fila["id_rol"]==2) {
                     
                     echo "ingresaste como trabajador";
+                     header("Location:../inicio.php");
                 }
 
         
