@@ -74,8 +74,19 @@
             </div>
         </section>
 
+                <section class="container top-products">
+            <h1 class="heading-1">Tabla de Estado</h1>
+
+            <div class="container-options">
+                <span class="active">Equipo Disponible</span>
+                <span class="active">Baja Confiabilidad</span>
+                <span class="active">Equipo no Disponible</span>
+            </div>
+
+        </section>
+
         <section class="container top-products">
-            <h1 class="heading-1">Historial</h1>
+            <h1 class="heading-1">Historial de Mantenimiento</h1>
 
             <div class="container-options">
                 <span class="active">Recientes</span>
@@ -122,7 +133,6 @@
                     <p class="title-footer">Información</p>
                     <ul>
                         <li><a href="#">Acerca de Nosotros</a></li>
-                        <li><a href="#">Información de Delivey</a></li>
                         <li><a href="#">Politicas de Privacidad</a></li>
                         <li><a href="#">Terminos y Condiciones</a></li>
                         <li><a href="#">Contactános</a></li>
@@ -136,7 +146,7 @@
                         <p>
                             en proceso
                         </p>
-                        <a href="#"><button>Suscribete</button></a>
+                        <a href="#"><button>en proceso?</button></a>
                     </div>
                 </div>
             </div>
@@ -145,7 +155,7 @@
                 <p>
                     Desarrollado por Fabianna Rios &copy; 2025
                 </p>
-                <img src="../imagenes/pagoos.png" alt="pagos">
+                <img src="./css/img/image-removebg-preview.png" alt="">
             </div>
         </div>
     </footer>
