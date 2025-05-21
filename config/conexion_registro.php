@@ -1,5 +1,5 @@
 <?php
-include ('./config/conecxion_bd.php');
+include ('conecxion_bd.php');
 
 
 

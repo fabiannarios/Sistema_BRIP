@@ -12,7 +12,7 @@
 
             <nav class="navbar-pequiven">
                 <a class="nav-link active" aria-current="page" href="equipos.php">Equipos</a>
-                <a class="nav-link" href="#">Incidencias</a>
+                <a class="nav-link" href="./incidencias.php">Incidencias</a>
                 <a class="nav-link" href="#">Mantenimiento</a>
                  <i class='bx bx-user' ></i>
             </nav>

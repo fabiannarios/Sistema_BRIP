@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="wrapper"> 
+    <div class="wrapper">
         <form method="POST" action="../config/conexion_registro.php">
             <h1>Registrate</h1>
             <div class="input-box">
@@ -22,10 +22,10 @@
             <div class="input-box">
                 <input type="text" placeholder="nombre" name="nombre" required>
             </div>
-           
+
             <div class="mb-3">
                 <label for="id_rol" class="form-label"><b>Roles:</b></label>
-                <select class="form-select" name="id_rol" required >
+                <select class="form-select" name="id_rol" required>
                     <option value="" disabled selected>Selecciona un rol</option>
                     <?php
                     include "../config/conecxion_bd.php";
@@ -42,30 +42,35 @@
                     $conexion->close();
                     ?>
                 </select>
-			</div>
+            </div>
 
             <div class="input-box">
                 <input type="text" placeholder="telefono" name="telefono" required>
             </div>
 
-            <div class="input-box">
-                <input type="datetime-local" placeholder="fecha" name="fecha_creacion" required>
-            </div>
+           
+                <input hidden type="datetime-local" placeholder="fecha" name="fecha_creacion" 
+                <?php
+                date_default_timezone_set("America/Caracas");
+                    $now = new DateTime();
+                
+                    echo "value='". $now->format('Y-m-d') ."T". $now->format('H:i')."'"
+                ?>" required>
+          
 
-            <br>
-            <br>
 
 
-            
+
 
             <button type="submit" name="registrar" class="button">Registrar</button>
         </form>
 
-            <div class="register-link">
-                <p>Ya tengo una cuenta <a href="../views/login.php">Inicio</a></p>
-            </div>
+        <div class="register-link">
+            <p>Ya tengo una cuenta <a href="../views/login.php">Inicio</a></p>
+        </div>
 
     </div>
 
 </body>
+
 </html>

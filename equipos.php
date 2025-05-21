@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar componente</title>
+    <title>Equipos</title>
     
     <link rel="icon" href="./css/img/favicon.ico" sizes="any" />
     <link rel="stylesheet" href="./datatable/datatables1.css">
@@ -80,7 +80,7 @@
                 </select>
             </div>
             <label for="fecha_revision">Última Revisión:</label>
-            <input type="date" id="fecha_revision" name="fecha_revision">
+            <input type="date" id="fecha_revision" name="fecha_revision" value="<?php $d=strtotime("yesterday"); echo date("Y-m-d", $d) ?>">
 
             <div class="col-12 my-3 text-center">
                 <button type="submit" class="btn btn-success fs-4 rounded-pill">Guardar Componente</button>
