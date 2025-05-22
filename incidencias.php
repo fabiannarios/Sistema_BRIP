@@ -69,17 +69,17 @@ $resultadousuarios = $conexion->query($consulta1);
         <div class="col-md-4">
             <label for="prioridad">prioridad:</label>
             <select class="form-select fs-4" id="prioridad" name="prioridad">
-                <option value="verde">alta</option>
-                <option value="amarillo">media</option>
-                <option value="rojo">baja</option>
+                <option value="alta">alta</option>
+                <option value="media">media</option>
+                <option value="baja">baja</option>
             </select>
         </div>
 
         <div class="col-md-4">
             <label for="estado">Estado:</label>
             <select class="form-select fs-4" id="estado" name="estado">
-                <option value="No">No resuelta</option>
-                <option value="Si">Ya resuelta</option>
+                <option value="No resuelta">No resuelta</option>
+                <option value="Resuelta">Ya resuelta</option>
 
             </select>
         </div>
@@ -127,7 +127,11 @@ $resultadousuarios = $conexion->query($consulta1);
                             <tr>
                                 
 
+<<<<<<< HEAD
                                 <td><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo='" . $row['id_equipo']."'";
+=======
+                                <td><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo = '". $row['id_equipo']."'";
+>>>>>>> 6ebee527cb5ead819f0b88900fe5e6607e519a1d
                                     $resultado = $conexion->query($sql1);
 
                                     $row1 = $resultado->fetch_assoc();
