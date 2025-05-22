@@ -127,7 +127,7 @@ $resultadousuarios = $conexion->query($consulta1);
                             <tr>
                                 
 
-                                <td><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo =" . $row['id_equipo'];
+                                <td><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo='" . $row['id_equipo']."'";
                                     $resultado = $conexion->query($sql1);
 
                                     $row1 = $resultado->fetch_assoc();
