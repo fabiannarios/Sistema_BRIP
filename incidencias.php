@@ -127,11 +127,7 @@ $resultadousuarios = $conexion->query($consulta1);
                             <tr>
                                 
 
-<<<<<<< HEAD
                                 <td><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo='" . $row['id_equipo']."'";
-=======
-                                <td><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo = '". $row['id_equipo']."'";
->>>>>>> 6ebee527cb5ead819f0b88900fe5e6607e519a1d
                                     $resultado = $conexion->query($sql1);
 
                                     $row1 = $resultado->fetch_assoc();
