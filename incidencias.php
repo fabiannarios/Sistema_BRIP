@@ -49,7 +49,7 @@ $resultadousuarios = $conexion->query($consulta1);
         </div>
 
         <div class="col-md-6">
-            <label for="usuario">Cedula del usuario:</label>
+            <label for="usuario">Cedula del Autor:</label>
             <datalist id="usuarios">
                 <?php
                 while ($listausuario = $resultadousuarios->fetch_assoc()) {
@@ -127,7 +127,7 @@ $resultadousuarios = $conexion->query($consulta1);
                             <tr>
                                 
 
-                                <td><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo = '". $row['id_equipo']."'";
+                                <td><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo='" . $row['id_equipo']."'";
                                     $resultado = $conexion->query($sql1);
 
                                     $row1 = $resultado->fetch_assoc();

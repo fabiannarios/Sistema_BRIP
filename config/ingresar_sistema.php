@@ -30,7 +30,7 @@ if(isset($_GET["iniciar"])){
                     echo "ingresaste como admin";
                 
                 }elseif ($fila["id_rol"]==2) {
-                    
+                header("Location:../inicio.php");
                     echo "ingresaste como trabajador";
                      header("Location:../inicio.php");
                 }

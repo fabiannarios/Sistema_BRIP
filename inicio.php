@@ -43,7 +43,7 @@
             <div class="card-feature">
                 <i class='bx bx-tachometer'></i>
                 <div class="feature-content">
-                    <span>Planta servicio industriales</span>
+                    <span>Planta servicio industriales 2</span>
                     <p>Rendimiento</p>
                 </div>
             </div>
