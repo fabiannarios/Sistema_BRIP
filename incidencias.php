@@ -49,7 +49,7 @@ $resultadousuarios = $conexion->query($consulta1);
         </div>
 
         <div class="col-md-6">
-            <label for="usuario">Cedula del usuario:</label>
+            <label for="usuario">Cedula del Autor:</label>
             <datalist id="usuarios">
                 <?php
                 while ($listausuario = $resultadousuarios->fetch_assoc()) {
