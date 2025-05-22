@@ -80,7 +80,7 @@ $resultadousuarios = $conexion->query($consulta1);
             <select class="form-select fs-4" id="estado" name="estado">
                 <option value="No resuelta">No resuelta</option>
                 <option value="Resuelta">Ya resuelta</option>
-
+                <option value="En proceso">En proceso</option>
             </select>
         </div>
 
