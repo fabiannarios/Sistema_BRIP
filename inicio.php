@@ -65,7 +65,7 @@
                     <span>Ver más</span>
                 </div>
                 <div class="card-category category-servicios">
-                    <p>Servicios industriales</p>
+                    <p>Servicios industriales 2</p>
                     <span>Ver más</span>
                 </div>
 
