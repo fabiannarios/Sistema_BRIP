@@ -120,7 +120,7 @@ $resultadousuarios = $conexion->query($consulta1);
                         </tr>
                     </thead>
 
-                    <tbody class='table-group-divider'>
+                    <tbody >
                         <?php
                         while ($row = $result->fetch_assoc()) {
                         ?>

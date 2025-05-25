@@ -21,16 +21,16 @@
             <h1 class="text-dark">Bienvenido</h1>
 
             <div class="input-box">
-                <input type="text" placeholder="cedula" name="id_usuario" required>
+                <input class=" bg-body-secondary" type="text" placeholder="cedula" name="id_usuario" required>
                 <i class='bx bx-user-circle'></i>
             </div>
 
             <div class="input-box">
-                <input type="password" placeholder="nombre" name="nombre" required>
+                <input class=" bg-body-secondary" type="password" placeholder="nombre" name="nombre" required>
                 <i class='bx bx-lock-alt'></i>
             </div>
             <br> 
-            <div class="container mx-md-2">
+            <div class="container mx-md-2 text-center">
             <button type="submit" class="btn btn-primary btn-lg mx-md-3" name="iniciar" value="Ingresar" >Iniciar</button>
             </div>
             <br>

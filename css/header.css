@@ -71,7 +71,7 @@ img{
     width: 80%;
     display: flex;
     justify-content: space-around;
-    
+    align-items: center;
     
 }
 
@@ -103,6 +103,26 @@ border-radius: 10px;
 -moz-transform: scale(1.3) ;
 }
 
+
+
 .titulo-header{
     color: black;
+}
+
+.pequiven-drop{
+    color: rgb(0, 0, 0);
+text-align: center;
+font-size: 2.2rem;
+align-self: center;
+padding: 10px 20px;
+background-color: rgb(245, 245, 245);
+border: 1px solid #03030300;
+border-radius: 10px;
+}
+
+.pequiven-drop:hover{
+    transition: .2s;
+   transform: scale(1.3) ;
+-webkit-transform: scale(1.3) ;
+-moz-transform: scale(1.3) ;
 }

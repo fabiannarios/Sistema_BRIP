@@ -22,10 +22,8 @@ $resultadoresponsable = $conexion->query($consulta3);
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-
+    <title>Mantenimiento</title>
     <link rel="icon" href="./css/img/favicon.ico" sizes="any" />
     <link rel="stylesheet" href="./datatable/datatables1.css">
     <link href="./css/tabla.css" rel="stylesheet">
@@ -37,77 +35,108 @@ $resultadoresponsable = $conexion->query($consulta3);
 </head>
 
 <body>
-    <?php include('./header.php') ?>
 
-    <main class="main-content">
-        <section class="container container-feactures">
-            <div class="card-feature">
-                <i class='bx bx-tachometer'></i>
-                <div class="feature-content">
-                    <span>Planta Amoniaco</span>
-                    <p>Rendimiento</p>
-                </div>
-            </div>
-            <div class="card-feature">
-                <i class='bx bx-tachometer'></i>
-                <div class="feature-content">
-                    <span>Planta Urea</span>
-                    <p>Rendimiento</p>
-                </div>
-            </div>
-            <div class="card-feature">
-                <i class='bx bx-tachometer'></i>
-                <div class="feature-content">
-                    <span>Planta Fertilizante</span>
-                    <p>Rendimiento</p>
-                </div>
-            </div>
-            <div class="card-feature">
-                <i class='bx bx-tachometer'></i>
-                <div class="feature-content">
-                    <span>Planta servicio industriales 2</span>
-                    <p>Rendimiento</p>
-                </div>
-            </div>
-        </section>
+    <?php include_once('./header.php') ?>
 
-        <section class="container top-categories">
-            <h1 class="heading-1">Plantas en Nitrogenado</h1>
-            <div class="container-categories">
-                <div class="card-category category-amoniaco">
-                    <p>Amoniaco</p>
-                    <span>Ver más</span>
-                </div>
-                <div class="card-category category-urea">
-                    <p>Urea</p>
-                    <span>Ver más</span>
-                </div>
-                <div class="card-category category-fertilizantes">
-                    <p>Fertilizantes</p>
-                    <span>Ver más</span>
-                </div>
-                <div class="card-category category-servicios">
-                    <p>Servicios industriales</p>
-                    <span>Ver más</span>
-                </div>
+    <h1 class="text-center  mt-4 border-bottom-4">MANTENIMIENTO</h1>
+
+    <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="./config/ingresar_mantenimiento.php" method="POST">
+
+        <div class="col-md-6">
+            <label for="repuesto">Codigo del repuesto:</label>
+            <datalist id="repuesto">
+                <?php
+                while ($listarepuesto = $resultadorepuestos->fetch_assoc()) {
+                    echo "<option value='" . $listarepuesto['id_repuesto'] . "'>";
+                }
+                ?>
+
+
+            </datalist>
+            <input type="text" id="repuesto" name="repuesto" list="repuesto" required>
+        </div>
 
 
 
-            </div>
-        </section>
+        <div class="col-md-6">
+            <label for="equipo">Codigo del equipo:</label>
+            <datalist id="equipo">
+                <?php
+                while ($listaequipo = $resultadoequipo->fetch_assoc()) {
+                    echo "<option value='" . $listaequipo['id_equipo'] . "'>";
+                }
+                ?>
 
-        <section class="container top-products">
-            <h1 class="heading-1">Tabla de Estado</h1>
+            </datalist>
+            <input type="text" id="equipo" name="equipo" list="equipo" required>
+        </div>
 
-            <div class="container-options">
-                <span class="active">Equipo Disponible</span>
-                <span class="active">Baja Confiabilidad</span>
-                <span class="active">Equipo no Disponible</span>
-            </div>
+        <div class="col-md-12">
+            <label for="mantenimiento">Tipo de mantenimiento:</label>
+            <select class="form-select fs-4" id="mantenimiento" name="mantenimiento">
+                <option value="correctivo">Correctivo</option>
+                <option value="preventivo">Preventivo</option>
+                <option value="predictivo">Predictivo</option>
+            </select>
+        </div>
 
-        </section>
+        <div class="col-md-8">
+            <label for="incidencia">Codigo de la incidencia:</label>
+            <datalist id="incidencia">
+                <?php
+                while ($listaincidencia = $resultadoincidencias->fetch_assoc()) {
+                    echo "<option value='" . $listaincidencia['id_incidencia'] . "'>";
+                }
+                ?>
 
-        <section class="container my-5">
+            </datalist>
+            <input type="text" id="incidencia" name="incidencia" list="incidencia" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="estado_anterior">Estado anterior:</label>
+            <select class="form-select fs-4" id="estado_anterior" name="estado_anterior">
+                <option value="No resuelta">No resuelta</option>
+                <option value="Resuelta">Ya resuelta</option>
+                <option value="En proceso">En proceso</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label for="estado_nuevo">Estado nuevo:</label>
+            <select class="form-select fs-4" id="estado_nuevo" name="estado_nuevo">
+                <option value="No resuelta">No resuelta</option>
+                <option value="Resuelta">Ya resuelta</option>
+                <option value="En proceso">En proceso</option>
+            </select>
+        </div>
+
+        <label for="observacion">Observación:</label>
+        <textarea id="observacion" name="observacion"></textarea>
+
+        <label for="fecha_mantenimiento">Fecha del mantenimiento:</label>
+        <input type="date" id="fecha_mantenimiento" name="fecha_mantenimiento" value="<?php $d = strtotime("yesterday");
+                                                                                        echo date("Y-m-d") ?>">
+
+        <div class="col-md-12">
+            <label for="responsable">Cedula del responsable:</label>
+            <datalist id="responsable">
+                <?php
+                while ($listaresponsable = $resultadoresponsable->fetch_assoc()) {
+                    echo "<option value='" . $listaresponsable['id_responsable'] . "'>";
+                }
+                ?>
+
+            </datalist>
+            <input type="text" id="responsable" name="responsable" list="responsable" required>
+        </div>
+
+        <div class="col-12 my-3 text-center">
+            <button type="submit" class="btn btn-success fs-4 rounded-pill">Ingresar Incidencia</button>
+        </div>
+    </form>
+
+    <section class="container my-5">
             <h1 class="heading-1">Historial de Mantenimiento</h1>
 
 
@@ -201,72 +230,6 @@ $resultadoresponsable = $conexion->query($consulta3);
         </section>
 
 
-        <footer class="footer">
-            <div class="container container-footer">
-                <div class="menu-footer">
-                    <div class="contact-info">
-                        <p class="title-footer">Información de contacto</p>
-                        <ul>
-                            <li>Dirección: Venezuela. edo Carabobo. Morón</li>
-                            <li>Telefono: 412-123-1234</li>
-                            <li>Fax: 123456789</li>
-                            <li>Email: pequiven.com</li>
-                        </ul>
-                        <div class="social-icons">
-                            <span class=facebook>
-                                <i class='bx bxl-facebook-circle'></i>
-                            </span>
-                            <span class="x">
-                                <i class='bx bx-x'></i>
-                            </span>
-                            <span class="tiktok">
-                                <i class='bx bxl-tiktok'></i>
-                            </span>
-                            <span class="instagram">
-                                <i class='bx bxl-instagram-alt'></i>
-                            </span>
-                            <span class="pinterest">
-                                <i class='bx bxl-pinterest'></i>
-                            </span>
-
-                        </div>
-                    </div>
-                    <div class="information">
-                        <p class="title-footer">Información</p>
-                        <ul>
-                            <li><a href="#">Acerca de Nosotros</a></li>
-                            <li><a href="#">Politicas de Privacidad</a></li>
-                            <li><a href="#">Terminos y Condiciones</a></li>
-                            <li><a href="#">Contactános</a></li>
-                        </ul>
-                    </div>
-
-
-                    <div class="newletter">
-                        <p class="title-footer">Boletin informativo</p>
-                        <div class="content">
-                            <p>
-                                en proceso
-                            </p>
-                            <a href="#"><button>en proceso?</button></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="copyrigth">
-                    <p>
-                        Desarrollado por Fabianna Rios &copy; 2025
-                    </p>
-                    <img src="./css/img/image-removebg-preview.png" alt="">
-                </div>
-            </div>
-        </footer>
-
-
-
-    </main>
-
-
     <script src="./jquery/jquery.js"></script>
     <script src="./datatable/datatables1.js"></script>
     <script>
@@ -289,6 +252,7 @@ $resultadoresponsable = $conexion->query($consulta3);
             });
         });
     </script>
+
 
 
 </body>

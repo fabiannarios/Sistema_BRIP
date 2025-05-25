@@ -25,12 +25,16 @@ if(isset($_GET["iniciar"])){
         while(($fila=mysqli_fetch_assoc($resultado))==true) {
 
                 if ($fila["id_rol"]==1) {
+
+                    session_start();
                     
                     header("Location:../inicio.php");
                     echo "ingresaste como admin";
                 
                 }elseif ($fila["id_rol"]==2) {
-                header("Location:../inicio.php");
+
+                    session_start();
+                    
                     echo "ingresaste como trabajador";
                      header("Location:../inicio.php");
                 }
@@ -41,8 +45,7 @@ if(isset($_GET["iniciar"])){
     }else{
        
         echo " no eres personal";
-        echo $cedula;
-        echo $nombre;
+       
 
     }  
     mysqli_free_result ($resultado);
