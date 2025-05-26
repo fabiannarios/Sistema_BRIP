@@ -5,6 +5,7 @@ require 'conecxion_bd.php';
 
         $idplanta= $conexion->real_escape_string($_POST['id_planta']);
 
+        
                 $sql = "SELECT id_proceso, nombre_proceso FROM procesos WHERE id_planta = $idplanta";
 
                     $resultado = $conexion->query($sql);
