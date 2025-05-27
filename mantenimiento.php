@@ -27,7 +27,7 @@ $resultadoresponsable = $conexion->query($consulta3);
     <link rel="icon" href="./css/img/favicon.ico" sizes="any" />
     <link rel="stylesheet" href="./datatable/datatables1.css">
     <link href="./css/tabla.css" rel="stylesheet">
-    <link href='./inicio.css' rel='stylesheet'>
+    <link href='./css/inicio.css' rel='stylesheet'>
     <link href="./css/header.css" rel="stylesheet">
     <link href='./css/bootstrap.css' rel='stylesheet'>
     <link href='./css/boxicons-2.1.4/css/boxicons.css' rel='stylesheet'>
@@ -105,9 +105,9 @@ $resultadoresponsable = $conexion->query($consulta3);
         <div class="col-md-6">
             <label for="estado_nuevo">Estado nuevo:</label>
             <select class="form-select fs-4" id="estado_nuevo" name="estado_nuevo">
-                <option value="No resuelta">No resuelta</option>
-                <option value="Resuelta">Ya resuelta</option>
-                <option value="En proceso">En proceso</option>
+                <option value="no resuelta">No resuelta</option>
+                <option value="resuelta">Ya resuelta</option>
+                <option value="en proceso">En proceso</option>
             </select>
         </div>
 
@@ -136,98 +136,113 @@ $resultadoresponsable = $conexion->query($consulta3);
         </div>
     </form>
 
-    <section class="container my-5">
-            <h1 class="heading-1">Historial de Mantenimiento</h1>
+    <section class="my-5">
+        <h1 class="heading-1">Historial de Mantenimiento</h1>
 
 
-            <div class="container-fluid">
-                <?php
-                $sql = "SELECT * FROM mantenimiento";
-                $result = $conexion->query($sql);
-                if ($result->num_rows > 0) {
-                ?>
-                    <table id='tabla' class='pequiven-table'>
-                        <thead>
+        <div class="container-fluid">
+            <?php
+            $sql = "SELECT * FROM mantenimiento";
+            $result = $conexion->query($sql);
+            if ($result->num_rows > 0) {
+            ?>
+                <table id='tabla' class='pequiven-table'>
+                    <thead>
+                        <tr>
+
+                            <th scope='col'>Codigo del repuesto</th>
+                            <th scope='col'>Nombre del equipo</th>
+                            <th scope='col'>Tipo de mantenimiento</th>
+                            <th scope='col'>Codigo de la incidencia</th>
+                            <th scope='col'>Estado anterior</th>
+                            <th scope='col'>Estado nuevo</th>
+                            <th scope='col'>Observaciones</th>
+                            <th scope='col'>Fecha del mantenimiento</th>
+                            <th scope='col'>Cedula del responsable</th>
+                            <th scope='col'>Nombre del responsable</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <?php
+                        while ($row = $result->fetch_assoc()) {
+                        ?>
                             <tr>
 
-                                <th scope='col'>Codigo del repuesto</th>
-                                <th scope='col'>Nombre del equipo</th>
-                                <th scope='col'>Tipo de mantenimiento</th>
-                                <th scope='col'>Codigo de la incidencia</th>
-                                <th scope='col'>Estado anterior</th>
-                                <th scope='col'>Estado nuevo</th>
-                                <th scope='col'>Observaciones</th>
-                                <th scope='col'>Fecha del mantenimiento</th>
-                                <th scope='col'>Cedula del responsable</th>
-                                 <th scope='col'>Nombre del responsable</th>
+                                <td><?php
+                                    $sql2 = "SELECT * FROM repuesto WHERE id_repuesto ='" . $row['id_repuesto'] . "'";
+                                    $resultado2 = $conexion->query($sql2);
+
+                                    $row2 = $resultado2->fetch_assoc();
+
+                                    echo $row2['id_repuesto'] ?></td>
+
+
+
+                                <td><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo='" . $row['id_equipo'] . "'";
+                                    $resultado = $conexion->query($sql1);
+
+                                    $row1 = $resultado->fetch_assoc();
+
+                                    echo $row1['nombre']            ?></td>
+
+
+
+                                <td><?php echo $row['tipo_mantenimiento'] ?> </td>
+
+                                <td><?php $sql3 = "SELECT * FROM incidencias WHERE id_incidencia='" . $row['id_incidencia'] . "'";
+                                    $resultado3 = $conexion->query($sql3);
+
+                                    $row3 = $resultado3->fetch_assoc();
+
+                                    echo $row3['id_incidencia']            ?></td>
+
+                                <td><?php echo $row['estado_anterior'] ?> </td>
+
+                                <?php
+
+                                if ($row['estado_nuevo'] == 'ya resuelta') {
+
+                                    echo "<td class = 'tabla-verde'> Disponible </td>";
+
+                                } else if ($row['estado_nuevo'] == 'en proceso') {
+
+                                    echo "<td class = 'tabla-amarillo'> Baja confiabilidad </td>";
+
+                                } else {
+
+                                    echo "<td class = 'tabla-rojo'> No disponible </td>";
+
+                                }
+                                ?>
+
+
+                                <td><?php echo $row['observacion'] ?></td>
+
+                                <td><?php echo $row['fecha_mantenimiento'] ?></td>
+
+                                <td><?php echo $row['id_responsable'] ?></td>
+
+                                <td><?php $sql4 = "SELECT * FROM responsables WHERE id_responsable='" . $row['id_responsable'] . "'";
+                                    $resultado4 = $conexion->query($sql4);
+
+                                    $row4 = $resultado4->fetch_assoc();
+
+                                    echo $row4['nombre']            ?></td>
+
                             </tr>
-                        </thead>
+                        <?php
+                        } ?>
+                    </tbody>
 
-                        <tbody>
-                            <?php
-                            while ($row = $result->fetch_assoc()) {
-                            ?>
-                                <tr>
+                <?php
+            }
+            $conexion->close();
+                ?>
+                </table>
+        </div>
 
-                                    <td><?php
-                                        $sql2 = "SELECT * FROM repuesto WHERE id_repuesto ='" . $row['id_repuesto'] . "'";
-                                        $resultado2 = $conexion->query($sql2);
-
-                                        $row2 = $resultado2->fetch_assoc();
-
-                                        echo $row2['id_repuesto'] ?></td>
-
-
-
-                                    <td><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo='" . $row['id_equipo'] . "'";
-                                        $resultado = $conexion->query($sql1);
-
-                                        $row1 = $resultado->fetch_assoc();
-
-                                        echo $row1['nombre']            ?></td>
-
-
-
-                                    <td><?php echo $row['tipo_mantenimiento'] ?> </td>
-
-                                    <td><?php $sql3 = "SELECT * FROM incidencias WHERE id_incidencia='" . $row['id_incidencia'] . "'";
-                                        $resultado3 = $conexion->query($sql3);
-
-                                        $row3 = $resultado3->fetch_assoc();
-
-                                        echo $row3['id_incidencia']            ?></td>
-
-                                    <td><?php echo $row['estado_anterior'] ?> </td>
-
-                                    <td><?php echo $row['estado_nuevo'] ?> </td>
-
-
-                                    <td><?php echo $row['observacion'] ?></td>
-
-                                    <td><?php echo $row['fecha_mantenimiento'] ?></td>
-
-                                    <td><?php echo $row['id_responsable'] ?></td>
-
-                                    <td><?php $sql4 = "SELECT * FROM responsables WHERE id_responsable='" . $row['id_responsable'] . "'";
-                                        $resultado4 = $conexion->query($sql4);
-
-                                        $row4 = $resultado4->fetch_assoc();
-
-                                        echo $row4['nombre']            ?></td>
-
-                                </tr>
-                            <?php
-                            } ?>
-                        </tbody>
-
-                    <?php
-                }
-                $conexion->close();
-                    ?>
-                    </table>
-            </div>
-
-        </section>
+    </section>
 
 
     <script src="./jquery/jquery.js"></script>

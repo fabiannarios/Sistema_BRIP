@@ -21,7 +21,7 @@ $resultadousuarios = $conexion->query($consulta1);
     <link rel="icon" href="./css/img/favicon.ico" sizes="any" />
     <link rel="stylesheet" href="./datatable/datatables1.css">
     <link href="./css/tabla.css" rel="stylesheet">
-    <link href='./inicio.css' rel='stylesheet'>
+    <link href='./css/inicio.css' rel='stylesheet'>
     <link href="./css/header.css" rel="stylesheet">
     <link href='./css/bootstrap.css' rel='stylesheet'>
     <link href='./css/boxicons-2.1.4/css/boxicons.css' rel='stylesheet'>
@@ -78,9 +78,9 @@ $resultadousuarios = $conexion->query($consulta1);
         <div class="col-md-4">
             <label for="estado">Estado:</label>
             <select class="form-select fs-4" id="estado" name="estado">
-                <option value="No resuelta">No resuelta</option>
-                <option value="Resuelta">Ya resuelta</option>
-                <option value="En proceso">En proceso</option>
+                <option value="no resuelta">No resuelta</option>
+                <option value="resuelta">Ya resuelta</option>
+                <option value="en proceso">En proceso</option>
             </select>
         </div>
 
@@ -107,7 +107,7 @@ $resultadousuarios = $conexion->query($consulta1);
                 <table id='tabla' class='pequiven-table'>
                     <thead>
                         <tr>
-                           
+
                             <th scope='col'>Codigo del equipo</th>
                             <th scope='col'>Cedula del usuario</th>
                             <th scope='col'>Nombre del usuario</th>
@@ -116,18 +116,18 @@ $resultadousuarios = $conexion->query($consulta1);
                             <th scope='col'>Estado</th>
                             <th scope='col'>Observaciones</th>
                             <th scope='col'>Fecha prevista de solucion</th>
-                            
+
                         </tr>
                     </thead>
 
-                    <tbody >
+                    <tbody>
                         <?php
                         while ($row = $result->fetch_assoc()) {
                         ?>
                             <tr>
-                                
 
-                                <td><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo='" . $row['id_equipo']."'";
+
+                                <td><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo='" . $row['id_equipo'] . "'";
                                     $resultado = $conexion->query($sql1);
 
                                     $row1 = $resultado->fetch_assoc();
@@ -152,7 +152,16 @@ $resultadousuarios = $conexion->query($consulta1);
 
                                 <td><?php echo $row['fecha_reporte'] ?> </td>
 
-                                <td><?php echo $row['prioridad'] ?> </td>
+                                <?php
+
+                                if ($row['prioridad'] == 'alta') {
+                                    echo "<td class = 'tabla-rojo'> alta </td>";
+                                } else if ($row['prioridad'] == 'media') {
+                                    echo "<td class = 'tabla-amarillo'> media </td>";
+                                } else {
+                                    echo "<td class = 'tabla-verde'> baja </td>";
+                                }
+                                ?>
 
 
                                 <td><?php echo $row['estado_solucion'] ?></td>
@@ -161,7 +170,7 @@ $resultadousuarios = $conexion->query($consulta1);
 
 
                                 <td><?php echo $row['fecha_solucion'] ?></td>
-                              
+
                             </tr>
                         <?php
                         } ?>

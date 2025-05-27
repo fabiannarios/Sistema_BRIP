@@ -65,3 +65,18 @@ table.pequiven-table {
 .btn:hover {
     background-color: #cc0000;
 }
+
+.tabla-verde{
+    background-color: rgb(59, 199, 59);
+    color: white;
+}
+
+.tabla-amarillo{
+    background-color: rgb(226, 187, 58);
+    color: rgb(0, 0, 0);
+}
+
+.tabla-rojo{
+    background-color: rgb(209, 58, 58);
+    color: white;
+}

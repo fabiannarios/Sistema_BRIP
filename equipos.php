@@ -131,8 +131,23 @@
                         $row2 = $resultado2->fetch_assoc();
                         echo $row2['nombre_proceso']?></td>
                         <td><?php echo $row['observacion']?> </td>
-                        <td><?php echo $row['estado']?></td>
+
+
+                        <?php 
+
+                        if ($row['estado'] == 'verde' ) {
+                            echo "<td class = 'tabla-verde'> Disponible </td>";  
+                        } else if ($row['estado'] =='amarillo') {
+                            echo "<td class = 'tabla-amarillo'> Baja confiabilidad </td>";
+                        } else {
+                            echo "<td class = 'tabla-rojo'> No disponible </td>";
+                        }
+                        ?>
+
+
                         <td><?php echo $row['ultima_revision']?></td>
+
+
                         <td> 
                             <a href="editarequipo.php?id_equipo=<?php echo $row['id_equipo'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
                             <a href="./config/eliminarequipo.php?id_equipo=<?php echo $row['id_equipo'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>

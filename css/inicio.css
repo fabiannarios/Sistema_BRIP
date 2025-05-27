@@ -320,28 +320,28 @@ html{
 }
 
 .category-amoniaco{
-    background-image: linear-gradient(#00000080, #00000080),url(./css/img/Inician\ pruebas\ en\ Planta\ de\ Urea\ y\ Amoniaco.jpg);
+    background-image: linear-gradient(#00000080, #00000080),url(./img/Inician\ pruebas\ en\ Planta\ de\ Urea\ y\ Amoniaco.jpg);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
 }
 
 .category-urea{
-    background-image: linear-gradient(#00000080, #00000080),url(./css/img/Fertilizantes-Pequiven-Urea-800x480.jpg);
+    background-image: linear-gradient(#00000080, #00000080),url(./img/Fertilizantes-Pequiven-Urea-800x480.jpg);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
 }
 
 .category-fertilizantes{
-    background-image: linear-gradient(#00000080, #00000080),url(./css/img/03-02-2016-petroquimica-de-venezuela-foto-moises-sayet0024.jpg);
+    background-image: linear-gradient(#00000080, #00000080),url(./img/03-02-2016-petroquimica-de-venezuela-foto-moises-sayet0024.jpg);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
 }
 
 .category-servicios{
-    background-image: linear-gradient(#00000080, #00000080),url(./css/img/PEQUIVEN-FACHADA.jpg);
+    background-image: linear-gradient(#00000080, #00000080),url(./img/PEQUIVEN-FACHADA.jpg);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
