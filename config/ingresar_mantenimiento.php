@@ -17,9 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insertar datos en la base de datos
     $sql = "INSERT INTO mantenimiento (id_repuesto, id_equipo, tipo_mantenimiento, id_incidencia, estado_anterior, estado_nuevo, observacion, fecha_mantenimiento, id_responsable) 
-                VALUES ('$repuesto', '$equipo', '$mantenimiento', '$incidencia', '$estado_anterior' ,'$estado_nuevo', '$observacion' , '$fecha_mantenimiento', '$responsable')";
+             VALUES ('$repuesto', '$equipo', '$mantenimiento', '$incidencia', '$estado_anterior' ,'$estado_nuevo', '$observacion' , '$fecha_mantenimiento', '$responsable')";
 
     if ($conexion->query($sql) === TRUE) {
+     
         header("Location:../mantenimiento.php");
     } else {
         echo "Error al registrar el componente: " . $conn->error;
@@ -29,4 +30,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Cerrar conexión
-$conn->close();
+$conexion->close();

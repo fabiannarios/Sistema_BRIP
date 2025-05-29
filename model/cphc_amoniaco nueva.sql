@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-05-2025 a las 03:09:26
+-- Tiempo de generación: 29-05-2025 a las 05:12:43
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -61,7 +61,10 @@ CREATE TABLE `equipos` (
 --
 
 INSERT INTO `equipos` (`id_equipo`, `nombre`, `id_planta`, `id_proceso`, `observacion`, `estado`, `ultima_revision`) VALUES
-('30097086 ', 'Compu', 0, 125, 'SOL', 'verde', '2025-05-22');
+('30097086 ', 'Compu', 0, 125, 'SOL', 'verde', '2025-05-22'),
+('5554587', 'Nanites', 1, 126, 'Juas', 'rojo', '2025-05-29'),
+('8569753', 'Mamamas', 1, 128, 'Bobosssssss', 'amarillo', '2025-05-31'),
+('V-123456', 'Miguel', 0, 129, 'Incidencia', 'verde', '2025-05-21');
 
 -- --------------------------------------------------------
 
@@ -85,8 +88,8 @@ CREATE TABLE `incidencias` (
 --
 
 INSERT INTO `incidencias` (`id_incidencia`, `id_equipo`, `id_usuario`, `fecha_reporte`, `prioridad`, `estado_solucion`, `observacion`, `fecha_solucion`) VALUES
-(4, '30097086 ', '30097086 ', '2025-05-20', 'verde', 'No', 'Esta malito', '2025-05-21'),
-(5, '30097086 ', '14655764 ', '2025-05-20', 'verde', 'No', 'NONONO', '2025-05-21');
+(7, 'V-123456', '14655764 ', '2025-05-21', 'verde', 'No', 'sasdfsdfsfsd', '2025-05-22'),
+(8, 'V-123456', '14655764 ', '2025-05-24', 'alta', 'No resuelta', 'ghfghfghfghhjkhkj', '2025-05-25');
 
 -- --------------------------------------------------------
 
@@ -95,10 +98,10 @@ INSERT INTO `incidencias` (`id_incidencia`, `id_equipo`, `id_usuario`, `fecha_re
 --
 
 CREATE TABLE `mantenimiento` (
-  `id_mantenimiento` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'identificador unico',
+  `id_mantenimiento` int(50) NOT NULL COMMENT 'identificador unico',
   `id_repuesto` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `id_equipo` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'relacionado con la tabla de equipo',
-  `tipo_mantenimiento` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'correctivo o preventivo',
+  `tipo_mantenimiento` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'correctivo, preventivo o predictivo',
   `id_incidencia` int(100) NOT NULL,
   `estado_anterior` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `estado_nuevo` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -106,6 +109,14 @@ CREATE TABLE `mantenimiento` (
   `fecha_mantenimiento` date NOT NULL COMMENT 'fecha en la que se ejecuto',
   `id_responsable` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'persona o equipo encargado'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `mantenimiento`
+--
+
+INSERT INTO `mantenimiento` (`id_mantenimiento`, `id_repuesto`, `id_equipo`, `tipo_mantenimiento`, `id_incidencia`, `estado_anterior`, `estado_nuevo`, `observacion`, `fecha_mantenimiento`, `id_responsable`) VALUES
+(1, '123456987456aaa', '30097086 ', 'correctivo', 7, 'No resuelta', 'En proceso', '7899999999', '2025-05-25', '30009775'),
+(2, 'Ps-qurtda', '8569753', 'preventivo', 7, 'En proceso', 'resuelta', '2222222222222222', '2025-05-29', '30009775');
 
 -- --------------------------------------------------------
 
@@ -163,9 +174,18 @@ CREATE TABLE `repuesto` (
   `nombre` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `estado` enum('solicitado','en_transito','recibido') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `costo` int(11) NOT NULL,
-  `fecha_solicitud` datetime NOT NULL,
-  `fecha_recepcion` datetime NOT NULL
+  `fecha_solicitud` date NOT NULL,
+  `fecha_recepcion` date NOT NULL,
+  `cantidad` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_general_ci;
+
+--
+-- Volcado de datos para la tabla `repuesto`
+--
+
+INSERT INTO `repuesto` (`id_repuesto`, `nombre`, `estado`, `costo`, `fecha_solicitud`, `fecha_recepcion`, `cantidad`) VALUES
+('123456987456aaa', 'Tarjeta grafica', 'recibido', 120000, '2025-05-25', '2025-05-30', 0),
+('Ps-qurtda', 'Manivela', 'solicitado', 12500, '2025-05-25', '2025-06-06', 5);
 
 -- --------------------------------------------------------
 
@@ -178,6 +198,13 @@ CREATE TABLE `responsables` (
   `nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `departamento` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_general_ci;
+
+--
+-- Volcado de datos para la tabla `responsables`
+--
+
+INSERT INTO `responsables` (`id_responsable`, `nombre`, `departamento`) VALUES
+('30009775', 'Fabianna Rios', 'AIT');
 
 -- --------------------------------------------------------
 
@@ -208,9 +235,17 @@ INSERT INTO `roles` (`id_rol`, `nombre`, `permisos`) VALUES
 
 CREATE TABLE `sesiones` (
   `id_usuario` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `fecha_inicio` date NOT NULL,
-  `fecha_fin` date NOT NULL
+  `fecha_inicio` datetime NOT NULL,
+  `fecha_fin` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_general_ci;
+
+--
+-- Volcado de datos para la tabla `sesiones`
+--
+
+INSERT INTO `sesiones` (`id_usuario`, `fecha_inicio`, `fecha_fin`) VALUES
+('30097086', '2025-05-28 21:35:00', '2025-05-28 20:37:00'),
+('admin', '2025-05-28 21:27:00', '2025-05-28 21:15:00');
 
 -- --------------------------------------------------------
 
@@ -233,7 +268,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `id_rol`, `telefono`, `fecha_creacion`, `activo`) VALUES
 ('14655764 ', 'edion', 2, 416643618, '2025-05-05 13:33:00', 1),
-('30097086 ', 'miguel', 1, 2147483647, '2025-05-08 20:00:00', 1);
+('30097086 ', 'miguel', 1, 2147483647, '2025-05-08 20:00:00', 1),
+('admin ', 'admin', 2, 2147483647, '2025-05-26T21:25', 1);
 
 --
 -- Índices para tablas volcadas
@@ -309,7 +345,7 @@ ALTER TABLE `roles`
 -- Indices de la tabla `sesiones`
 --
 ALTER TABLE `sesiones`
-  ADD KEY `id_usuario` (`id_usuario`);
+  ADD PRIMARY KEY (`id_usuario`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -326,7 +362,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `incidencias`
 --
 ALTER TABLE `incidencias`
-  MODIFY `id_incidencia` int(100) NOT NULL AUTO_INCREMENT COMMENT 'identificador unico', AUTO_INCREMENT=6;
+  MODIFY `id_incidencia` int(100) NOT NULL AUTO_INCREMENT COMMENT 'identificador unico', AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `mantenimiento`
+--
+ALTER TABLE `mantenimiento`
+  MODIFY `id_mantenimiento` int(50) NOT NULL AUTO_INCREMENT COMMENT 'identificador unico', AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `plantas`

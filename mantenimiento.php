@@ -59,7 +59,7 @@ $resultadoresponsable = $conexion->query($consulta3);
 
 
         <div class="col-md-6">
-            <label for="equipo">Codigo del equipo:</label>
+            <label for="equipo">TAG:</label>
             <datalist id="equipo">
                 <?php
                 while ($listaequipo = $resultadoequipo->fetch_assoc()) {

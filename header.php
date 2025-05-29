@@ -18,7 +18,7 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="equipos.php">Ingresar equipos</a></li>
-                        <li><a class="dropdown-item" href="#">Respuestos</a></li>
+                        <li><a class="dropdown-item" href="repuesto.php">Respuestos</a></li>
                         
 
                     </ul>
@@ -34,7 +34,7 @@
                        <i class='bx bx-user'></i>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item link-header" href="./views/login.php">Cerrar sesion</a></li>
+                        <li><a class="dropdown-item link-header" href="./config/logout.php">Cerrar sesion</a></li>
                         
                     </ul>
                 

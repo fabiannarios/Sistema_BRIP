@@ -16,11 +16,11 @@
         <form method="POST" action="../config/conexion_registro.php">
             <h1>Registrate</h1>
             <div class="input-box">
-                <input type="text" placeholder="id_usuario" name="id_usuario" required>
+                <input class="bg-body-secondary" type="text " placeholder="id_usuario" name="id_usuario" required>
             </div>
 
             <div class="input-box">
-                <input type="text" placeholder="nombre" name="nombre" required>
+                <input class="bg-body-secondary" type="text" placeholder="nombre" name="nombre" required>
             </div>
 
             <div class="mb-3">
@@ -45,7 +45,7 @@
             </div>
 
             <div class="input-box">
-                <input type="text" placeholder="telefono" name="telefono" required>
+                <input class="bg-body-secondary" type="text" placeholder="telefono" name="telefono" required>
             </div>
 
            

@@ -36,7 +36,7 @@ $resultadousuarios = $conexion->query($consulta1);
     <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="./config/ingreso_incidencia.php" method="POST">
 
         <div class="col-md-6">
-            <label for="codigo">Codigo del equipos:</label>
+            <label for="codigo">TAG:</label>
             <datalist id="equipos">
                 <?php
                 while ($listaequipo = $resultadoequipo->fetch_assoc()) {

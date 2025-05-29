@@ -35,6 +35,14 @@
             </div>
             <br>
 
+            <input hidden type="datetime-local" placeholder="fecha" name="fecha_inicio" 
+                <?php
+                date_default_timezone_set("America/Caracas");
+                    $now = new DateTime();
+                
+                    echo "value='". $now->format('Y-m-d') ."T". $now->format('H:i')."'"
+                ?>" required>
+          
            
 
             <div class="register-link">
