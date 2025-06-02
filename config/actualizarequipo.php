@@ -20,7 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ultima_revision = '".$fecha_revision."'
             WHERE id_equipo = '".$id."'";
 
+
     if ($conexion->query($sql) === TRUE) {
+        
         header("Location: ../equipos.php");
        
     } else {

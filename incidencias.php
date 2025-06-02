@@ -108,7 +108,7 @@ $resultadousuarios = $conexion->query($consulta1);
                     <thead>
                         <tr>
 
-                            <th scope='col'>Codigo del equipo</th>
+                            <th scope='col'>Nombre del equipo</th>
                             <th scope='col'>Cedula del usuario</th>
                             <th scope='col'>Nombre del usuario</th>
                             <th scope='col'>Fecha de reportaje</th>

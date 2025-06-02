@@ -20,7 +20,7 @@
     <?php
     include_once('./config/conecxion_bd.php');
     include_once('./header.php');
-    $sql = "SELECT * FROM equipos WHERE id_equipo =" . $_REQUEST['id_equipo'];
+    $sql = "SELECT * FROM equipos WHERE id_equipo ='" . $_REQUEST['id_equipo']."'";
 
     $resultado = $conexion->query($sql);
 
