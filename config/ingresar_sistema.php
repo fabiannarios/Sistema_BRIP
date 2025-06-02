@@ -42,7 +42,7 @@ if (isset($_GET["iniciar"])) {
                     $conexion->query($sql1);
                 }
 
-
+                $_SESSION['rol'] = $fila["id_rol"];
                 header("Location:../inicio.php");
                 echo "ingresaste como admin";
             } elseif ($fila["id_rol"] == 2) {
@@ -59,7 +59,7 @@ if (isset($_GET["iniciar"])) {
                              WHERE id_usuario = '" . $cedula . "'";
                     $conexion->query($sql1);
                 }
-
+                $_SESSION['rol'] = $fila["id_rol"];
                 echo "ingresaste como trabajador";
                 header("Location:../inicio.php");
             }
@@ -68,6 +68,5 @@ if (isset($_GET["iniciar"])) {
 
         echo " no eres personal";
     }
-    mysqli_free_result($resultado);
-    mysqli_close($conexion);
+    
 }
