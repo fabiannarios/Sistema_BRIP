@@ -3,7 +3,7 @@
 include("./config/ingresar_sistema.php");
 
 
-if ($_SESSION['rol'] == 1) {?>
+if ($_SESSION['rol'] == 2) {?>
 <header>
 <script src="./css/bootstrap-5.3.5-dist/js/bootstrap.bundle.js"></script>
     <div class="header-pequiven">
