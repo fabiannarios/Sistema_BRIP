@@ -2,6 +2,8 @@
 
 include_once('conecxion_bd.php');
 
+
+
 // Validar que los datos fueron enviados correctamente
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener y sanitizar los datos del formulario
@@ -13,9 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $observacion = $_POST['observacion'];
     $fecha_solucion = $_POST['fecha_solucion'];
 
-    // Verificar que no haya campos vacíos
-   
-        // Insertar datos en la base de datos
+
+    $sql1= "SELECT * FROM usuarios WHERE id_usuario = '$usuario'";
+    $resultado = $conexion->query($sql1);
+    $fila1 = $resultado->fetch_assoc();
+
+    if ( $fila1['id_usuario'] != NULL || $f) {
         $sql = "INSERT INTO incidencias (id_equipo, id_usuario, fecha_reporte, prioridad, estado_solucion, observacion, fecha_solucion) 
                 VALUES ('$codigo', '$usuario', '$fecha_reporte', '$prioridad', '$estado' ,'$observacion', '$fecha_solucion')";
 
@@ -26,9 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     
 } else {
-    echo "Método de solicitud no válido.";
+    header("Location:../incidencias.php");
 }
 
-// Cerrar conexión
-$conn->close();
+    }
+        
+
 ?>

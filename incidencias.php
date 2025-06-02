@@ -135,7 +135,7 @@ $resultadousuarios = $conexion->query($consulta1);
                                     echo $row1['nombre']            ?></td>
 
                                 <td><?php
-                                    $sql2 = "SELECT * FROM usuarios WHERE id_usuario =" . $row['id_usuario'];
+                                    $sql2 = "SELECT * FROM usuarios WHERE id_usuario ='" . $row['id_usuario']."'";
                                     $resultado2 = $conexion->query($sql2);
 
                                     $row2 = $resultado2->fetch_assoc();
@@ -143,7 +143,7 @@ $resultadousuarios = $conexion->query($consulta1);
                                     echo $row2['id_usuario'] ?></td>
 
                                 <td><?php
-                                    $sql2 = "SELECT * FROM usuarios WHERE id_usuario =" . $row['id_usuario'];
+                                    $sql2 = "SELECT * FROM usuarios WHERE id_usuario ='" . $row['id_usuario']."'";
                                     $resultado2 = $conexion->query($sql2);
 
                                     $row2 = $resultado2->fetch_assoc();
