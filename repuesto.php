@@ -25,7 +25,7 @@
         <link href='./css/inicio.css' rel='stylesheet'>
         <link href="./css/header.css" rel="stylesheet">
         <link href='./css/bootstrap.css' rel='stylesheet'>
-        <link href='./css/boxicons-2.1.4/css/boxicons.css' rel='stylesheet'>
+        <link href='./css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
 
     </head>
 

@@ -18,6 +18,7 @@
 <body>
     <div class="wrapper"> 
         <form method="GET" action="../config/ingresar_sistema.php">
+            
             <h1 class="text-dark">Bienvenido</h1>
 
             <div class="input-box">
@@ -42,12 +43,6 @@
                 
                     echo "value='". $now->format('Y-m-d') ."T". $now->format('H:i')."'"
                 ?>" required>
-          
-           
-
-            <div class="register-link">
-                <p>No tienes cuenta? <a class="" href="../views/signup.php">Registrar</a></p>
-            </div>
 
         </form>
     </div>

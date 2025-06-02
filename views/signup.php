@@ -8,19 +8,24 @@
     <title>Registrate</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link href='../css/bootstrap.css' rel='stylesheet'>
-    <link href='../css/boxicons-2.1.4/css/boxicons.css' rel='stylesheet'>
+    <link href='../css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
+    
 </head>
 
 <body>
+    
+
     <div class="wrapper">
         <form method="POST" action="../config/conexion_registro.php">
+            <i class='bx bx-arrow-big-left-line'  style='color:#000000'></i>  
             <h1>Registrate</h1>
             <div class="input-box">
-                <input class="bg-body-secondary" type="text " placeholder="id_usuario" name="id_usuario" required>
+                <input class="bg-body-secondary" type="text " placeholder="Cedula" name="id_usuario" required>
             </div>
 
             <div class="input-box">
-                <input class="bg-body-secondary" type="text" placeholder="nombre" name="nombre" required>
+                <input class="bg-body-secondary" type="text" placeholder="Nombre" name="nombre" required>
+            
             </div>
 
             <div class="mb-3">
@@ -64,10 +69,6 @@
 
             <button type="submit" name="registrar" class="button">Registrar</button>
         </form>
-
-        <div class="register-link">
-            <p>Ya tengo una cuenta <a href="../views/login.php">Inicio</a></p>
-        </div>
 
     </div>
 
