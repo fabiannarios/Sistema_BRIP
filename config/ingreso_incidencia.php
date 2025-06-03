@@ -20,7 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultado = $conexion->query($sql1);
     $fila1 = $resultado->fetch_assoc();
 
-    if ( $fila1['id_usuario'] != NULL || $f) {
+    $sql2= "SELECT * FROM equipos WHERE id_equipo= '$codigo'";
+    $resultado2 = $conexion->query($sql2);
+    $fila2 = $resultado2->fetch_assoc();
+
+    if ( $fila1['id_usuario'] != NULL || $fila2['id_equipo' != NULL]) {
         $sql = "INSERT INTO incidencias (id_equipo, id_usuario, fecha_reporte, prioridad, estado_solucion, observacion, fecha_solucion) 
                 VALUES ('$codigo', '$usuario', '$fecha_reporte', '$prioridad', '$estado' ,'$observacion', '$fecha_solucion')";
 

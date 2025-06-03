@@ -10,7 +10,7 @@
 }
 
 html{
-    font-size: 62.5%; /** Reset para REMS 1 - 62.5% = 10PX */
+    font-size: 62.5% !important; /** Reset para REMS 1 - 62.5% = 10PX */
     box-sizing: border-box;
     font-family: 'Poppins' , sans-serif;
 }

@@ -116,6 +116,7 @@ $resultadousuarios = $conexion->query($consulta1);
                             <th scope='col'>Estado</th>
                             <th scope='col'>Observaciones</th>
                             <th scope='col'>Fecha prevista de solucion</th>
+                            <th scope='col'></th>
 
                         </tr>
                     </thead>
@@ -170,6 +171,11 @@ $resultadousuarios = $conexion->query($consulta1);
 
 
                                 <td><?php echo $row['fecha_solucion'] ?></td>
+
+                                 <td> 
+                            <a href="editarincidencia.php?id_incidencia=<?php echo $row['id_incidencia'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
+                            <a href="./config/eliminarincidencia.php?id_incidencia=<?php echo $row['id_incidencia'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
+                        </td>
 
                             </tr>
                         <?php

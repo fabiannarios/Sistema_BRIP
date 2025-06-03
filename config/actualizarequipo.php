@@ -23,9 +23,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conexion->query($sql) === TRUE) {
         
-        header("Location: ../equipos.php");
+           echo "<script type='text/javascript'>";
+            echo "alert('Se edito exitosamente');";
+            echo "window.location.href = '../equipos.php';";
+            echo "</script>";
        
     } else {
+        echo "<script type='text/javascript'>";
+            echo "alert('Error en los datos');";
+            echo "window.location.href = '../editarequipo.php?id_equipo=".$id."';";
+            echo "</script>";
         echo "Error al actualizar: " . $conexion->error;
     }
 } else {

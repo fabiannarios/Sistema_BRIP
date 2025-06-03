@@ -25,6 +25,7 @@ $resultadoresponsable = $conexion->query($consulta3);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mantenimiento</title>
     <link rel="icon" href="./css/img/favicon.ico" sizes="any" />
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="./datatable/datatables1.css">
     <link href="./css/tabla.css" rel="stylesheet">
     <link href='./css/inicio.css' rel='stylesheet'>
@@ -118,7 +119,7 @@ $resultadoresponsable = $conexion->query($consulta3);
         <input type="date" id="fecha_mantenimiento" name="fecha_mantenimiento" value="<?php $d = strtotime("yesterday");
                                                                                         echo date("Y-m-d") ?>">
 
-        <div class="col-md-12">
+        <div class="col-md-6">
             <label for="responsable">Cedula del responsable:</label>
             <datalist id="responsable">
                 <?php
@@ -129,12 +130,57 @@ $resultadoresponsable = $conexion->query($consulta3);
 
             </datalist>
             <input type="text" id="responsable" name="responsable" list="responsable" required>
+            <button type="button" class="btn btn-primary fs-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Ingresar responsable
+                </button>
         </div>
+
+        
 
         <div class="col-12 my-3 text-center">
             <button type="submit" class="btn btn-success fs-4 rounded-pill">Ingresar Incidencia</button>
         </div>
     </form>
+
+
+         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-1" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                       <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="./config/ingreso_responsable.php" method="POST">
+                                 
+                       
+                       <div class="col-md-6">
+                        <label for="cedula">Cedula del responsable:</label>
+                       <input type="text" id="cedula" name="cedula"  required>
+                       </div>
+
+                        <div class="col-md-6">
+                        <label for="nombre">Nombre del responsable:</label>
+                       <input type="text" id="nombre" name="nombre"  required>
+                       </div>
+
+                       <div class="col-md-6">
+                        <label for="departamento">Departamento del responsable:</label>
+                       <input type="text" id="departamento" name="departamento"  required>
+                       </div>
+
+                            <div class="col-12 my-3 text-center">
+                       <button type="submit" class="btn btn-primary fs-3 rounded-pill">Guardar responsable</button>
+                            </div>
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary fs-3" data-bs-dismiss="modal">Close</button>
+                        
+                    </div>
+                    </div>
+                </div>
+                </div>
 
     <section class="my-5">
         <h1 class="heading-1">Historial de Mantenimiento</h1>
@@ -160,6 +206,7 @@ $resultadoresponsable = $conexion->query($consulta3);
                             <th scope='col'>Fecha del mantenimiento</th>
                             <th scope='col'>Cedula del responsable</th>
                             <th scope='col'>Nombre del responsable</th>
+                            <th scope='col'></th>
                         </tr>
                     </thead>
 
@@ -201,18 +248,15 @@ $resultadoresponsable = $conexion->query($consulta3);
 
                                 <?php
 
-                                if ($row['estado_nuevo'] == 'ya resuelta') {
+                                if ($row['estado_nuevo'] == 'resuelta') {
 
-                                    echo "<td class = 'tabla-verde'> Disponible </td>";
-
+                                    echo "<td class = 'tabla-verde'> Ya resuelta </td>";
                                 } else if ($row['estado_nuevo'] == 'en proceso') {
 
-                                    echo "<td class = 'tabla-amarillo'> Baja confiabilidad </td>";
-
+                                    echo "<td class = 'tabla-amarillo'> En proceso </td>";
                                 } else {
 
-                                    echo "<td class = 'tabla-rojo'> No disponible </td>";
-
+                                    echo "<td class = 'tabla-rojo'> No resuelta </td>";
                                 }
                                 ?>
 
@@ -229,6 +273,11 @@ $resultadoresponsable = $conexion->query($consulta3);
                                     $row4 = $resultado4->fetch_assoc();
 
                                     echo $row4['nombre']            ?></td>
+
+                                     <td> 
+                            <a href="editarmantenimiento.php?id_mantenimiento=<?php echo $row['id_mantenimiento'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
+                            <a href="./config/eliminarmantenimiento.php?id_mantenimiento=<?php echo $row['id_mantenimiento'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
+                        </td>
 
                             </tr>
                         <?php
