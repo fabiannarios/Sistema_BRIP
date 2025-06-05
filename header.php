@@ -34,7 +34,7 @@ if ($_SESSION['rol'] == 2) {?>
                 <a class="nav-link link-header" href="./incidencias.php">Incidencias</a>
                 <a class="nav-link link-header" href="./mantenimiento.php">Mantenimiento</a>
                 
-
+                <p class=" fs-3 text-white text-uppercase fw-bold my-0"> Bienvenido  <?php echo $_SESSION['usuario'] ?></p>
                 <div class="dropdown">
                     <button class=" border border-white rounded-circle bg-transparent" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                        <i class='bx bx-user'></i>
@@ -84,6 +84,7 @@ if ($_SESSION['rol'] == 2) {?>
                 <a class="nav-link link-header" href="./incidencias.php">Incidencias</a>
                 <a class="nav-link link-header" href="./mantenimiento.php">Mantenimiento</a>
                 
+               <p class=" fs-3 text-white text-uppercase fw-bold my-0"> Bienvenido  <?php echo $_SESSION['usuario'] ?></p>
 
                 <div class="dropdown">
                     <button class=" border border-white rounded-circle bg-transparent" type="button" data-bs-toggle="dropdown" aria-expanded="false">

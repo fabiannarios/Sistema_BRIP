@@ -1,5 +1,4 @@
 <!--formulario-->
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -91,7 +90,7 @@
         <div class="container-fluid">
             <?php
             include("../Sistema_BRIP/config/conecxion_bd.php");
-       
+                ob_start();
 
             $sql = "SELECT * FROM equipos";
             $result = $conexion->query($sql);
@@ -110,6 +109,8 @@
                     <th scope='col'></th>
                     </tr>
                 </thead>
+
+
 
                 <tbody class='table-group-divider'>
                 <?php
@@ -162,8 +163,10 @@
             $conexion->close();
             ?>
             </table>
-</div>
 
+           
+</div>
+                <a class="nav-link link-header" href="dompdf.php">Descargar</a>
         </section>
 
 

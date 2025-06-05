@@ -19,7 +19,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Repuestos</title>
 
-        <link rel="icon" href="./css/img/favicon.ico" sizes="any" />
+       <link rel="icon" href="./css/img/favicon.ico" sizes="any" />
         <link rel="stylesheet" href="./datatable/datatables1.css">
         <link href="./css/tabla.css" rel="stylesheet">
         <link href='./css/inicio.css' rel='stylesheet'>

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrate</title>
+    <link rel="icon" href="../css/img/favicon.ico" sizes="any" />
     <link rel="stylesheet" href="../css/styles.css">
     <link href='../css/bootstrap.css' rel='stylesheet'>
     <link href='../css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
@@ -17,7 +18,9 @@
 
     <div class="wrapper">
         <form method="POST" action="../config/conexion_registro.php">
-            <i class='bx bx-arrow-big-left-line'  style='color:#000000'></i>  
+            <a href="../inicio.php">
+            <i class='bx bx-arrow-big-left-line fs-3'  style='color:#000000'></i>  
+            </a>
             <h1>Registrate</h1>
             <div class="input-box">
                 <input class="bg-body-secondary" type="text " placeholder="Cedula" name="id_usuario" required>

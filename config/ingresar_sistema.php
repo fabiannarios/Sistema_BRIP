@@ -21,6 +21,11 @@ if (isset($_GET["iniciar"])) {
     $resultado2 = mysqli_query($conexion, $sql2);
     $fila2 = mysqli_fetch_assoc($resultado2);
 
+
+    $sql3 = "SELECT * FROM usuarios WHERE nombre = '$nombre'";
+    $resultado3 = mysqli_query($conexion, $sql3);
+    $fila3 = mysqli_fetch_assoc($resultado3);
+
     if ($numero_registro != 0) {
 
         while (($fila = mysqli_fetch_assoc($resultado)) == true) {
@@ -28,39 +33,41 @@ if (isset($_GET["iniciar"])) {
             if ($fila["id_rol"] == 1) {
 
                 if ($fila2['frecuencia'] == 0) {
-                  $sql1 = "INSERT INTO sesiones (id_usuario, fecha_inicio, fecha_fin) 
+                    $sql1 = "INSERT INTO sesiones (id_usuario, fecha_inicio, fecha_fin) 
                     VALUES ('$cedula', '$fechainicio', '$fechainicio')";
-                    
-                    
-                    $conexion->query($sql1);
 
+
+                    $conexion->query($sql1);
                 } else {
 
-                      $sql1 = "UPDATE sesiones
+                    $sql1 = "UPDATE sesiones
                              SET fecha_inicio = '" . $fechainicio . "'
                              WHERE id_usuario = '" . $cedula . "'";
                     $conexion->query($sql1);
                 }
 
                 $_SESSION['rol'] = $fila["id_rol"];
+
+
+                $_SESSION['usuario'] = $fila3["nombre"];
+
                 header("Location:../inicio.php");
-                echo "ingresaste como admin";
             } elseif ($fila["id_rol"] == 2) {
 
-                    if ($fila2['frecuencia'] == 0) {
-                  $sql1 = "INSERT INTO sesiones (id_usuario, fecha_inicio, fecha_fin) 
+                if ($fila2['frecuencia'] == 0) {
+                    $sql1 = "INSERT INTO sesiones (id_usuario, fecha_inicio, fecha_fin) 
                     VALUES ('$cedula', '$fechainicio', '$fechainicio')";
                     $conexion->query($sql1);
-
                 } else {
-                    
-                      $sql1 = "UPDATE sesiones
+
+                    $sql1 = "UPDATE sesiones
                              SET fecha_inicio = '" . $fechainicio . "'
                              WHERE id_usuario = '" . $cedula . "'";
                     $conexion->query($sql1);
                 }
                 $_SESSION['rol'] = $fila["id_rol"];
-                echo "ingresaste como trabajador";
+                $_SESSION['usuario'] = $fila3["nombre"];
+
                 header("Location:../inicio.php");
             }
         }
@@ -68,5 +75,4 @@ if (isset($_GET["iniciar"])) {
 
         echo " no eres personal";
     }
-    
 }
