@@ -769,3 +769,34 @@ html{
 .form-registro{
     font-size: 1.5rem;
 }
+
+
+.amoniaco-banner{
+    background:scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(./img/Inician\ pruebas\ en\ Planta\ de\ Urea\ y\ Amoniaco.jpg);
+    height: 20vh ;
+   
+}
+
+
+.parent {
+    width: 70%;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+justify-content: center;
+}
+
+.div1 { width: 95%; }
+.div2 { width: 95%; }
+.div3 { width: 95%; }
+.div4 { width: 95%; }
+.div5 { width: 95%; }
+.div6 { width: 95%; }
+.div7 { width: 95%; }
+.div8 { width: 95%; }

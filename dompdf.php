@@ -12,7 +12,7 @@
             $result = $conexion->query($sql);
             if ($result->num_rows > 0) {
                
-               $html .= "<table id='tabla' class='pequiven-table'>"
+               $html .= "<table id='tabla' class='pequiven-table'>";
                     "<thead>"
                     "<tr>"
                     "<th scope='col'>TAG</th>"
