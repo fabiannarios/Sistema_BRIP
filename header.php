@@ -24,7 +24,7 @@ if ($_SESSION['rol'] == 2) {?>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="equipos.php">Ingresar equipos</a></li>
-                        <li><a class="dropdown-item" href="repuestos.php">Respuestos</a></li>
+                        <li><a class="dropdown-item" href="respuestos.php">Respuestos</a></li>
                         
 
                     </ul>
@@ -74,7 +74,7 @@ if ($_SESSION['rol'] == 2) {?>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="equipos.php">Ingresar equipos</a></li>
-                        <li><a class="dropdown-item" href="repuestos.php">Respuestos</a></li>
+                        <li><a class="dropdown-item" href="respuestos.php">Respuestos</a></li>
                         
 
                     </ul>
