@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 VALUES ('$codigo', '$nombre', '$estado', '$costo', '$fecha_solicitud' ,'$fecha_recepcion', '$cantidad')";
 
         if ($conexion->query($sql) === TRUE) {
-            header("Location:../repuesto.php");
+            header("Location:../repuestos.php");
         } else {
             echo "Error al registrar el componente: " . $conn->error;
         }
