@@ -73,6 +73,9 @@ if (isset($_GET["iniciar"])) {
         }
     } else {
 
-        echo " no eres personal";
+            echo "<script type='text/javascript'>";
+            echo "alert('Usuario no reconocido');";
+            echo "window.location.href = '../views/login.php';";
+            echo "</script>";
     }
 }

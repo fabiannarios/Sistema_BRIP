@@ -101,7 +101,7 @@ $html .= "<div class='container-fluid'>";
           
             include("../Sistema_BRIP/config/conecxion_bd.php");
 
-            $sql = "SELECT * FROM equipos";
+            $sql = "SELECT * FROM equipos WHERE id_planta = 0";
             $result = $conexion->query($sql);
             if ($result->num_rows > 0) {
                
@@ -186,8 +186,8 @@ $html .= "<div class='container-fluid'>";
 
                     // Render the HTML as PDF
                    $dompdf->render();
-            header("Content-type: application/pdf");
-            header("Content-Disposition: inline; filename= Archivo.pdf");
+              header("Content-type: application/pdf");
+              header("Content-Disposition: inline; filename= Archivo". date('Y:m:d:m:s').".pdf");
                     // Output the generated PDF to Browser
                    echo $dompdf->output();
                     
