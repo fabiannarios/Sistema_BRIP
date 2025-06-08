@@ -18,7 +18,7 @@ $resultadousuarios = $conexion->query($consulta1);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incidencias</title>
 
-    <link rel="icon" href="./css/img/favicon.ico" sizes="any" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="stylesheet" href="./datatable/datatables1.css">
     <link href="./css/tabla.css" rel="stylesheet">
     <link href='./css/inicio.css' rel='stylesheet'>
@@ -98,7 +98,9 @@ $resultadousuarios = $conexion->query($consulta1);
     </form>
 
     <section class="seccion">
+         <h1 class="heading-1">Historial de Incidencias</h1>
         <div class="container-fluid">
+
             <?php
             $sql = "SELECT * FROM incidencias";
             $result = $conexion->query($sql);

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar componente</title>
-    <link rel="icon" href="./css/img/favicon.ico" sizes="any" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="stylesheet" href="./datatable/datatables1.css">
     <link href="./css/tabla.css" rel="stylesheet">
     <link href='./css/inicio.css' rel='stylesheet'>
@@ -49,8 +49,8 @@
 
         <div class="col-md-4">
             <label for="planta">Planta:</label>
-            <select class="form-select fs-4" id="planta" name="planta">
-                <option value="<?php echo $row['id_planta'] ?>" selected></option>
+            <select class="form-select fs-4" id="planta" name="planta" required>
+                <option value="<?php echo $row['id_planta'] ?>" selected ></option>
 
                 <?php
                  include("../Sistema_BRIP/config/conecxion_bd.php");
@@ -69,7 +69,7 @@
 
         <div class="col-md-4">
             <label for="proceso">Proceso:</label>
-            <select class="form-select fs-4" id="proceso" name="proceso">
+            <select class="form-select fs-4" id="proceso" name="proceso" required>
                 
             </select>
 
@@ -79,7 +79,7 @@
 
         <div class="col-md-4">
             <label for="estado">Estado:</label>
-            <select class="form-select fs-4" id="estado" name="estado">
+            <select class="form-select fs-4" id="estado" name="estado" required>
                 <option value="verde">Disponible</option>
                 <option value="amarillo">Baja Confiabilidad</option>
                 <option value="rojo">No Disponible</option>

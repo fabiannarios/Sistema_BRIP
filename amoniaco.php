@@ -26,7 +26,7 @@ $resultadoresponsable = $conexion->query($consulta3);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amoniaco</title>
 
-    <link rel="icon" href="./css/img/favicon.ico" sizes="any" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="stylesheet" href="./datatable/datatables1.css">
     <link href="./css/tabla.css" rel="stylesheet">
     <link href='./css/inicio.css' rel='stylesheet'>
@@ -134,7 +134,7 @@ $resultadoresponsable = $conexion->query($consulta3);
 
             <?php
         }
-        $conexion->close();
+        
             ?>
 
             <?php include('script.php') ?>
@@ -144,7 +144,7 @@ $resultadoresponsable = $conexion->query($consulta3);
 
 
 
-<script src="scriptchart.js"></script>
+<script src="./js/scriptchart.js"></script>
 <script src="./node_modules/chart.js/dist/chart.umd.js"></script>
 
 

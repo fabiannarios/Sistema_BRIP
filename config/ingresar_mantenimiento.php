@@ -36,14 +36,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO mantenimiento (id_repuesto, id_equipo, tipo_mantenimiento, id_incidencia, estado_anterior, estado_nuevo, observacion, fecha_mantenimiento, id_responsable) 
              VALUES ('$repuesto', '$equipo', '$mantenimiento', '$incidencia', '$estado_anterior' ,'$estado_nuevo', '$observacion' , '$fecha_mantenimiento', '$responsable')";
 
+
     if ($conexion->query($sql) === TRUE) {
      
-        header("Location:../mantenimiento.php");
+        
+            echo "<script type='text/javascript'>";
+            echo "alert('Responsable ingresado con exito');";
+            echo "window.location.href = '../incidencias.php';";
+            echo "</script>";
+
     } else {
         echo "Error al registrar el componente: " . $conn->error;
     }
 } else{
- header("Location:../mantenimiento.php");   
+ 
+            echo "<script type='text/javascript'>";
+            echo "alert('Error en el ingreso del mantenimiento');";
+            echo "window.location.href = '../incidencias.php';";
+            echo "</script>";
 }
 
 

@@ -26,7 +26,7 @@ $resultadoresponsable = $conexion->query($consulta3);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
 
-    <link rel="icon" href="./css/img/favicon.ico" sizes="any" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="stylesheet" href="./datatable/datatables1.css">
     <link href="./css/tabla.css" rel="stylesheet">
     <link href='./css/inicio.css' rel='stylesheet'>
@@ -76,7 +76,7 @@ $resultadoresponsable = $conexion->query($consulta3);
             <div class="container-categories">
                 <div class="card-category category-amoniaco">
                     <p>Amoniaco</p>
-                   <a class="link-offset-2 link-underline link-underline-opacity-0" href="amoniaco.php"> <span>Ver más</span></a>
+                   <a class="link-offset-2 link-underline link-underline-opacity-0" href="amoniaco.php?id_planta=0"> <span>Ver más</span></a>
                 </div>
                 <div class="card-category category-urea">
                     <p>Urea</p>
@@ -403,68 +403,6 @@ $resultadoresponsable = $conexion->query($consulta3);
             </div>
 
         </section>
-
-
-        <footer class="footer">
-            <div class="container container-footer">
-                <div class="menu-footer">
-                    <div class="contact-info">
-                        <p class="title-footer">Información de contacto</p>
-                        <ul>
-                            <li>Dirección: Venezuela. edo Carabobo. Morón</li>
-                            <li>Telefono: 412-123-1234</li>
-                            <li>Fax: 123456789</li>
-                            <li>Email: pequiven.com</li>
-                        </ul>
-                        <div class="social-icons">
-                            <span class=facebook>
-                                <i class='bx bxl-facebook-circle'></i>
-                            </span>
-                            <span class="x">
-                                <i class='bx bx-x'></i>
-                            </span>
-                            <span class="tiktok">
-                                <i class='bx bxl-tiktok'></i>
-                            </span>
-                            <span class="instagram">
-                                <i class='bx bxl-instagram-alt'></i>
-                            </span>
-                            <span class="pinterest">
-                                <i class='bx bxl-pinterest'></i>
-                            </span>
-
-                        </div>
-                    </div>
-                    <div class="information">
-                        <p class="title-footer">Información</p>
-                        <ul>
-                            <li><a href="#">Acerca de Nosotros</a></li>
-                            <li><a href="#">Politicas de Privacidad</a></li>
-                            <li><a href="#">Terminos y Condiciones</a></li>
-                            <li><a href="#">Contactános</a></li>
-                        </ul>
-                    </div>
-
-
-                    <div class="newletter">
-                        <p class="title-footer">Boletin informativo</p>
-                        <div class="content">
-                            <p>
-                                en proceso
-                            </p>
-                            <a href="#"><button>en proceso?</button></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="copyrigth">
-                    <p>
-                        Desarrollado por Fabianna Rios &copy; 2025
-                    </p>
-                    <img src="./css/img/image-removebg-preview.png" alt="">
-                </div>
-            </div>
-        </footer>
 
 
 

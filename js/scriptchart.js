@@ -10,7 +10,8 @@ const ctx6 = document.getElementById("myChart6");
 const ctx7 = document.getElementById("myChart7");
 const ctx8 = document.getElementById("myChart8");
 
-fetch("scriptchart.php")
+
+fetch(" char/scriptchart.php")
   .then((response) => {
     return response.json();
   })
@@ -18,7 +19,7 @@ fetch("scriptchart.php")
     createChart(datos, "pie");
   });
 
-fetch("scriptchart1.php")
+fetch(" char/scriptchart1.php")
   .then((response) => {
     return response.json();
   })
@@ -26,7 +27,7 @@ fetch("scriptchart1.php")
     createChart1(datos, "pie");
   });
 
-fetch("scriptchart2.php")
+fetch(" char/scriptchart2.php")
   .then((response) => {
     return response.json();
   })
@@ -34,7 +35,7 @@ fetch("scriptchart2.php")
     createChart2(datos, "pie");
   });
 
-fetch("scriptchart2.php")
+fetch(" char/scriptchart2.php")
   .then((response) => {
     return response.json();
   })
@@ -42,7 +43,7 @@ fetch("scriptchart2.php")
     createChart2(datos, "pie");
   });
 
-fetch("scriptchart3.php")
+fetch(" char/scriptchart3.php")
   .then((response) => {
     return response.json();
   })
@@ -50,7 +51,7 @@ fetch("scriptchart3.php")
     createChart3(datos, "pie");
   });
 
-fetch("scriptchart4.php")
+fetch(" char/scriptchart4.php")
   .then((response) => {
     return response.json();
   })
@@ -58,7 +59,7 @@ fetch("scriptchart4.php")
     createChart4(datos, "pie");
   });
 
-fetch("scriptchart5.php")
+fetch(" char/scriptchart5.php")
   .then((response) => {
     return response.json();
   })
@@ -66,7 +67,7 @@ fetch("scriptchart5.php")
     createChart5(datos, "pie");
   });
 
-fetch("scriptchart6.php")
+fetch(" char/scriptchart6.php")
   .then((response) => {
     return response.json();
   })
@@ -74,7 +75,7 @@ fetch("scriptchart6.php")
     createChart6(datos, "pie");
   });
 
-fetch("scriptchart7.php")
+fetch(" char/scriptchart7.php")
   .then((response) => {
     return response.json();
   })
@@ -82,7 +83,7 @@ fetch("scriptchart7.php")
     createChart7(datos, "pie");
   });
 
-fetch("scriptchart8.php")
+fetch(" char/scriptchart8.php")
   .then((response) => {
     return response.json();
   })
@@ -97,7 +98,7 @@ function createChart(chartData, type) {
       labels: ["Disponibles", "Baja confiabilidad", "no disponibles"],
       datasets: [
         {
-          label: "# of Votes",
+          label: "# de equipos",
           data: [
             chartData.map((row) => row.verde),
             chartData.map((row) => row.amarillo),
@@ -125,7 +126,7 @@ function createChart1(chartData, type) {
       labels: ["Disponibles", "Baja confiabilidad", "no disponibles"],
       datasets: [
         {
-          label: "# of Votes",
+          label: "# de equipos",
           data: [
             chartData.map((row) => row.verde),
             chartData.map((row) => row.amarillo),
@@ -153,7 +154,7 @@ function createChart2(chartData, type) {
       labels: ["Disponibles", "Baja confiabilidad", "no disponibles"],
       datasets: [
         {
-          label: "# of Votes",
+          label: "# de equipos",
           data: [
             chartData.map((row) => row.verde),
             chartData.map((row) => row.amarillo),
@@ -182,7 +183,7 @@ function createChart3(chartData, type) {
       labels: ["Disponibles", "Baja confiabilidad", "no disponibles"],
       datasets: [
         {
-          label: "# of Votes",
+          label: "# de equipos",
           data: [
             chartData.map((row) => row.verde),
             chartData.map((row) => row.amarillo),
@@ -210,7 +211,7 @@ function createChart4(chartData, type) {
       labels: ["Disponibles", "Baja confiabilidad", "no disponibles"],
       datasets: [
         {
-          label: "# of Votes",
+          label: "# de equipos",
           data: [
             chartData.map((row) => row.verde),
             chartData.map((row) => row.amarillo),
@@ -238,7 +239,7 @@ function createChart5(chartData, type) {
       labels: ["Disponibles", "Baja confiabilidad", "no disponibles"],
       datasets: [
         {
-          label: "# of Votes",
+          label: "# de equipos",
           data: [
             chartData.map((row) => row.verde),
             chartData.map((row) => row.amarillo),
@@ -266,7 +267,7 @@ function createChart6(chartData, type) {
       labels: ["Disponibles", "Baja confiabilidad", "no disponibles"],
       datasets: [
         {
-          label: "# of Votes",
+          label: "# de equipos",
           data: [
             chartData.map((row) => row.verde),
             chartData.map((row) => row.amarillo),
@@ -295,7 +296,7 @@ function createChart7(chartData, type) {
       labels: ["Disponibles", "Baja confiabilidad", "no disponibles"],
       datasets: [
         {
-          label: "# of Votes",
+          label: "# de equipos",
           data: [
             chartData.map((row) => row.verde),
             chartData.map((row) => row.amarillo),
@@ -323,7 +324,7 @@ function createChart8(chartData, type) {
       labels: ["Disponibles", "Baja confiabilidad", "no disponibles"],
       datasets: [
         {
-          label: "# of Votes",
+          label: "# de equipos",
           data: [
             chartData.map((row) => row.verde),
             chartData.map((row) => row.amarillo),

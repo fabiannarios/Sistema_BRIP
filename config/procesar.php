@@ -1,16 +1,5 @@
 <?php
-// Configuración de conexión a la base de datos
-$servidor = "localhost";
-$usuario = "root";
-$contrasena = "";
-$bd = "cphc_amoniaco";
-
-$conn = new mysqli($servidor, $usuario, $contrasena, $bd);
-
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
-
+include('conecxion_bd.php');
 // Validar que los datos fueron enviados correctamente
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener y sanitizar los datos del formulario
@@ -25,19 +14,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verificar que no haya campos vacíos
    
         // Insertar datos en la base de datos
+
+
         $sql = "INSERT INTO equipos (id_equipo, nombre, id_planta, id_proceso, observacion, estado, ultima_revision) 
                 VALUES ('$codigo', '$nombre', '$planta', '$id_proceso', '$observacion', '$estado', '$fecha_revision')";
 
-        if ($conn->query($sql) === TRUE) {
+        $sql1 = "SELECT * FROM equipos WHERE id_equipo = '$codigo' AND nombre = '$nombre'";
+        $resultado = $conexion->query($sql1);
+        $row = $resultado->fetch_assoc();
+        
+
+if ($row['id_equipo'] == NULL && $row['nombre'] == NULL) {
+
+        if ($conexion->query($sql) === TRUE) {
             header("Location:../equipos.php");
         } else {
             echo "Error al registrar el componente: " . $conn->error;
         }
-    
+} else {
+            echo "<script type='text/javascript'>";
+            echo "alert('Equipo duplicado');";
+            echo "window.location.href = '../equipos.php';";
+            echo "</script>";
+}
 } else {
     echo "Método de solicitud no válido.";
 }
 
 // Cerrar conexión
-$conn->close();
+$conexion->close();
 ?>

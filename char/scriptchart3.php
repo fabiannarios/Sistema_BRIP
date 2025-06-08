@@ -1,5 +1,5 @@
 <?php 
-include ('./config/conecxion_bd.php');
+include ('../config/conecxion_bd.php');
       $sql3 = "SELECT 
         SUM(CASE WHEN estado = 'verde' THEN 1 ELSE 0 END) AS verde,
         SUM(CASE WHEN estado = 'amarillo' THEN 1 ELSE 0 END) AS amarillo,

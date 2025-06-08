@@ -24,16 +24,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultado2 = $conexion->query($sql2);
     $fila2 = $resultado2->fetch_assoc();
 
-    if ( $fila1['id_usuario'] != NULL || $fila2['id_equipo' != NULL]) {
+    if ( $fila1['id_usuario'] != NULL || $fila2['id_equipo'] != NULL) {
+
         $sql = "INSERT INTO incidencias (id_equipo, id_usuario, fecha_reporte, prioridad, estado_solucion, observacion, fecha_solucion) 
                 VALUES ('$codigo', '$usuario', '$fecha_reporte', '$prioridad', '$estado' ,'$observacion', '$fecha_solucion')";
+        
+        $sql3 = "SELECT * FROM incidencias WHERE id_incidencia = '$codigo'";
+        $resultado3 = $conexion->query($sql3);
+        $row = $resultado3->fetch_assoc();
 
+        if ($row['id_incidencia'] == NULL) {
+            
         if ($conexion->query($sql) === TRUE) {
-            header("Location:../incidencias.php");
+
+            echo "<script type='text/javascript'>";
+            echo "alert('Responsable ingresado con exito');";
+            echo "window.location.href = '../incidencias.php';";
+            echo "</script>";
+            
         } else {
             echo "Error al registrar el componente: " . $conn->error;
         }
-    
+        }
 } else {
     header("Location:../incidencias.php");
 }

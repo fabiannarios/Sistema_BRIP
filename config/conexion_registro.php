@@ -14,11 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$id_usuario ','$nombre', '$id_rol','$telefono','$fecha')";
 
     if ($conexion->query($sql) === TRUE) {
-        echo "
-        exitoso
-        ";
-        header("Location:../views/login.php");
-    
+         echo "<script type='text/javascript'>";
+            echo "alert('Responsable ingresado con exito');";
+            echo "window.location.href = '../inicio.php';";
+          
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conexion->error;

@@ -11,6 +11,7 @@ $sql = "UPDATE sesiones
 
 
 $conexion->query($sql);
+session_unset();
 session_destroy();
 header('location:../views/login.php');
 ?>

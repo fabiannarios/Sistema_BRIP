@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipos</title>
     
-    <link rel="icon" href="./css/img/favicon.ico" sizes="any" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="stylesheet" href="./datatable/datatables1.css">
     <link href="./css/tabla.css" rel="stylesheet">
     <link href='./css/inicio.css' rel='stylesheet'>
@@ -38,7 +38,7 @@
 
             <div class="col-md-4">
             <label for="planta">Planta:</label>
-            <select class="form-select fs-4" id="planta" name="planta">
+            <select class="form-select fs-4" id="planta" name="planta" required>
                 <option value="">Seleccionar</option>
 
                 <?php
@@ -58,7 +58,7 @@
 
             <div class="col-md-4">
                 <label for="proceso">Proceso:</label>
-                <select class="form-select fs-4" id="proceso" name="proceso">
+                <select class="form-select fs-4" id="proceso" name="proceso" required>
                 <option value="">Seleccionar</option>
 
                 
@@ -72,14 +72,14 @@
 
             <div class="col-md-4">
                 <label for="estado">Estado:</label>
-                <select class="form-select fs-4" id="estado" name="estado">
+                <select class="form-select fs-4" id="estado" name="estado" required>
                     <option value="verde">Disponible</option>
                     <option value="amarillo">Baja Confiabilidad</option>
                     <option value="rojo">No Disponible</option>
                 </select>
             </div>
             <label for="fecha_revision">Última Revisión:</label>
-            <input type="date" id="fecha_revision" name="fecha_revision" value="<?php $d=strtotime("yesterday"); echo date("Y-m-d", $d) ?>">
+            <input type="date" id="fecha_revision" name="fecha_revision" value="<?php $d=strtotime("yesterday"); echo date("Y-m-d", $d) ?>" required>
 
             <div class="col-12 my-3 text-center">
                 <button type="submit" class="btn btn-success fs-4 rounded-pill">Guardar equipo</button>
@@ -177,7 +177,7 @@
             $(document).ready(function() {
                 $('#tabla').DataTable({
                     lengthMenu: [5, 10, 25, 50, 100],
-                    pageLength: 5,
+                    pageLength: 25,
                     language: {
                         lengthMenu: "Mostrar MENU registros por pagina",
                         zeroRecords: "Sin resultado - disculpa",
