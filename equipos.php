@@ -67,7 +67,7 @@
             </div>
 
 
-            <label for="observacion">Observación:</label>
+            <label for="observacion">Observacion:</label>
             <textarea id="observacion" name="observacion"></textarea>
 
             <div class="col-md-4">
@@ -78,11 +78,11 @@
                     <option value="rojo">No Disponible</option>
                 </select>
             </div>
-            <label for="fecha_revision">Última Revisión:</label>
+            <label for="fecha_revision">Ultima Revision:</label>
             <input type="date" id="fecha_revision" name="fecha_revision" value="<?php $d=strtotime("yesterday"); echo date("Y-m-d", $d) ?>" required>
 
             <div class="col-12 my-3 text-center">
-                <button type="submit" class="btn btn-success fs-4 rounded-pill">Guardar equipo</button>
+                <button type="submit" class="btn btn-success fs-4 rounded-pill">Guardar Equipo</button>
             </div>
         </form>
 

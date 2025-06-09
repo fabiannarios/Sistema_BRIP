@@ -49,14 +49,14 @@ $resultadoresponsable = $conexion->query($consulta3);
             <canvas id="myChart"></canvas>
         </div>
              <div class="container-fluid parent">
-            <div class="div1">  <h4 class="text-center">Hidro Desulfuración</h4> <canvas id="myChart1"></canvas> </div>
-            <div class="div2"> <h4 class="text-center">Reformación Primaria</h4> <canvas id="myChart2"></canvas> </div>
+            <div class="div1">  <h4 class="text-center">Hidro Desulfuracion</h4> <canvas id="myChart1"></canvas> </div>
+            <div class="div2"> <h4 class="text-center">Reformacion Primaria</h4> <canvas id="myChart2"></canvas> </div>
             <div class="div3"> <h4 class="text-center">Reforma Secundaria</h4> <canvas id="myChart3"></canvas> </div>
-            <div class="div4"> <h4 class="text-center">Conversión de Alta y Baja Temperatura</h4> <canvas id="myChart4"> </div>
-            <div class="div5"> <h4 class="text-center">Remoción de CO2</h4> <canvas id="myChart5"> </div>
-            <div class="div6"> <h4 class="text-center">Metanación</h4> <canvas id="myChart6"> </div>
-            <div class="div7"> <h4 class="text-center">Compresión y Sintesis</h4> <canvas id="myChart7"> </div>
-            <div class="div7"> <h4 class="text-center">Sistema de Refigeración de Amoniaco (NH3)</h4> <canvas id="myChart8"> </div>
+            <div class="div4"> <h4 class="text-center">Conversion de Alta y Baja Temperatura</h4> <canvas id="myChart4"> </div>
+            <div class="div5"> <h4 class="text-center">Remocion de CO2</h4> <canvas id="myChart5"> </div>
+            <div class="div6"> <h4 class="text-center">Metanacion</h4> <canvas id="myChart6"> </div>
+            <div class="div7"> <h4 class="text-center">Comprecion y Sintesis</h4> <canvas id="myChart7"> </div>
+            <div class="div7"> <h4 class="text-center">Sistema de Refigeracion de Amoniaco (NH3)</h4> <canvas id="myChart8"> </div>
             </div> 
                 
 
