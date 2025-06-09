@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($conexion->query($sql) === TRUE) {
 
             echo "<script type='text/javascript'>";
-            echo "alert('Responsable ingresado con exito');";
+            echo "alert('Incidencia ingresada con exito');";
             echo "window.location.href = '../incidencias.php';";
             echo "</script>";
             

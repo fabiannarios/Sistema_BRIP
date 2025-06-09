@@ -64,8 +64,8 @@ $resultadoresponsable = $conexion->query($consulta3);
 
 
     <div class="container-fluid mt-5 ">
-                <div class="container-fluid d-flex ">
-                 <a class="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2 fs-2 bg-danger text-white" href="dompdf.php">Descargar tabla en PDF</a>
+                <div class="container-fluid  text-center ">
+                 <a class="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2 fs-2 bg-danger text-white" href="export_pdf.php">Descargar tabla en PDF</a>
 
                 <a class="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2 fs-2 bg-success text-white ms-5" href="export_excel.php">Descargar tabla en EXCEL</a>
                 </div>

@@ -9,7 +9,10 @@ if (isset($_GET['id_mantenimiento'])) {
     
     
     if ($conexion->query($sql) === TRUE) {
-        header("Location: ../mantenimiento.php");
+         echo "<script type='text/javascript'>";
+            echo "alert('Registro de mantenimiento eliminado');";
+            echo "window.location.href = '../mantenimiento.php';";
+            echo "</script>";
         exit;
     } else {
         echo "Error al eliminar: " . $conexion->error;

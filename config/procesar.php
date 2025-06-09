@@ -27,9 +27,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if ($row['id_equipo'] == NULL && $row['nombre'] == NULL) {
 
         if ($conexion->query($sql) === TRUE) {
-            header("Location:../equipos.php");
+          
+              echo "<script type='text/javascript'>";
+            echo "alert('Equipo ingresado con exito');";
+            echo "window.location.href = '../equipos.php';";
+            echo "</script>";
         } else {
-            echo "Error al registrar el componente: " . $conn->error;
+            echo "Error al registrar el componente: " . $conexion->error;
         }
 } else {
             echo "<script type='text/javascript'>";

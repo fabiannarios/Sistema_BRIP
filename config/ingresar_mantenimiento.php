@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
             echo "<script type='text/javascript'>";
             echo "alert('Responsable ingresado con exito');";
-            echo "window.location.href = '../incidencias.php';";
+            echo "window.location.href = '../mantenimiento.php';";
             echo "</script>";
 
     } else {
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
             echo "<script type='text/javascript'>";
             echo "alert('Error en el ingreso del mantenimiento');";
-            echo "window.location.href = '../incidencias.php';";
+            echo "window.location.href = '../mantenimiento.php';";
             echo "</script>";
 }
 

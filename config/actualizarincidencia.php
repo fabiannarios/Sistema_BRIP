@@ -40,7 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conexion->query($sql) === TRUE) {
         
-        header("Location: ../incidencias.php");
+       echo "<script type='text/javascript'>";
+            echo "alert('Se edito exitosamente');";
+            echo "window.location.href = '../incidencias.php';";
+            echo "</script>";
        
     } else {
         echo "Error al actualizar: " . $conexion->error;
