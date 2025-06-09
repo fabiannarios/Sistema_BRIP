@@ -20,7 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 VALUES ('$codigo', '$nombre', '$estado', '$costo', '$fecha_solicitud' ,'$fecha_recepcion', '$cantidad')";
 
         if ($conexion->query($sql) === TRUE) {
-            header("Location:../repuestos.php");
+             echo "<script type='text/javascript'>";
+            echo "alert('Repuesto ingresado con exito');";
+            echo "window.location.href = '../mantenimiento.php';";
+            echo "</script>";
         } else {
             echo "Error al registrar el componente: " . $conn->error;
         }

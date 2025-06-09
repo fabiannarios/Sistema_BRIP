@@ -51,7 +51,10 @@ if (isset($_GET["iniciar"])) {
 
                 $_SESSION['usuario'] = $fila3["nombre"];
 
-                header("Location:../inicio.php");
+                 echo "<script type='text/javascript'>";
+            echo "alert('Usuario ingresado con exito');";
+            echo "window.location.href = '../inicio.php';";
+            echo "</script>";
             } elseif ($fila["id_rol"] == 2) {
 
                 if ($fila2['frecuencia'] == 0) {
@@ -68,7 +71,10 @@ if (isset($_GET["iniciar"])) {
                 $_SESSION['rol'] = $fila["id_rol"];
                 $_SESSION['usuario'] = $fila3["nombre"];
 
-                header("Location:../inicio.php");
+                 echo "<script type='text/javascript'>";
+            echo "alert('Usuario ingresado con exito');";
+            echo "window.location.href = '../inicio.php';";
+            echo "</script>";
             }
         }
     } else {

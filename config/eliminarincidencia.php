@@ -9,8 +9,10 @@ if (isset($_GET['id_incidencia'])) {
     
     
     if ($conexion->query($sql) === TRUE) {
-        header("Location: ../incidencias.php");
-        exit;
+         echo "<script type='text/javascript'>";
+            echo "alert('Registro de incidencia eliminado');";
+            echo "window.location.href = '../incidencias.php';";
+            echo "</script>";
     } else {
         echo "Error al eliminar: " . $conexion->error;
     }

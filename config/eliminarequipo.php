@@ -9,8 +9,10 @@ if (isset($_GET['id_equipo'])) {
     
     
     if ($conexion->query($sql) === TRUE) {
-        header("Location: ../equipos.php");
-        exit;
+         echo "<script type='text/javascript'>";
+            echo "alert('Equipo eliminado');";
+            echo "window.location.href = '../equipos.php';";
+            echo "</script>";
     } else {
         echo "Error al eliminar: " . $conexion->error;
     }

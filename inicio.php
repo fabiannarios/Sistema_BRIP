@@ -44,15 +44,18 @@ $resultadoresponsable = $conexion->query($consulta3);
             <div class="card-feature">
                 <i class='bx bx-tachometer'></i>
                 <div class="feature-content">
+                    
                     <span>Planta Amoniaco</span>
-                    <p>Rendimiento</p>
+                    <p class=" fs-4 mb-0">Rendimiento</p>
+                    <p class=" fs-4"> <?php include('porcentaje.php') ?></p>
                 </div>
             </div>
             <div class="card-feature">
                 <i class='bx bx-tachometer'></i>
                 <div class="feature-content">
                     <span>Planta Urea</span>
-                    <p>Rendimiento</p>
+                    <p class=" mb-0">Rendimiento</p>
+                    <p class=" fs-4"> <?php include('porcentajeurea.php') ?></p>
                 </div>
             </div>
             <div class="card-feature">
