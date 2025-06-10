@@ -138,7 +138,7 @@ $resultadoresponsable = $conexion->query($consulta3);
         
 
         <div class="col-12 my-3 text-center">
-            <button type="submit" class="btn btn-success fs-4 rounded-pill">Ingresar Incidencia</button>
+            <button type="submit" class="btn btn-success fs-4 rounded-pill">Ingresar Mantenmiento</button>
         </div>
     </form>
 

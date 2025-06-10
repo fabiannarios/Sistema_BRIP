@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      
         
             echo "<script type='text/javascript'>";
-            echo "alert('Responsable ingresado con exito');";
+            echo "alert('Registro de mantenimiento ingresado con exito');";
             echo "window.location.href = '../mantenimiento.php';";
             echo "</script>";
 
