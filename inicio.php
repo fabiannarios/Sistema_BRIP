@@ -297,7 +297,7 @@ $resultadoresponsable = $conexion->query($consulta3);
 
         </section>
 
-        <section class=" container-fluid my-5">
+        <section class=" container-fluid p-5">
             <h1 class="heading-1">Historial de Mantenimiento</h1>
 
 
@@ -362,7 +362,7 @@ $resultadoresponsable = $conexion->query($consulta3);
 
                                     <?php
 
-                                    if ($row['estado_nuevo'] == 'ya resuelta') {
+                                    if ($row['estado_nuevo'] == 'resuelta') {
 
                                         echo "<td class = 'tabla-verde'> Ya resuelta </td>";
                                     } else if ($row['estado_nuevo'] == 'en proceso') {
