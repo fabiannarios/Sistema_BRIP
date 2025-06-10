@@ -81,10 +81,7 @@ $resultadoresponsable = $conexion->query($consulta3);
                     <p>Urea</p>
                     <span>Ver más</span>
                 </div>
-                <div class="card-category category-fertilizantes">
-                    <p>Fertilizantes</p>
-                    <span>Ver más</span>
-                </div>
+            
                 <div class="card-category category-servicios">
                     <p>Servicios industriales 2</p>
                     <span>Ver más</span>
