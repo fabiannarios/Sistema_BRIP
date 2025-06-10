@@ -97,19 +97,21 @@ $resultadousuarios = $conexion->query($consulta1);
         </div>
     </form>
 
-    <section class="seccion">
-         <h1 class="heading-1">Historial de Incidencias</h1>
-        <div class="container-fluid">
+   
 
             <?php
             $sql = "SELECT * FROM incidencias";
             $result = $conexion->query($sql);
             if ($result->num_rows > 0) {
             ?>
+            
+                <section class="seccion">
+                <h1 class="heading-1">Historial de Incidencias</h1>
+                <div class="container-fluid">
                 <table id='tabla' class='pequiven-table'>
                     <thead>
                         <tr>
-
+                            <th scope='col'>Codigo de la incidencia</th>
                             <th scope='col'>Nombre del equipo</th>
                             <th scope='col'>Cedula del usuario</th>
                             <th scope='col'>Nombre del usuario</th>
@@ -129,15 +131,16 @@ $resultadousuarios = $conexion->query($consulta1);
                         ?>
                             <tr>
 
+                                <td class=" text-center"><?php echo $row['id_incidencia'] ?> </td>
 
-                                <td><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo='" . $row['id_equipo'] . "'";
+                                <td class=" text-center"><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo='" . $row['id_equipo'] . "'";
                                     $resultado = $conexion->query($sql1);
 
                                     $row1 = $resultado->fetch_assoc();
 
                                     echo $row1['nombre']            ?></td>
 
-                                <td><?php
+                                <td class=" text-center"><?php
                                     $sql2 = "SELECT * FROM usuarios WHERE id_usuario ='" . $row['id_usuario']."'";
                                     $resultado2 = $conexion->query($sql2);
 
@@ -145,7 +148,7 @@ $resultadousuarios = $conexion->query($consulta1);
 
                                     echo $row2['id_usuario'] ?></td>
 
-                                <td><?php
+                                <td class=" text-center"><?php
                                     $sql2 = "SELECT * FROM usuarios WHERE id_usuario ='" . $row['id_usuario']."'";
                                     $resultado2 = $conexion->query($sql2);
 
@@ -153,7 +156,7 @@ $resultadousuarios = $conexion->query($consulta1);
 
                                     echo $row2['nombre'] ?></td>
 
-                                <td><?php echo $row['fecha_reporte'] ?> </td>
+                                <td class=" text-center"><?php echo $row['fecha_reporte'] ?> </td>
 
                                 <?php
 
@@ -167,14 +170,14 @@ $resultadousuarios = $conexion->query($consulta1);
                                 ?>
 
 
-                                <td><?php echo $row['estado_solucion'] ?></td>
+                                <td class=" text-center"><?php echo $row['estado_solucion'] ?></td>
 
-                                <td><?php echo $row['observacion'] ?></td>
+                                <td class=" text-center"><?php echo $row['observacion'] ?></td>
 
 
-                                <td><?php echo $row['fecha_solucion'] ?></td>
+                                <td class=" text-center"><?php echo $row['fecha_solucion'] ?></td>
 
-                                 <td> 
+                                 <td class=" text-center"> 
                             <a href="editarincidencia.php?id_incidencia=<?php echo $row['id_incidencia'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
                             <a href="./config/eliminarincidencia.php?id_incidencia=<?php echo $row['id_incidencia'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
                         </td>

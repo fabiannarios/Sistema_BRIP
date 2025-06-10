@@ -40,32 +40,28 @@ $resultadoresponsable = $conexion->query($consulta3);
     <?php include('./header.php') ?>
 
     <main class="main-content">
-        <section class="container container-feactures">
-            <div class="card-feature">
+        <section class="container-fluid  d-flex justify-content-evenly p-5">
+
+            <div class="card-feature w-25 border-3 border border-danger">
+                 <p class="fs-2 fw-bold font-monospace"> <?php include('porcentaje.php') ?></p>
                 <i class='bx bx-tachometer'></i>
                 <div class="feature-content">
                     
                     <span>Planta Amoniaco</span>
-                    <p class=" fs-4 mb-0">Rendimiento</p>
-                    <p class=" fs-4"> <?php include('porcentaje.php') ?></p>
+                    <p class=" fs-4 mb-0 ">Rendimiento</p>
                 </div>
             </div>
-            <div class="card-feature">
+            <div class="card-feature w-25 border-3 border border-danger">
+                <p class="fs-2 fw-bold font-monospace"> <?php include('porcentajeurea.php') ?></p>
                 <i class='bx bx-tachometer'></i>
                 <div class="feature-content">
                     <span>Planta Urea</span>
                     <p class=" mb-0">Rendimiento</p>
-                    <p class=" fs-4"> <?php include('porcentajeurea.php') ?></p>
+                    
                 </div>
             </div>
-            <div class="card-feature">
-                <i class='bx bx-tachometer'></i>
-                <div class="feature-content">
-                    <span>Planta Fertilizante</span>
-                    <p>Rendimiento</p>
-                </div>
-            </div>
-            <div class="card-feature">
+            
+            <div class="card-feature w-25 border-3 border border-danger">
                 <i class='bx bx-tachometer'></i>
                 <div class="feature-content">
                     <span>Planta servicio industriales 2</span>

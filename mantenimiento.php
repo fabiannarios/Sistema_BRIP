@@ -182,16 +182,19 @@ $resultadoresponsable = $conexion->query($consulta3);
                 </div>
                 </div>
 
+ <?php
+            $sql = "SELECT * FROM mantenimiento";
+            $result = $conexion->query($sql);
+            if ($result->num_rows > 0) {
+            ?>
+
+
     <section class="my-5">
         <h1 class="heading-1">Historial de Mantenimiento</h1>
 
 
         <div class="container-fluid">
-            <?php
-            $sql = "SELECT * FROM mantenimiento";
-            $result = $conexion->query($sql);
-            if ($result->num_rows > 0) {
-            ?>
+           
                 <table id='tabla' class='pequiven-table'>
                     <thead>
                         <tr>

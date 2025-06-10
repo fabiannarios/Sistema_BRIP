@@ -33,7 +33,7 @@ if ($_SESSION['rol'] == 2) {?>
 
                 <a class="nav-link link-header" href="./incidencias.php">Incidencias</a>
                 <a class="nav-link link-header" href="./mantenimiento.php">Mantenimiento</a>
-                <a class="nav-link link-header" href="configuracion.php">Configuracion</a>
+                
 
                 <p class=" fs-3 text-white text-uppercase fw-bold my-0"> Bienvenido  <?php echo $_SESSION['usuario'] ?></p>
                 <div class="dropdown">
@@ -42,6 +42,7 @@ if ($_SESSION['rol'] == 2) {?>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item link-header" href="./config/logout.php">Cerrar sesion</a></li>
+                        <li><a class="dropdown-item link-header" href="configuracion.php">Configuracion</a></li>
                         <li><a class="dropdown-item link-header" href="./views/signup.php">Agregar usuario</a></li>
                     </ul>
                 
