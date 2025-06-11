@@ -30,6 +30,8 @@ if (isset($_GET["iniciar"])) {
 
         while (($fila = mysqli_fetch_assoc($resultado)) == true) {
 
+            if ($fila['activo'] == 1) {
+                
             if ($fila["id_rol"] == 1) {
 
                 if ($fila2['frecuencia'] == 0) {
@@ -55,6 +57,7 @@ if (isset($_GET["iniciar"])) {
             echo "alert('Usuario ingresado con exito');";
             echo "window.location.href = '../inicio.php';";
             echo "</script>";
+            
             } elseif ($fila["id_rol"] == 2) {
 
                 if ($fila2['frecuencia'] == 0) {
@@ -75,6 +78,13 @@ if (isset($_GET["iniciar"])) {
             echo "alert('Usuario ingresado con exito');";
             echo "window.location.href = '../inicio.php';";
             echo "</script>";
+            }
+
+            } else{
+                echo "<script type='text/javascript'>";
+                echo "alert('Usuario inhabilitado');";
+                echo "window.location.href = '../views/login.php';";
+                echo "</script>";
             }
         }
     } else {

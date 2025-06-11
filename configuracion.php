@@ -78,7 +78,9 @@
                         <td> 
                          
                             <a href="editarusuario.php?id_usuario=<?php echo $row['id_usuario'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
-                            <a href="./config/eliminarusuario.php?id_equipo=<?php echo $row['id_usuario'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
+                            <a href="./config/eliminarusuario.php?id_usuario=<?php echo $row['id_usuario'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
+                            <a href="./config/habilitarusuario.php?id_usuario=<?php echo $row['id_usuario'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0 p-2"> DESHABILITAR/HABILITAR</a>
+
                         </td>
                         </tr>
                   <?php      
