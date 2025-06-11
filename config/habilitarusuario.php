@@ -1,6 +1,5 @@
 <?php
 
-use PhpOffice\PhpSpreadsheet\Worksheet\Row;
 
 include('conecxion_bd.php');
 
@@ -15,23 +14,31 @@ if (isset($_GET['id_usuario'])) {
     if ($row['activo'] == '1') {
          $sql = "UPDATE usuarios SET activo = 0 
             WHERE id_usuario = '".$id."'";
+             if ($conexion->query($sql) === TRUE) {
+
+         echo "<script type='text/javascript'>";
+            echo "alert('Usuario Inhabilitado');";
+            echo "window.location.href = '../configuracion.php';";
+            echo "</script>";
+
+    } else {
+        echo "Error al eliminar: " . $conexion->error;
+    }
+
     } else {
          $sql = "UPDATE usuarios SET activo = 1
             WHERE id_usuario = '".$id."'";
-    }
 
-   
-
-    
-    
-    if ($conexion->query($sql) === TRUE) {
+             if ($conexion->query($sql) === TRUE) {
          echo "<script type='text/javascript'>";
-            echo "alert('Registro de incidencia eliminado');";
+            echo "alert('Usuario habilitado');";
             echo "window.location.href = '../configuracion.php';";
             echo "</script>";
     } else {
         echo "Error al eliminar: " . $conexion->error;
     }
+    }
+   
 } else {
     echo "ID no especificado.";
 }
