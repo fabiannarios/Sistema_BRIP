@@ -33,14 +33,13 @@
     <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="./config/actualizarusuario.php" method="POST">
 
        
-        <form method="POST" action="./inicio.php">
-            <a href="">
+            <a href="./configuracion.php">
             <i class='bx bx-arrow-big-left-line fs-3'  style='color:#000000'></i>  
             </a>
 
            <div class="col-md-5">
             <label for="cedula">Cedula:</label>
-            <input type="text" id="cedula" name="cedula" value="<?php echo $row['id_usuario'] ?> " disabled required>
+            <input type="text" id="cedula" name="cedula" value="<?php echo $row['id_usuario'] ?> "  required>
         </div>
 
 
@@ -52,12 +51,12 @@
                     
         <div class="col-md-6">
                     <label for="telefono">Telefono:</label>
-                    <input type="text" id="telefono" name="telefono" value="<?php echo $row['telefono'] ?> " disabled required>
+                    <input type="text" id="telefono" name="telefono" value="<?php echo $row['telefono'] ?> "  required>
                     </div>
 
                     <div class="mb-3">
                 <label for="id_rol" class="form-label"><b>Roles:</b></label>
-                <select class="form-select" name="id_rol" required>
+                <select class="form-select fs-4" name="id_rol" required>
                     <option value="" disabled selected>Selecciona un rol</option>
                     <?php
                     include "../config/conecxion_bd.php";

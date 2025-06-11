@@ -3,6 +3,7 @@ include('./conecxion_bd.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id             = $_POST['codigo'];
+    $codigo             = $_POST['codigo'];
     $nombre         = $_POST['nombre'];
     $planta         = $_POST['planta'];
     $proceso        = $_POST['proceso'];
@@ -11,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fecha_revision = $_POST['fecha_revision'];
 
     $sql = "UPDATE equipos 
-            SET id_equipo = '".$id."', 
+            SET id_equipo = '".$codigo."', 
                 nombre = '".$nombre."',
                 id_planta = '".$planta."', 
                 id_proceso = '".$proceso."', 

@@ -1,0 +1,41 @@
+<?php
+include('./conecxion_bd.php');
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $id = $_POST['id'];
+    $cedula = $_POST['cedula'];
+    $nombre = $_POST['nombre'];
+    $telefono = $_POST['telefono'];
+    $rol = $_POST['id_rol'];
+    
+   
+
+    $sql = "UPDATE usuarios 
+            SET id_usuario = '".$cedula."', 
+                nombre = '".$nombre."',
+                id_rol = '".$rol."', 
+                telefono = '".$telefono."'
+            WHERE id_usuario = '".$id."'";
+
+
+    if ($conexion->query($sql) === TRUE) {
+        
+           echo "<script type='text/javascript'>";
+            echo "alert('Se edito exitosamente');";
+            echo "window.location.href = '../configuracion.php';";
+            echo "</script>";
+       
+    } else {
+        echo "<script type='text/javascript'>";
+            echo "alert('Error en los datos');";
+            echo "window.location.href = '../configuracion.php?id_usuario=".$id."';";
+            echo "</script>";
+        echo "Error al actualizar: " . $conexion->error;
+    }
+} else {
+    echo "Método de solicitud no válido.";
+}
+
+$conexion->close();
+?>

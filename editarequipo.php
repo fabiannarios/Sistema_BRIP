@@ -39,7 +39,7 @@
 
         <div class="col-md-6">
             <label for="codigo">Código:</label>
-            <input type="text" id="codigo" name="codigo" value="<?php echo $row['id_equipo'] ?> " disabled required>
+            <input type="text" id="codigo" name="codigo" value="<?php echo $row['id_equipo'] ?> "  required>
         </div>
 
         <div class="col-md-6">
@@ -91,7 +91,7 @@
         <div class="col-12 my-3 text-center">
             <button type="submit" class="btn btn-success fs-4 rounded-pill">Guardar Componente</button>
         </div>
-        <input type="hidden" id="codigo" name="codigo" value="<?php echo $row['id_equipo'] ?> " required>
+        <input type="hidden" id="id" name="id" value="<?php echo $row['id_usuario'] ?> " required>
 
     </form>
 

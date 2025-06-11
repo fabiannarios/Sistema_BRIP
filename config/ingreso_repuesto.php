@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($conexion->query($sql) === TRUE) {
              echo "<script type='text/javascript'>";
             echo "alert('Repuesto ingresado con exito');";
-            echo "window.location.href = '../mantenimiento.php';";
+            echo "window.location.href = '../repuestos.php';";
             echo "</script>";
         } else {
             echo "Error al registrar el componente: " . $conn->error;
