@@ -43,14 +43,14 @@
             </div>
 
             <div class="col-md-6">
-                <label for="nombre">Nombre del equipo:</label>
+                <label for="nombre">Nombre del eqrepuesto:</label>
                 <input type="text" id="nombre" name="nombre" required>
             </div>
 
 
 
             <div class="col-md-6">
-                <label for="costo">Costo del equipo:</label>
+                <label for="costo">Costo del repuesto:</label>
                 <input type="text" id="costo" name="costo" required>
             </div>
 
@@ -120,9 +120,9 @@
                                     if ($row['estado'] == 'recibido') {
                                         echo "<td class = 'tabla-verde'> Recibido </td>";
                                     } else if ($row['estado'] == 'en_transito') {
-                                        echo "<td class = 'tabla-amarillo'> Baja confiabilidad </td>";
+                                        echo "<td class = 'tabla-amarillo'> En transito </td>";
                                     } else {
-                                        echo "<td class = 'tabla-rojo'> No disponible </td>";
+                                        echo "<td class = 'tabla-rojo'> Solicitado </td>";
                                     }
                                     ?>
                                     <td><?php echo $row['costo'] ?> </td>
