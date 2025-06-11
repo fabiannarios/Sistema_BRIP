@@ -75,7 +75,7 @@ $resultadoresponsable = $conexion->query($consulta3);
             <div class="container-categories">
                 <div class="card-category category-amoniaco">
                     <p>Amoniaco</p>
-                   <a class="link-offset-2 link-underline link-underline-opacity-0" href="amoniaco.php?id_planta=0"> <span>Ver más</span></a>
+                   <a class="link-offset-2 link-underline link-underline-opacity-0" href="amoniaco.php"> <span>Ver más</span></a>
                 </div>
                 <div class="card-category category-urea">
                     <p>Urea</p>

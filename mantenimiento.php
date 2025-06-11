@@ -132,10 +132,10 @@ $resultadoresponsable = $conexion->query($consulta3);
             <input type="text" id="responsable" name="responsable" list="responsable" required>
             <button type="button" class="btn btn-primary fs-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Ingresar responsable
-                </button>
+            </button>
         </div>
 
-        
+
 
         <div class="col-12 my-3 text-center">
             <button type="submit" class="btn btn-success fs-4 rounded-pill">Ingresar Mantenmiento</button>
@@ -143,73 +143,73 @@ $resultadoresponsable = $conexion->query($consulta3);
     </form>
 
 
-         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-1" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                       <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="./config/ingreso_responsable.php" method="POST">
-                                 
-                       
-                       <div class="col-md-6">
-                        <label for="cedula">Cedula del responsable:</label>
-                       <input type="text" id="cedula" name="cedula"  required>
-                       </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-1" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="./config/ingreso_responsable.php" method="POST">
+
 
                         <div class="col-md-6">
-                        <label for="nombre">Nombre del responsable:</label>
-                       <input type="text" id="nombre" name="nombre"  required>
-                       </div>
+                            <label for="cedula">Cedula del responsable:</label>
+                            <input type="text" id="cedula" name="cedula" required>
+                        </div>
 
-                       <div class="col-md-6">
-                        <label for="departamento">Departamento del responsable:</label>
-                       <input type="text" id="departamento" name="departamento"  required>
-                       </div>
+                        <div class="col-md-6">
+                            <label for="nombre">Nombre del responsable:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
 
-                            <div class="col-12 my-3 text-center">
-                       <button type="submit" class="btn btn-primary fs-3 rounded-pill">Guardar responsable</button>
-                            </div>
+                        <div class="col-md-6">
+                            <label for="departamento">Departamento del responsable:</label>
+                            <input type="text" id="departamento" name="departamento" required>
+                        </div>
+
+                        <div class="col-12 my-3 text-center">
+                            <button type="submit" class="btn btn-primary fs-3 rounded-pill">Guardar responsable</button>
+                        </div>
                     </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary fs-3" data-bs-dismiss="modal">Close</button>
-                        
-                    </div>
-                    </div>
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary fs-3" data-bs-dismiss="modal">Close</button>
+
                 </div>
+            </div>
+        </div>
+    </div>
 
- <?php
-            $sql = "SELECT * FROM mantenimiento";
-            $result = $conexion->query($sql);
-            if ($result->num_rows > 0) {
-            ?>
+    <?php
+    $sql = "SELECT * FROM mantenimiento";
+    $result = $conexion->query($sql);
+    if ($result->num_rows > 0) {
+    ?>
 
 
-    <section class="my-5">
-        <h1 class="heading-1">Historial de Mantenimiento</h1>
+        <section class="my-5">
+            <h1 class="heading-1">Historial de Mantenimiento</h1>
 
 
-        <div class="container-fluid">
-           
+            <div class="container-fluid">
+
                 <table id='tabla' class='pequiven-table'>
                     <thead>
                         <tr>
 
-                            <th scope='col'>Codigo del repuesto</th>
-                            <th scope='col'>Nombre del equipo</th>
-                            <th scope='col'>Tipo de mantenimiento</th>
-                            <th scope='col'>Codigo de la incidencia</th>
-                            <th scope='col'>Estado anterior</th>
-                            <th scope='col'>Estado nuevo</th>
-                            <th scope='col'>Observaciones</th>
-                            <th scope='col'>Fecha del mantenimiento</th>
-                            <th scope='col'>Cedula del responsable</th>
-                            <th scope='col'>Nombre del responsable</th>
-                            <th scope='col'></th>
+                            <th class="text-center" scope='col'>Codigo del repuesto</th>
+                            <th class="text-center" scope='col'>Nombre del equipo</th>
+                            <th class="text-center" scope='col'>Tipo de mantenimiento</th>
+                            <th class="text-center" scope='col'>Codigo de la incidencia</th>
+                            <th class="text-center" scope='col'>Estado anterior</th>
+                            <th class="text-center" scope='col'>Estado nuevo</th>
+                            <th class="text-center" scope='col'>Observaciones</th>
+                            <th class="text-center" scope='col'>Fecha del mantenimiento</th>
+                            <th class="text-center" scope='col'>Cedula del responsable</th>
+                            <th class="text-center" scope='col'>Nombre del responsable</th>
+                            <th class="text-center" scope='col'></th>
                         </tr>
                     </thead>
 
@@ -219,7 +219,7 @@ $resultadoresponsable = $conexion->query($consulta3);
                         ?>
                             <tr>
 
-                                <td><?php
+                                <td class=" text-center"><?php
                                     $sql2 = "SELECT * FROM repuesto WHERE id_repuesto ='" . $row['id_repuesto'] . "'";
                                     $resultado2 = $conexion->query($sql2);
 
@@ -229,7 +229,7 @@ $resultadoresponsable = $conexion->query($consulta3);
 
 
 
-                                <td><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo='" . $row['id_equipo'] . "'";
+                                <td class=" text-center"><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo='" . $row['id_equipo'] . "'";
                                     $resultado = $conexion->query($sql1);
 
                                     $row1 = $resultado->fetch_assoc();
@@ -238,16 +238,16 @@ $resultadoresponsable = $conexion->query($consulta3);
 
 
 
-                                <td><?php echo $row['tipo_mantenimiento'] ?> </td>
+                                <td class=" text-center"><?php echo $row['tipo_mantenimiento'] ?> </td>
 
-                                <td><?php $sql3 = "SELECT * FROM incidencias WHERE id_incidencia='" . $row['id_incidencia'] . "'";
+                                <td class=" text-center"><?php $sql3 = "SELECT * FROM incidencias WHERE id_incidencia='" . $row['id_incidencia'] . "'";
                                     $resultado3 = $conexion->query($sql3);
 
                                     $row3 = $resultado3->fetch_assoc();
 
                                     echo $row3['id_incidencia']            ?></td>
 
-                                <td><?php echo $row['estado_anterior'] ?> </td>
+                                <td class=" text-center"><?php echo $row['estado_anterior'] ?> </td>
 
                                 <?php
 
@@ -264,23 +264,23 @@ $resultadoresponsable = $conexion->query($consulta3);
                                 ?>
 
 
-                                <td><?php echo $row['observacion'] ?></td>
+                                <td class=" text-center"><?php echo $row['observacion'] ?></td>
 
-                                <td><?php echo $row['fecha_mantenimiento'] ?></td>
+                                <td class=" text-center"><?php echo $row['fecha_mantenimiento'] ?></td>
 
-                                <td><?php echo $row['id_responsable'] ?></td>
+                                <td class=" text-center"><?php echo $row['id_responsable'] ?></td>
 
-                                <td><?php $sql4 = "SELECT * FROM responsables WHERE id_responsable='" . $row['id_responsable'] . "'";
+                                <td class=" text-center"><?php $sql4 = "SELECT * FROM responsables WHERE id_responsable='" . $row['id_responsable'] . "'";
                                     $resultado4 = $conexion->query($sql4);
 
                                     $row4 = $resultado4->fetch_assoc();
 
                                     echo $row4['nombre']            ?></td>
 
-                                     <td> 
-                            <a href="editarmantenimiento.php?id_mantenimiento=<?php echo $row['id_mantenimiento'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
-                            <a href="./config/eliminarmantenimiento.php?id_mantenimiento=<?php echo $row['id_mantenimiento'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
-                        </td>
+                                <td class=" text-center">
+                                    <a href="editarmantenimiento.php?id_mantenimiento=<?php echo $row['id_mantenimiento'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
+                                    <a href="./config/eliminarmantenimiento.php?id_mantenimiento=<?php echo $row['id_mantenimiento'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
+                                </td>
 
                             </tr>
                         <?php
@@ -292,33 +292,33 @@ $resultadoresponsable = $conexion->query($consulta3);
             $conexion->close();
                 ?>
                 </table>
-        </div>
+            </div>
 
-    </section>
+        </section>
 
 
-    <script src="./jquery/jquery.js"></script>
-    <script src="./datatable/datatables1.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#tabla').DataTable({
-                lengthMenu: [5, 10, 25, 50, 100],
-                pageLength: 5,
-                language: {
-                    lengthMenu: "Mostrar MENU registros por pagina",
-                    zeroRecords: "Sin resultado - disculpa",
-                    info: "Mostrando la pagina PAGE de PAGES",
-                    infoEmpty: "No records available",
-                    infoFiltered: "(filtrado de  MAX registros totales)",
-                    search: "Buscar: ",
-                    paginate: {
-                        next: "Siguientes",
-                        previous: "Anterior"
-                    },
-                }
+        <script src="./jquery/jquery.js"></script>
+        <script src="./datatable/datatables1.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#tabla').DataTable({
+                    lengthMenu: [5, 10, 25, 50, 100],
+                    pageLength: 5,
+                    language: {
+                        lengthMenu: "Mostrar MENU registros por pagina",
+                        zeroRecords: "Sin resultado - disculpa",
+                        info: "Mostrando la pagina PAGE de PAGES",
+                        infoEmpty: "No records available",
+                        infoFiltered: "(filtrado de  MAX registros totales)",
+                        search: "Buscar: ",
+                        paginate: {
+                            next: "Siguientes",
+                            previous: "Anterior"
+                        },
+                    }
+                });
             });
-        });
-    </script>
+        </script>
 
 
 

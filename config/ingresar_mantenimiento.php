@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error al registrar el componente: " . $conn->error;
     }
 } else{
+    
  
             echo "<script type='text/javascript'>";
             echo "alert('Error en el ingreso del mantenimiento');";
