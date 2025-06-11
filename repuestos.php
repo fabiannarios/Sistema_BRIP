@@ -43,7 +43,7 @@
             </div>
 
             <div class="col-md-6">
-                <label for="nombre">Nombre del eqrepuesto:</label>
+                <label for="nombre">Nombre del repuesto:</label>
                 <input type="text" id="nombre" name="nombre" required>
             </div>
 
