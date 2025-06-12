@@ -10,6 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefono = $_POST['telefono'];
     $fecha = $_POST['fecha_creacion'];
 
+
+    try { 
     $sql = "INSERT INTO `usuarios` (`id_usuario`,`nombre`,`id_rol`,`telefono`,`fecha_creacion`) 
             VALUES ('$id_usuario ','$nombre', '$id_rol','$telefono','$fecha')";
 
@@ -17,13 +19,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          echo "<script type='text/javascript'>";
             echo "alert('Responsable ingresado con exito');";
             echo "window.location.href = '../inicio.php';";
-          
+          echo "</script>";
         exit();
-    } else {
-        echo "Error: " . $sql . "<br>" . $conexion->error;
-    }
+  
 }
 
+} catch (mysqli_sql_exception $e ) {
+
+            $conexion->rollback();
+            
+            if ($e->getCode()==1062) {               
+              echo "<script type='text/javascript'>";
+            echo "alert('Usuario duplicado');";
+            echo "window.location.href = '../configuracion.php';";
+            echo "</script>";
+        
+            } else {
+            throw ($e)  ;                      
+                }
+
+        }
+    }
+
 $conexion->close();
-?>
 ?>

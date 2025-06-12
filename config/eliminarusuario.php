@@ -10,7 +10,7 @@ if (isset($_GET['id_usuario'])) {
     
     if ($conexion->query($sql) === TRUE) {
          echo "<script type='text/javascript'>";
-            echo "alert('Registro de incidencia eliminado');";
+            echo "alert('Usuario eliminado');";
             echo "window.location.href = '../configuracion.php';";
             echo "</script>";
     } else {
