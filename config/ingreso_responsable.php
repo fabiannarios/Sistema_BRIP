@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $departamento = $_POST['departamento'];
     
 
-   
+  try { 
         $sql = "INSERT INTO responsables (id_responsable, nombre, departamento) 
                 VALUES ('$cedula', '$nombre', '$departamento')";
 
@@ -19,25 +19,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $resultado->fetch_assoc();
         
 
-if ($row['id_responsable'] == NULL && $row['nombre'] == NULL) {
 
-        if ($conexion->query($sql) === TRUE) {
+   if ($conexion->query($sql) === TRUE) {
             
             echo "<script type='text/javascript'>";
             echo "alert('Responsable ingresado con exito');";
             echo "window.location.href = '../mantenimiento.php';";
             echo "</script>";
         } else {
-            echo "Error al registrar el componente: " . $conn->error;
+            echo "Error al registrar el componente: " . $conexion->error;
         }
 
-    } else {
-         echo "<script type='text/javascript'>";
+        } catch (mysqli_sql_exception $e ) {
+
+            $conexion->rollback();
+            
+            if ($e->getCode()==1062) {               
+              echo "<script type='text/javascript'>";
             echo "alert('Responsable duplicado');";
-            echo "window.location.href = '../equipos.php';";
+            echo "window.location.href = '../mantenimiento.php';";
             echo "</script>";
+        
+            } else {
+            throw ($e)  ;                      
+                }
+
+        }
     }
+        
     
-    }
+    
         
 ?>
