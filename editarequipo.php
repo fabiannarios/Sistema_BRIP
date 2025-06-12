@@ -91,7 +91,7 @@
         <div class="col-12 my-3 text-center">
             <button type="submit" class="btn btn-success fs-4 rounded-pill">Guardar Componente</button>
         </div>
-        <input type="hidden" id="id" name="id" value="<?php echo $row['id_usuario'] ?> " required>
+        <input type="hidden" id="id" name="id" value="<?php echo $row['id_equipo'] ?> " required>
 
     </form>
 
