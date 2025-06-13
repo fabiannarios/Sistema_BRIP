@@ -782,7 +782,7 @@ html{
 }
 
 
-.parent {
+.parent_amoniaco {
     width: 70%;
 display: grid;
 grid-template-columns: repeat(4, 1fr);
@@ -790,13 +790,37 @@ grid-template-rows: repeat(2, 1fr);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
 justify-content: center;
+justify-content: center;
 }
 
-.div1 { width: 95%; }
-.div2 { width: 95%; }
-.div3 { width: 95%; }
-.div4 { width: 95%; }
-.div5 { width: 95%; }
-.div6 { width: 95%; }
-.div7 { width: 95%; }
-.div8 { width: 95%; }
+.parent_amoniaco .div1 { width: 95%; }
+.parent_amoniaco .div2 { width: 95%; }
+.parent_amoniaco .div3 { width: 95%; }
+.parent_amoniaco .div4 { width: 95%; }
+.parent_amoniaco .div5 { width: 95%; }
+.parent_amoniaco .div6 { width: 95%; }
+.parent_amoniaco .div7 { width: 95%; }
+.parent_amoniaco .div8 { width: 95%; }
+
+.parent_urea {
+   max-width: 70%;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 14px;
+grid-row-gap: 8px; 
+justify-content: center;
+}
+
+.parent_urea .div1 { width: 80%; }
+.parent_urea .div2 { width: 80%; }
+.parent_urea .div3 { width: 80%;  }
+.parent_urea .div4 { width: 80%;  }
+.parent_urea .div5 { width: 80%;  }
+.parent_urea .div6 { width: 80%;  }
+
+.parent_urea .div7 { width: 80%;  }
+.parent_urea .div8 { width: 80%;  }
+.parent_urea .div9 { width: 80%;  }
+.parent_urea .div10 { width: 80%;  }
+.parent_urea .div11 { width: 80%;  } 

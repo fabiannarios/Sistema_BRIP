@@ -92,6 +92,64 @@
                 
             <?php    
             }
+         
+            ?>
+            </table>
+
+           
+</div>
+
+
+<div class="container-fluid">
+            <?php
+           
+
+            $sql = "SELECT * FROM responsables";
+            $result = $conexion->query($sql);
+            if ($result->num_rows > 0) {
+                ?>
+                <table id='tabla2' class='pequiven-table'>
+                    <thead>
+                    <tr>
+                    <th scope='col text-center'>Cedula del responsable</th>
+                    <th scope='col text-center'>Nombre del responsable</th>
+                    <th scope='col text-center'>Departamento del responsable</th>
+                    
+                    <th></th>
+                    </tr>
+                </thead>
+
+
+
+                <tbody class='table-group-divider'>
+                <?php
+                while ($row = $result->fetch_assoc()) {
+                    ?>
+                    <tr>
+                    <td class=" text-center"><?php echo $row['id_responsable'] ?> </td>
+                        
+                    <td class=" text-center"><?php echo $row['nombre'] ?> </td>
+                    <td class=" text-center"><?php echo $row['departamento'] ?> </td>
+                        <td> 
+                            
+                            <a href="editaresponsable.php?id_responsable=<?php echo $row['id_responsable'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
+                            
+                            <a href="./config/eliminaresponsable.php?id_responsable=<?php echo $row['id_responsable'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
+                           
+
+                        </td>
+                        </tr>
+
+
+                  <?php      
+                }?>
+
+                         
+
+                    
+                
+            <?php    
+            }
             $conexion->close();
             ?>
             </table>
@@ -102,29 +160,7 @@
       
 
 
-        <script src="./js/peticiones.js"></script>
-        <script src="./jquery/jquery.js"></script>
-        <script src="./datatable/datatables1.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('#tabla').DataTable({
-                    lengthMenu: [5, 10, 25, 50, 100],
-                    pageLength: 25,
-                    language: {
-                        lengthMenu: "Mostrar MENU registros por pagina",
-                        zeroRecords: "Sin resultado - disculpa",
-                        info: "Mostrando la pagina PAGE de PAGES",
-                        infoEmpty: "No records available",
-                        infoFiltered: "(filtrado de  MAX registros totales)",
-                        search: "Buscar: ",
-                        paginate: {
-                            next: "Siguientes",
-                            previous: "Anterior"
-                        },
-                    }
-                });
-            });
-        </script>
-    
+        <?php include_once('./script.php')?>
+           
 </body>
 </html>

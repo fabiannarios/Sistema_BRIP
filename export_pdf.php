@@ -1,111 +1,117 @@
 <?php 
+
+include("../Sistema_BRIP/config/conecxion_bd.php");
           require_once 'dompdf/autoload.inc.php';
             use Dompdf\Dompdf;
           ob_start();
 
-          $html.=" <!--DOCTYPE html-->
-<html>
-    <head>
-           <meta charset='utf-8'>
-           <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
+          $sql = "SELECT * FROM plantas WHERE id_planta =".$_GET['id_planta'];
+          $result = $conexion->query($sql);
+          $row1 = $result->fetch_assoc();
 
-        <title>OCS Inventory</title>
-        <link rel='shortcut icon' href='favicon.ico'>
-        <link rel='stylesheet' href='libraries/bootstrap/css/bootstrap.min.css'>
-        <link rel='stylesheet' href='libraries/bootstrap/css/bootstrap-theme.min.css'>
-        <link rel='stylesheet' href='libraries/select2/css/select2.min.css' />
-        <link rel='stylesheet' href='css/dataTables-custom.css'>
-        <link rel='stylesheet' href='libraries/datatable/media/css/dataTables.bootstrap.css'>
-        <link rel='stylesheet' href='css/ocsreports.css'>
-        <link rel='stylesheet' href='css/bootstrap-datetimepicker.css'>
-        <link rel='stylesheet' href='css/header.css'>
-        <link rel='stylesheet' href='css/computer_details.css'>
-        <link rel='stylesheet' href='css/bootstrap-formhelpers.css'>
-        <link rel='stylesheet' href='css/forms.css'>    
-        
-        <style>
+      $html.=" 
+      <!--DOCTYPE html-->
+      <html>
+          <head>
+                <meta charset='utf-8'>
+                <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+              <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-        body{
-        font-family: Arial, sans-serif;
-        background-color: #FAFAFA;
-        }
-
-        div {
-            text-align:center;
-
-            
-          }
-
-          h3{
-            color: white;
-            width: auto;
-            text-align: center;
-            position: relative;
-            align-items: center;
-            border: solid 1px #C8142A;
-            border-radius: 5px;
-            background-color: #C8142A;
-        
-        }
-
-        h1{
-            color: #FFFFFF;
-            text-align: center;
-            border: solid 1px #C8142A;
-            border-radius: 5px;
-            background-color: #C8142A;
-        }
-
-        
-        table {
-            width: 100%;
-            max-width: 100%;
-            
-            border-spacing: 0;
-            border-collapse: collapse;
-            border: solid 1px black;
-
-            margin: 0 auto;
-
-            font-size: 10px;
-            page-break-inside: avoid;
-        }
-        
-          td,th {
-             padding: 2px;
-            
-            }
-                thead {
-                    display: table-header-group;
-                    background-color: #E3E3E3;
-                  }
-                  
-                  tr {
-                    page-break-inside: avoid;
-                  }
-
-                  td{
-                text-align: center;  
-                }
-
-                tbody{
-                    background-color: #FFFF;
-
-                }
+      
+              <link rel='shortcut icon' href='favicon.ico'>
+              <link rel='stylesheet' href='libraries/bootstrap/css/bootstrap.min.css'>
+              <link rel='stylesheet' href='libraries/bootstrap/css/bootstrap-theme.min.css'>
+              <link rel='stylesheet' href='libraries/select2/css/select2.min.css' />
+              <link rel='stylesheet' href='css/dataTables-custom.css'>
+              <link rel='stylesheet' href='libraries/datatable/media/css/dataTables.bootstrap.css'>
+              <link rel='stylesheet' href='css/ocsreports.css'>
+              <link rel='stylesheet' href='css/bootstrap-datetimepicker.css'>
+              <link rel='stylesheet' href='css/header.css'>
+              <link rel='stylesheet' href='css/computer_details.css'>
+              <link rel='stylesheet' href='css/bootstrap-formhelpers.css'>
+              <link rel='stylesheet' href='css/forms.css'>    
               
-        
-        </style>";
+              <style>
 
-$html .= "<div class='container-fluid'>";
-          
-            include("../Sistema_BRIP/config/conecxion_bd.php");
+              body{
+              font-family: Arial, sans-serif;
+              background-color: #FAFAFA;
+              }
 
-            $sql = "SELECT * FROM equipos WHERE id_planta = 0";
+              div {
+                  text-align:center;
+
+                  
+                }
+
+                h3{
+                  color: white;
+                  width: auto;
+                  text-align: center;
+                  position: relative;
+                  align-items: center;
+                  border: solid 1px #C8142A;
+                  border-radius: 5px;
+                  background-color: #C8142A;
+              
+              }
+
+              h1{
+                  height: 25%;
+                  color: #FFFFFF;
+                  text-align: center;
+                  border: solid 1px #C8142A;
+                  border-radius: 5px;
+                  background-color: #C8142A;
+              }
+
+              
+              table {
+                  width: 100%;
+                  max-width: 100%;
+                  
+                  border-spacing: 0;
+                  border-collapse: collapse;
+                  border: solid 1px black;
+
+                  margin: 0;
+
+                  font-size: 10px;
+                  page-break-inside: avoid;
+              }
+              
+                td,th {
+                  padding: 2px;
+                  
+                  }
+                      thead {
+                          display: table-header-group;
+                          background-color: #E3E3E3;
+                        }
+                        
+                        tr {
+                          page-break-inside: avoid;
+                        }
+
+                        td{
+                      text-align: center;  
+                      }
+
+                      tbody{
+                          background-color: #FFFFFF;
+
+                      }
+                    
+              
+              </style>";
+
+  
+            $sql = "SELECT * FROM equipos WHERE id_planta =".$_GET['id_planta'];
             $result = $conexion->query($sql);
             if ($result->num_rows > 0) {
-               
-               $html .= "<table id='tabla' class='pequiven-table'>";
+              
+               $html .= "<table>";
+              
                 $html.=    "<thead>";
                     $html.="<tr>";
                     $html.="<th scope='col'>TAG</th>";
@@ -170,6 +176,7 @@ $html .= "<div class='container-fluid'>";
             
            
             $html .="</table>";
+          
        
 
                     
@@ -187,7 +194,7 @@ $html .= "<div class='container-fluid'>";
                     // Render the HTML as PDF
                    $dompdf->render();
               header("Content-type: application/pdf");
-              header("Content-Disposition: inline; filename= Archivo". date('Y:m:d:m:s').".pdf");
+              header("Content-Disposition: inline; filename=". $row1['nombre_planta'] ." ". date('Y:m:d:m:s').".pdf");
                     // Output the generated PDF to Browser
                    echo $dompdf->output();
                     

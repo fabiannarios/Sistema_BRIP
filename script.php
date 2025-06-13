@@ -5,7 +5,7 @@
         $(document).ready(function() {
             $('#tabla').DataTable({
                 lengthMenu: [5, 10, 25, 50, 100],
-                pageLength: 5,
+                pageLength: 25,
                 language: {
                     lengthMenu: "Mostrar MENU registros por pagina",
                     zeroRecords: "Sin resultado - disculpa",
@@ -25,7 +25,7 @@
         $(document).ready(function() {
             $('#tabla2').DataTable({
                 lengthMenu: [5, 10, 25, 50, 100],
-                pageLength: 5,
+                pageLength: 25,
                 language: {
                     lengthMenu: "Mostrar MENU registros por pagina",
                     zeroRecords: "Sin resultado - disculpa",
@@ -46,7 +46,7 @@
         $(document).ready(function() {
             $('#tabla3').DataTable({
                 lengthMenu: [5, 10, 25, 50, 100],
-                pageLength: 5,
+                pageLength: 25,
                 language: {
                     lengthMenu: "Mostrar MENU registros por pagina",
                     zeroRecords: "Sin resultado - disculpa",
@@ -67,7 +67,7 @@
         $(document).ready(function() {
             $('#tabla4').DataTable({
                 lengthMenu: [5, 10, 25, 50, 100],
-                pageLength: 5,
+                pageLength: 25,
                 language: {
                     lengthMenu: "Mostrar MENU registros por pagina",
                     zeroRecords: "Sin resultado - disculpa",

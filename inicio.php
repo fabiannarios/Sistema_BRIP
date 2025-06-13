@@ -79,7 +79,7 @@ $resultadoresponsable = $conexion->query($consulta3);
                 </div>
                 <div class="card-category category-urea">
                     <p>Urea</p>
-                    <span>Ver más</span>
+                    <a class="link-offset-2 link-underline link-underline-opacity-0" href="urea.php"><span>Ver más</span></a>
                 </div>
             
                 <div class="card-category category-servicios">

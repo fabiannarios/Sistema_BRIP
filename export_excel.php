@@ -1,6 +1,13 @@
 <?php
+
+include('./config/conecxion_bd.php');
+
+$sql = "SELECT * FROM plantas WHERE id_planta =".$_GET['id_planta'];
+$result = $conexion->query($sql);
+$row = $result->fetch_assoc();
+
 header("Content-Type: application/xls");
-header("Content-Disposition: attachment; filename=documento_exportado_" . date('Y:m:d:m:s') . ".xls");
+header("Content-Disposition: attachment; filename=" .$row['nombre_planta']."".  date('Y:m:d:m:s') . ".xls");
 header("Pragma: no-cache");
 header("Expires: 0");
 
@@ -9,7 +16,7 @@ require('./config/conecxion_bd.php');
 $output = "";
 
 
-$sql = "SELECT * FROM equipos WHERE id_planta = 0";
+$sql = "SELECT * FROM equipos WHERE id_planta =".$_GET['id_planta'];
 $result = $conexion->query($sql);
 if ($result->num_rows > 0) {
 
