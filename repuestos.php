@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repuesto</title>
+    <title>Solicitar Repuesto</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Repuestos</title>
+        <title> Solicitar Repuestos</title>
         <link rel="icon" href="favicon.ico" sizes="any" />
         <link rel="stylesheet" href="./datatable/datatables1.css">
         <link href="./css/tabla.css" rel="stylesheet">
@@ -31,7 +31,7 @@
 
     <body>
         <?php include('./header.php') ?>
-        <h1 class="text-center  mt-4 border-bottom-4">Repuestos</h1>
+        <h1 class="text-center  mt-4 border-bottom-4">Solicitar Repuestos</h1>
 
 
 
@@ -80,7 +80,7 @@
 
 
             <div class="col-12 my-3 text-center">
-                <button type="submit" class="btn btn-success fs-4 rounded-pill">Guardar Componente</button>
+                <button type="submit" class="btn btn-success fs-4 rounded-pill">Guardar Repuesto</button>
             </div>
         </form>
 
