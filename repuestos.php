@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +11,8 @@
 <body>
     <!--formulario-->
 
+=======
+>>>>>>> f7e3a139cca7463ca47f69743826365768a92cf5
     <!DOCTYPE html>
     <html lang="es">
 
@@ -17,7 +20,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
         <title> Solicitar Repuestos</title>
+=======
+        <title>Solicitar Repuestos</title>
+>>>>>>> f7e3a139cca7463ca47f69743826365768a92cf5
         <link rel="icon" href="favicon.ico" sizes="any" />
         <link rel="stylesheet" href="./datatable/datatables1.css">
         <link href="./css/tabla.css" rel="stylesheet">
