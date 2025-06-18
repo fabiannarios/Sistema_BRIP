@@ -13,7 +13,7 @@
     <link rel="icon" href="../favicon.ico" sizes="any" />
     <link rel="stylesheet" href="../css/styles.css">
     <link href='../css/bootstrap.css' rel='stylesheet'>
-    <link href='../css/boxicons-2.1.4/css/boxicons.css' rel='stylesheet'>
+    <link href='../css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -24,12 +24,12 @@
 
             <div class="input-box">
                 <input class=" bg-body-secondary" type="text" placeholder="cedula" name="id_usuario" required>
-                <i class='bx bx-user-circle'></i>
+                <i class='bxr  bx-user-circle'  style='color:#000000'></i> 
             </div>
 
             <div class="input-box">
                 <input class=" bg-body-secondary" type="password" placeholder="nombre" name="nombre" required>
-                <i class='bx bx-lock-alt'></i>
+                <i class='bxr  bx-lock'  style='color:#000000'></i> 
             </div>
             <br> 
             <div class="container mx-md-2 text-center">

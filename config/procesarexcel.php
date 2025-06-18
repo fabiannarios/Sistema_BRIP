@@ -29,7 +29,7 @@ if (isset($_POST['send'])) {
                 $valor5 = $hojaActual->getCell('F'.$i)->getValue();
                 $valor6 = $hojaActual->getCell('G'.$i)->getValue();
 
-                $sql1 = "SELECT id_planta from plantas WHERE nombre_planta='". $valorplanta."'";
+                $sql1 = "SELECT id_planta from plantas WHERE nombre_planta='".$valorplanta."'";
                 $resultado1= $conexion->query($sql1);
                 $row1 = $resultado1->fetch_assoc();
                 $valor2 = $row1['id_planta']; 
@@ -50,6 +50,10 @@ if (isset($_POST['send'])) {
             echo "alert('Equipos ingresados con exito');";
             echo "window.location.href = '../equipos.php';";
             echo "</script>";
+
+           
+
+            
     }else{
         echo "No existe archivo seleccionado";
     }

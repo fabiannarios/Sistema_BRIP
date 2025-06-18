@@ -1,8 +1,8 @@
 <?php
 
-require './excel/vendor/autoload.php';
-require './config/conecxion_bd.php';
 
+require './config/conecxion_bd.php';
+require './excel/vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\{Spreadsheet, IOFactory};
 
 $sql = "SELECT * FROM equipos WHERE id_planta =" . $_GET['id_planta'];
