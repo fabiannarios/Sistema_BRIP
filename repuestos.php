@@ -94,6 +94,7 @@
                                 <th scope='col'>Fecha de solicitud</th>
                                 <th scope='col'>Fecha de recepcion</th>
                                 <th scope='col'>Cantidad</th>
+                                <th class="text-center" scope='col'></th>
                                 
                             </tr>
                         </thead>
@@ -120,6 +121,11 @@
                                     <td><?php echo $row['fecha_solicitud'] ?></td>
                                     <td><?php echo $row['fecha_recepcion'] ?></td>
                                     <td><?php echo $row['cantidad'] ?></td>
+
+                                    <td class=" text-center">
+                                    <a href="./editar_repuesto.php?id_repuesto=<?php ECHO $row['id_repuesto'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
+                                    <a href="./config/eliminarrepuesto.php?id_repuesto=<?php ECHO $row['id_repuesto'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
+                                </td>
 
 
                                 </tr>

@@ -87,7 +87,7 @@ $resultadoresponsable = $conexion->query($consulta3);
                 <div class="container-fluid  text-center ">
                  <a class="d-inline-flex focus-ring  px-2 text-decoration-none border rounded-pill fs-2 bg-danger text-white p-3" href="export_pdf.php?id_planta=1">Descargar tabla en PDF</a>
 
-                <a class="d-inline-flex focus-ring px-2 text-decoration-none border rounded-pill fs-2 bg-success text-white ms-5 p-3" href="export_excel.php?id_planta=1">Descargar tabla en EXCEL</a>
+                <a class="d-inline-flex focus-ring px-2 text-decoration-none border rounded-pill fs-2 bg-success text-white ms-5 p-3" href="exprt_excel.php?id_planta=1">Descargar tabla en EXCEL</a>
                 </div>
         <?php
 

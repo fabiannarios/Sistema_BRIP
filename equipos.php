@@ -26,15 +26,23 @@
 
         <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="./config/procesar.php" method="POST">
 
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <label for="codigo">TAG:</label>
                 <input type="text" id="codigo" name="codigo" required>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <label for="nombre">Nombre del equipo:</label>
                 <input type="text" id="nombre" name="nombre" required>
             </div>
+            
+            <button type="button" class=" col-md-2 btn btn-primary fs-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Importar con excel
+
+            </button>
+
+ 
+
 
             <div class="col-md-4">
             <label for="planta">Planta:</label>
@@ -85,6 +93,40 @@
                 <button type="submit" class="btn btn-success fs-4 rounded-pill">Guardar Equipo</button>
             </div>
         </form>
+
+                   <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2" id="staticBackdropLabel">Importar equipos</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+
+      <div class="modal-body">
+
+<form action="./config/procesarexcel.php" method="POST" enctype="multipart/form-data">
+        <div class=" p-5">
+        <label for="" class="form-label fs-3">Coloque un archivo excel</label>
+        <input class="form-control form-control-lg" id="excel" type="file" name="excel" accept=".xlsx, .xls, .xlsm, .csv, .ods">
+        </div>
+
+                <div class=" text-center">
+                <button type="submit" class="btn btn-success fs-4 rounded-pill" name="send">Guardar Equipo</button>
+            </div>
+</form>
+      </div>
+
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary fs-3" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
         <section >
         <div class="container-fluid">
