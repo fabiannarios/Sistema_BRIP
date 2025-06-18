@@ -40,9 +40,9 @@ $resultadoresponsable = $conexion->query($consulta3);
     <?php include('./header.php') ?>
 
     <main class="main-content">
-        <section class="container-fluid  d-flex justify-content-evenly p-5">
+        <section class="container-xxl  d-flex justify-content-evenly p-5">
 
-            <div class="card-feature w-25 border-3 border border-danger">
+            <div class="card-feature w-50 ms-3 border-3 border border-danger">
                  <p class="fs-2 fw-bold font-monospace"> <?php include('porcentaje.php') ?></p>
                 <i class='bx bx-tachometer'></i>
                 <div class="feature-content">
@@ -51,7 +51,7 @@ $resultadoresponsable = $conexion->query($consulta3);
                     <p class=" fs-4 mb-0 ">Rendimiento</p>
                 </div>
             </div>
-            <div class="card-feature w-25 border-3 border border-danger">
+            <div class="card-feature w-50 ms-3 border-3 border border-danger">
                 <p class="fs-2 fw-bold font-monospace"> <?php include('porcentajeurea.php') ?></p>
                 <i class='bx bx-tachometer'></i>
                 <div class="feature-content">
@@ -61,7 +61,7 @@ $resultadoresponsable = $conexion->query($consulta3);
                 </div>
             </div>
             
-            <div class="card-feature w-25 border-3 border border-danger">
+            <div class="card-feature w-50 ms-3 border-3 border border-danger">
                 <i class='bx bx-tachometer'></i>
                 <div class="feature-content">
                     <span>Planta servicio industriales 2</span>
@@ -297,7 +297,7 @@ $resultadoresponsable = $conexion->query($consulta3);
 
         </section>
 
-        <section class=" container-fluid p-5">
+        <section class="container-fluid p-5">
             <h1 class="heading-1">Historial de Mantenimiento</h1>
 
 

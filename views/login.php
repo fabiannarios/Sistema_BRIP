@@ -28,14 +28,14 @@
             </div>
 
             <div class="input-box">
-                <input class=" bg-body-secondary" type="password" placeholder="nombre" name="nombre" required>
-                <i class='bxr  bx-lock'  style='color:#000000'></i> 
+                <input class=" bg-body-secondary" type="password" placeholder="nombre" id="password" name="nombre" required>
+                <i class='bxr  bx-eye-slash' id="pass-icon"  style='color:#000000; cursor: pointer;' onclick="pass()"></i> 
             </div>
-            <br> 
+           
             <div class="container mx-md-2 text-center">
             <button type="submit" class="btn btn-primary btn-lg mx-md-3" name="iniciar" value="Ingresar" >Iniciar</button>
             </div>
-            <br>
+           
 
             <input hidden type="datetime-local" placeholder="fecha" name="fecha_inicio" 
                 <?php
@@ -47,6 +47,8 @@
 
         </form>
     </div>
+
+    <script src="../js/password.js"> </script>
 
 </body>
 

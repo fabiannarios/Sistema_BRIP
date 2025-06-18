@@ -10,7 +10,7 @@ if (isset($_POST['send'])) {
         $archivocontent = $_FILES['excel']['tmp_name'];
        
 
-
+try { 
        $Documento = IOFactory::load($archivocontent);
        $totalhojas = $Documento->getSheetCount();
  
@@ -50,10 +50,36 @@ if (isset($_POST['send'])) {
             echo "alert('Equipos ingresados con exito');";
             echo "window.location.href = '../equipos.php';";
             echo "</script>";
+        } catch (mysqli_sql_exception $e ) {
 
-           
-
+             $conexion->rollback();
             
+            switch ($e->getCode()) {
+                case 1062:
+                    echo "<script type='text/javascript'>";
+            echo "alert('Equipos duplicados');";
+            echo "window.location.href = '../equipos.php';";
+            echo "</script>";
+
+                    break;
+
+                     case 1452:
+                    echo "<script type='text/javascript'>";
+                    echo "alert('Error en los datos');";
+                    echo "window.location.href = '../equipos.php';";
+                    echo "</script>";
+
+                    break;
+                
+                default:
+                 echo "<script type='text/javascript'>";
+                    echo "alert('Error en los datos');";
+                    echo "window.location.href = '../equipos.php';";
+                    echo "</script>";
+                    break;
+            }      
+            
+        }         
     }else{
         echo "No existe archivo seleccionado";
     }
