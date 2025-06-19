@@ -47,16 +47,23 @@
             <input type="text" id="nombre" name="nombre" value="<?php echo $row['nombre'] ?>" required>
         </div>
 
+        <?php
+        include("../Sistema_BRIP/config/conecxion_bd.php");
+                $sql2 = "SELECT id_planta, nombre_planta FROM plantas";
+                $resultado2 = $conexion->query($sql2);
+
+                $sql3 = "SELECT id_planta, nombre_planta FROM plantas WHERE id_planta ='". $row['id_planta']."'";
+                $resultado3 = $conexion->query($sql3);
+                $planta = $resultado3->fetch_assoc();
+                 ?>
         <div class="col-md-4">
             <label for="planta">Planta:</label>
             <select class="form-select fs-4" id="planta" name="planta" required>
-                <option value="<?php echo $row['id_planta'] ?>" selected ></option>
+                <option value="<?php echo $planta['id_planta'] ?>" selected ><?php echo $planta['nombre_planta'] ?></option>
 
                 <?php
-                 include("../Sistema_BRIP/config/conecxion_bd.php");
+                 
 
-                $sql2 = "SELECT id_planta, nombre_planta FROM plantas";
-                $resultado2 = $conexion->query($sql2);
                 while ($fila = $resultado2->fetch_assoc()) {
                     echo "<option value='" . $fila['id_planta'] . "'>" . $fila['nombre_planta'] . "</option>";
                 }
@@ -66,10 +73,16 @@
 
             </select>
             </div>
+            <?php
+            $sql4 = "SELECT id_proceso, nombre_proceso FROM procesos WHERE id_proceso ='".$row['id_proceso'] ."'";
+                $resultado4 = $conexion->query($sql4);
+                $proceso = $resultado4->fetch_assoc();
+                 ?>
 
         <div class="col-md-4">
             <label for="proceso">Proceso:</label>
             <select class="form-select fs-4" id="proceso" name="proceso" required>
+                <option value="<?php echo $proceso['id_proceso'] ?>" selected ><?php echo $proceso['nombre_proceso'] ?></option>
                 
             </select>
 
