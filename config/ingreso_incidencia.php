@@ -24,8 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultado2 = $conexion->query($sql2);
     $fila2 = $resultado2->fetch_assoc();
 
-    if ( $fila1['id_usuario'] != NULL || $fila2['id_equipo'] != NULL) {
-
+try { 
         $sql = "INSERT INTO incidencias (id_equipo, id_usuario, fecha_reporte, prioridad, estado_solucion, observacion, fecha_solucion) 
                 VALUES ('$codigo', '$usuario', '$fecha_reporte', '$prioridad', '$estado' ,'$observacion', '$fecha_solucion')";
         
@@ -33,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $resultado3 = $conexion->query($sql3);
         $row = $resultado3->fetch_assoc();
 
-        if ($row['id_incidencia'] == NULL) {
+       
             
         if ($conexion->query($sql) === TRUE) {
 
@@ -45,12 +44,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Error al registrar el componente: " . $conn->error;
         }
-        }
+    
+   } catch (mysqli_sql_exception $e ) {
+
+             $conexion->rollback();
+            
+            switch ($e->getCode()) {
+                case 1062:
+                  
+                    echo "<script type='text/javascript'>";
+            echo "alert('Incidencia duplicada');";
+            echo "window.location.href = '../incidencias.php';";
+            echo "</script>";
+
+                    break;
+
+                     case 1452:
+                        
+                        
+                        
+                    echo "<script type='text/javascript'>";
+                    echo "alert('Error en los datos');";
+                    echo "window.location.href = '../incidencias.php';";
+                    echo "</script>";
+                        
+                    break;
+                
+                default:
+                 echo "<script type='text/javascript'>";
+                    echo "alert('Error en los datos');";
+                    echo "window.location.href = '../incidencias.php';";
+                    echo "</script>";
+                    break;
+            }      
+            
+        }         
 } else {
     header("Location:../incidencias.php");
 }
 
-    }
         
 
 ?>
