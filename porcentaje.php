@@ -14,9 +14,13 @@ include('./config/conecxion_bd.php');
             estado";
 
         $resultado = $conexion->query($sql);
-        $row = $resultado->fetch_assoc();
-        echo $row['porcentaje'];
+        if ($row = $resultado->fetch_assoc()) {
+           echo $row['porcentaje'];
         echo "%";
+        } else {
+            echo '0%';
+        }
+        
 
             
 ?>
