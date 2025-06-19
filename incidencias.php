@@ -105,10 +105,10 @@ $resultadousuarios = $conexion->query($consulta1);
             if ($result->num_rows > 0) {
             ?>
             
-                <section class="seccion">
+                
                 <h1 class="heading-1">Historial de Incidencias</h1>
                 <div class="container-fluid">
-                <table id='tabla' class='pequiven-table'>
+                <table id='tabla' class='pequiven-table table-responsive'>
                     <thead>
                         <tr>
                             <th scope='col'>Codigo de la incidencia</th>
@@ -131,7 +131,7 @@ $resultadousuarios = $conexion->query($consulta1);
                         ?>
                             <tr>
 
-                                <td class=" text-center"><?php echo $row['id_incidencia'] ?> </td>
+                                <th class=" text-center"><?php echo $row['id_incidencia'] ?> </th>
 
                                 <td class=" text-center"><?php $sql1 = "SELECT * FROM equipos WHERE id_equipo='" . $row['id_equipo'] . "'";
                                     $resultado = $conexion->query($sql1);
@@ -172,7 +172,7 @@ $resultadousuarios = $conexion->query($consulta1);
 
                                 <td class=" text-center"><?php echo $row['estado_solucion'] ?></td>
 
-                                <td class=" text-center"><?php echo $row['observacion'] ?></td>
+                                <td class=" text-center"><p><?php echo $row['observacion'] ?></p></td>
 
 
                                 <td class=" text-center"><?php echo $row['fecha_solucion'] ?></td>
@@ -194,7 +194,7 @@ $resultadousuarios = $conexion->query($consulta1);
                 </table>
         </div>
 
-    </section>
+
 
 
 

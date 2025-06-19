@@ -16,7 +16,7 @@ h2 {
 
 /* Estilo de la tabla para Pequiven */
 table.pequiven-table {
-    width: 90% !important;
+    width: 99% !important;
     margin: 0 auto;
     border-collapse: collapse;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -30,11 +30,17 @@ table.pequiven-table {
 
 .pequiven-table th, 
 .pequiven-table td {
+    width: 5px;
     border: 1px solid #ff0000;
-    padding: 10px;
     text-align: left;
     font-size: 1.5rem;
 }
+
+.pequiven-table td{
+    
+    word-break:break-all;
+}
+
 
 /* Filas alternadas: blanco y un ligero tono rosado */
 .pequiven-table tbody tr:nth-child(odd) {

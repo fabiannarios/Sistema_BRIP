@@ -26,18 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             WHERE id_incidencia = '".$id."'";
 
 
-
-            $sql1= "SELECT * FROM usuarios WHERE id_usuario = '$usuario'";
-    $resultado = $conexion->query($sql1);
-    $fila1 = $resultado->fetch_assoc();
-
-    $sql2= "SELECT * FROM equipos WHERE id_equipo= '$tag'";
-    $resultado2 = $conexion->query($sql2);
-    $fila2 = $resultado2->fetch_assoc();
-
-
-     if ( $fila1['id_usuario'] != NULL || $fila2['id_equipo'] != NULL) {
-
+try { 
+      
     if ($conexion->query($sql) === TRUE) {
         
        echo "<script type='text/javascript'>";
@@ -48,12 +38,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Error al actualizar: " . $conexion->error;
     }
-} else {
-    echo "<script type='text/javascript'>";
-echo "alert('Error en los datos');";
-echo "window.location.href = '../editarincidencia.php?id_incidencia=".$id."';";
-echo "</script>";
-}
+} catch (mysqli_sql_exception $e ) {
+
+             $conexion->rollback();
+            
+            switch ($e->getCode()) {
+                case 1062:
+                  
+                    echo "<script type='text/javascript'>";
+            echo "alert('Incidencia duplicada');";
+            echo "window.location.href = '../incidencias.php';";
+            echo "</script>";
+
+                    break;
+
+                     case 1452:
+                    echo "<script type='text/javascript'>";
+                    echo "alert('Error en los datos');";
+                    echo "window.location.href = '../incidencias.php';";
+                    echo "</script>";
+                        
+                    break;
+                
+                default:
+                 echo "<script type='text/javascript'>";
+                    echo "alert('Error en los datos');";
+                    echo "window.location.href = '../incidencias.php';";
+                    echo "</script>";
+                    break;
+            }      
+            
+        }         
 } else {
     echo "Método de solicitud no válido.";
 }

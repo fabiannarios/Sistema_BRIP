@@ -71,7 +71,7 @@ $resultadousuarios = $conexion->query($consulta1);
                 ?>
 
             </datalist>
-            <input type="text" id="usuario" name="usuario" list="usuarios" value=" <?php echo $row['id_usuario'] ?>" required>
+            <input type="text" id="usuario" name="usuario" list="usuarios" value="<?php echo $row['id_usuario'] ?>" required>
         </div>
 
         <label for="fecha_reporte">Fecha de reportaje:</label>
