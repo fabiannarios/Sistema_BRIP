@@ -213,6 +213,7 @@ $resultadoresponsable = $conexion->query($consulta3);
                         </tr>
                     </thead>
 
+                    
                     <tbody>
                         <?php
                         while ($row = $result->fetch_assoc()) {
@@ -264,7 +265,11 @@ $resultadoresponsable = $conexion->query($consulta3);
                                 ?>
 
 
-                                <td class=" text-center"><?php echo $row['observacion'] ?></td>
+                                <td class=" text-center"> <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+                                Launch static backdrop modal
+                                </button>
+                                </td>
 
                                 <td class=" text-center"><?php echo $row['fecha_mantenimiento'] ?></td>
 
@@ -286,6 +291,12 @@ $resultadoresponsable = $conexion->query($consulta3);
                         <?php
                         } ?>
                     </tbody>
+
+                    
+
+
+
+                   
 
                 <?php
             }
