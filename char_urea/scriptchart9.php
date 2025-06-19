@@ -8,11 +8,11 @@ $sql1 = "SELECT
      FROM equipos WHERE id_planta = 1 AND id_proceso = 308";
 
      $resultado1 = $conexion->query($sql1);
-     $datos1 = [];
+     $datos9 = [];
 
      while($row1 = $resultado1->fetch_assoc()){
-            array_push($datos1,$row1);
+            array_push($datos9,$row1);
      }
 
-     echo json_encode($datos1);
+     echo json_encode($datos9);
      ?>

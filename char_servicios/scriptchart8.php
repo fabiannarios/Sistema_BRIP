@@ -5,7 +5,7 @@ include ('../config/conecxion_bd.php');
         SUM(CASE WHEN estado = 'amarillo' THEN 1 ELSE 0 END) AS amarillo,
         SUM(CASE WHEN estado = 'rojo' THEN 1 ELSE 0 END) AS rojo
 
-     FROM equipos WHERE id_planta = 1 AND id_proceso = 207";
+     FROM equipos WHERE id_planta = 2 AND id_proceso = 207";
 
      $resultado8 = $conexion->query($sql8);
      $datos8 = [];
