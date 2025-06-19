@@ -13,14 +13,16 @@ if (isset($_POST['send'])) {
 try { 
        $Documento = IOFactory::load($archivocontent);
        $totalhojas = $Documento->getSheetCount();
- 
         //for ($i=0; $i < $totalhojas ; $i++) { 
            $hojaActual = $Documento->getSheet(0);
            $numeroFilas = $hojaActual->getHighestDataRow();
+
+          
            $letra = $hojaActual->getHighestColumn();
+          
         //}
 
-            for ($i=2; $i <=$numeroFilas ; $i++) { 
+            for ($i=2; $i <$numeroFilas ; $i++) { 
                 $valor = $hojaActual->getCell('A'.$i)->getValue();
                 $valor1 = $hojaActual->getCell('B'.$i)->getValue();
                 $valorplanta = $hojaActual->getCell('C'.$i)->getValue();
@@ -29,21 +31,32 @@ try {
                 $valor5 = $hojaActual->getCell('F'.$i)->getValue();
                 $valor6 = $hojaActual->getCell('G'.$i)->getValue();
 
+
+                if ($valor5 == "disponible" ||$valor5 == "verde") {
+                    $valor5 = "verde";
+                } elseif ($valor5 =="baja confiabilidad" || $valor5 == "amarillo") {
+                    $valor5 = "amarillo";
+                 } else {
+                    $valor5 = "rojo";
+                }
+
                 $sql1 = "SELECT id_planta from plantas WHERE nombre_planta='".$valorplanta."'";
                 $resultado1= $conexion->query($sql1);
                 $row1 = $resultado1->fetch_assoc();
                 $valor2 = $row1['id_planta']; 
 
-                $sql2 = "SELECT id_proceso from procesos WHERE nombre_proceso='". $valorproceso."'";
+                $sql2 = "SELECT id_proceso from procesos WHERE nombre_proceso='".$valorproceso."'";
                 $resultado2= $conexion->query($sql2);
                 $row2 = $resultado2->fetch_assoc();
                 $valor3 = $row2['id_proceso']; 
        
 
                 $sql = "INSERT INTO equipos (id_equipo, nombre, id_planta, id_proceso, observacion, estado, ultima_revision) 
-                VALUES ('$valor', '$valor1', '$valor2', '$valor3', '$valor4', '$valor5', '$valor6')";
+                                     VALUES ('$valor', '$valor1', '$valor2', '$valor3', '$valor4', '$valor5', '$valor6')";
                 $conexion->query($sql);        
 
+            echo $valor1,$valor2,$valor3,$valor4,$valor5,$valor6;
+            echo "</br>";
             
             }
             echo "<script type='text/javascript'>";
@@ -56,6 +69,7 @@ try {
             
             switch ($e->getCode()) {
                 case 1062:
+                  
                     echo "<script type='text/javascript'>";
             echo "alert('Equipos duplicados');";
             echo "window.location.href = '../equipos.php';";
@@ -64,11 +78,14 @@ try {
                     break;
 
                      case 1452:
+                        
+                        
+                        
                     echo "<script type='text/javascript'>";
-                    echo "alert('Error en los datos');";
+                    echo "alert('Proceso completado');";
                     echo "window.location.href = '../equipos.php';";
                     echo "</script>";
-
+                        
                     break;
                 
                 default:

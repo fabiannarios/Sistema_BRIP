@@ -1,19 +1,6 @@
 <?php
 
 include('./config/conecxion_bd.php');
-
-$consulta = "SELECT * FROM equipos";
-$resultadoequipo = $conexion->query($consulta);
-
-$consulta1 = "SELECT * FROM repuesto";
-$resultadorepuestos = $conexion->query($consulta1);
-
-$consulta2 = "SELECT id_incidencia FROM incidencias";
-$resultadoincidencias = $conexion->query($consulta2);
-
-$consulta3 = "SELECT * FROM responsables";
-$resultadoresponsable = $conexion->query($consulta3);
-
 ?>
 
 

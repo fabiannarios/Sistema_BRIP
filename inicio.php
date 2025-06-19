@@ -84,7 +84,7 @@ $resultadoresponsable = $conexion->query($consulta3);
             
                 <div class="card-category category-servicios">
                     <p>Servicios industriales 2</p>
-                    <span>Ver más</span>
+                    <a class="link-offset-2 link-underline link-underline-opacity-0" href="servicios.php"><span>Ver más</span></a>
                 </div>
 
 
