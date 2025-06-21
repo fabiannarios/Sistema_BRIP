@@ -5,7 +5,7 @@ include('./config/conecxion_bd.php');
         $sql = "SELECT
             *,
             COUNT(*) AS disponibles,
-            (COUNT(*) / (SELECT COUNT(*) FROM equipos WHERE id_planta = 0)) * 100 AS porcentaje
+            (COUNT(*) / (SELECT COUNT(*) FROM equipos WHERE id_planta = 2)) * 100 AS porcentaje
         FROM
             equipos
         WHERE

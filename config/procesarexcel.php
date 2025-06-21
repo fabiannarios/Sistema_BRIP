@@ -10,19 +10,28 @@ if (isset($_POST['send'])) {
         $archivocontent = $_FILES['excel']['tmp_name'];
        
 
-try { 
+//try { 
        $Documento = IOFactory::load($archivocontent);
+       
        $totalhojas = $Documento->getSheetCount();
+       
         //for ($i=0; $i < $totalhojas ; $i++) { 
            $hojaActual = $Documento->getSheet(0);
-           $numeroFilas = $hojaActual->getHighestDataRow();
+            
 
+           $numeroFilas = $hojaActual->getHighestDataRow();
+            echo $numeroFilas;
+             echo "</br>";
           
            $letra = $hojaActual->getHighestColumn();
+           echo $numeroFilas;
+            echo "</br>";
           
-        //}
+ echo "</br>";        //}
 
-            for ($i=2; $i <$numeroFilas ; $i++) { 
+            for ($i=2; $i <=$numeroFilas ; $i++) {
+                try {
+               
                 $valor = $hojaActual->getCell('A'.$i)->getValue();
                 $valor1 = $hojaActual->getCell('B'.$i)->getValue();
                 $valorplanta = $hojaActual->getCell('C'.$i)->getValue();
@@ -55,32 +64,20 @@ try {
                                      VALUES ('$valor', '$valor1', '$valor2', '$valor3', '$valor4', '$valor5', '$valor6')";
                 $conexion->query($sql);        
 
-            echo $valor1,$valor2,$valor3,$valor4,$valor5,$valor6;
+            echo  $valor,$valor1,$valor2,$valor3,$valor4,$valor5,$valor6;
             echo "</br>";
-            
-            }
-            echo "<script type='text/javascript'>";
-            echo "alert('Equipos ingresados con exito');";
-            echo "window.location.href = '../equipos.php';";
-            echo "</script>";
-        } catch (mysqli_sql_exception $e ) {
+
+                    } catch (mysqli_sql_exception $e ) {
 
              $conexion->rollback();
             
             switch ($e->getCode()) {
                 case 1062:
-                  
-                    echo "<script type='text/javascript'>";
-            echo "alert('Equipos duplicados');";
-            echo "window.location.href = '../equipos.php';";
-            echo "</script>";
+                 echo "Equipo duplicado";
 
                     break;
 
-                     case 1452:
-                        
-                        
-                        
+                     case 1452:  
                     echo "<script type='text/javascript'>";
                     echo "alert('Proceso completado');";
                     echo "window.location.href = '../equipos.php';";
@@ -96,7 +93,15 @@ try {
                     break;
             }      
             
-        }         
+        }     
+            
+            }
+            
+            echo "<script type='text/javascript'>";
+            echo "alert('Equipos ingresados con exito');";
+            echo "window.location.href = '../equipos.php';";
+            echo "</script>";
+    
     }else{
         echo "No existe archivo seleccionado";
     }
