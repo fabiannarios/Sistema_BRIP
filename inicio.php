@@ -65,7 +65,7 @@ $resultadoresponsable = $conexion->query($consulta3);
                 <p class="fs-2 fw-bold font-monospace"> <?php include('porcentajeservicios.php') ?></p>
                 <i class='bx bx-tachometer'></i>
                 <div class="feature-content">
-                    <span class=" fw-semibold fs-4 mb-0">Planta servicio industriales 2</span>
+                    <span class=" fw-semibold fs-4 mb-0">Planta Servicio Industriales 2</span>
                     <p class=" fs-4 mb-0">Rendimiento</p>
                 </div>
             </div>
