@@ -27,7 +27,7 @@ include('./config/conecxion_bd.php');
     <?php include('./header.php') ?>
 
 
-    <h1 class="text-center display-1 bg-danger-subtle p-4 mb-5">Planta Servicios industriales</h1>
+    <h1 class="text-center display-1 bg-danger-subtle p-4 mb-5">Planta Servicios Industriales</h1>
 
     <div class="container-fluid d-flex">
 
