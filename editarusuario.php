@@ -96,7 +96,7 @@
         <div class="col-md-4">
             <label for="planta">Planta:</label>
             <select class="form-select fs-4" id="planta" name="planta" required>
-                <?php if (empty($complejo['nombre_complejo'])) { ?>
+                <?php if (empty($planta['nombre_complejo']) ) { ?>
                 <option value="<?php echo $planta['id_planta'] ?>" selected ><?php echo $planta['nombre_planta'] ?></option>
                    <?php }
                 else {

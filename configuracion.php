@@ -70,7 +70,7 @@
                         $resultado2 = $conexion->query($sql2);
 
                         $row2 = $resultado2->fetch_assoc();
-                        if (empty($row2['id_planta'])) {
+                        if (empty($row2['id_planta']) && $row2['id_planta'] != 0) {
                             echo 'No asignado';
                         }else {
                             echo $row2['nombre_planta'];
