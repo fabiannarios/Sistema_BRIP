@@ -7,13 +7,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_usuario = $_POST['id_usuario'];
     $nombre = $_POST['nombre'];
     $id_rol = $_POST['id_rol'];
+    $planta = $_POST['planta'];
+    $complejo = $_POST['complejo'];
     $telefono = $_POST['telefono'];
     $fecha = $_POST['fecha_creacion'];
 
 
     try { 
-    $sql = "INSERT INTO `usuarios` (`id_usuario`,`nombre`,`id_rol`,`telefono`,`fecha_creacion`) 
-            VALUES ('$id_usuario ','$nombre', '$id_rol','$telefono','$fecha')";
+    $sql = "INSERT INTO usuarios (id_usuario,nombre,id_rol,id_planta,nombre_complejo,telefono,fecha_creacion) 
+            VALUES ('$id_usuario ','$nombre', '$id_rol','$planta','$complejo','$telefono','$fecha')";
 
     if ($conexion->query($sql) === TRUE) {
          echo "<script type='text/javascript'>";
