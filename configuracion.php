@@ -65,12 +65,17 @@
 
                         <td class=" text-center"><?php echo $row['telefono']?> </td>
 
-                        <td class=" text-center"><?php
+                        <td class=" text-center"><?php  
+                        
+                        $sql3 = "SELECT * FROM complejos_petroquimicos WHERE nombre_complejo ='". $row['nombre_complejo'] ."'";
+                        $resultado3 = $conexion->query($sql3);
+
+                        $row3 = $resultado3->fetch_assoc();
                         $sql2 = "SELECT * FROM plantas WHERE id_planta ='". $row['id_planta'] ."'";
                         $resultado2 = $conexion->query($sql2);
 
                         $row2 = $resultado2->fetch_assoc();
-                        if (empty($row2['id_planta']) && $row2['id_planta'] !== 0) {
+                        if (empty($row3['nombre_complejo'])) {
                             echo 'No asignado';
                         }else {
                             echo $row2['nombre_planta'];
@@ -80,10 +85,7 @@
                     </td>
 
                         <td class=" text-center"><?php
-                        $sql3 = "SELECT * FROM complejos_petroquimicos WHERE nombre_complejo ='". $row['nombre_complejo'] ."'";
-                        $resultado3 = $conexion->query($sql3);
-
-                        $row3 = $resultado3->fetch_assoc();
+                      
 
                         if (empty($row3['nombre_complejo'])) {
                            echo 'No asignado';
