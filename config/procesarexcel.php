@@ -38,7 +38,7 @@ if (isset($_POST['send'])) {
                 $valorproceso = $hojaActual->getCell('D'.$i)->getValue();
                 $valor4 = $hojaActual->getCell('E'.$i)->getValue();
                 $valor5 = $hojaActual->getCell('F'.$i)->getValue();
-                $valor6 = $hojaActual->getCell('G'.$i)->getValue();
+                $valor6 = $hojaActual->getCell('G'.$i)->getFormattedValue();
 
 
                 if ($valor5 == "disponible" ||$valor5 == "verde") {
