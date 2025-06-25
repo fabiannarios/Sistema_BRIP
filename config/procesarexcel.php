@@ -38,7 +38,7 @@ if (isset($_POST['send'])) {
                 $valorproceso = $hojaActual->getCell('D'.$i)->getValue();
                 $valor4 = $hojaActual->getCell('E'.$i)->getValue();
                 $valor5 = $hojaActual->getCell('F'.$i)->getValue();
-                $valor6 = $hojaActual->getCell('G'.$i)->getValue();
+                $valor6 = $hojaActual->getCell('G'.$i)->getFormattedValue();
 
 
                 if ($valor5 == "disponible" ||$valor5 == "verde") {
@@ -58,14 +58,14 @@ if (isset($_POST['send'])) {
                 $resultado2= $conexion->query($sql2);
                 $row2 = $resultado2->fetch_assoc();
                 $valor3 = $row2['id_proceso']; 
-       
+                
+                
 
                 $sql = "INSERT INTO equipos (id_equipo, nombre, id_planta, id_proceso, observacion, estado, ultima_revision) 
                                      VALUES ('$valor', '$valor1', '$valor2', '$valor3', '$valor4', '$valor5', '$valor6')";
                 $conexion->query($sql);        
 
-            echo  $valor,$valor1,$valor2,$valor3,$valor4,$valor5,$valor6;
-            echo "</br>";
+           
 
                     } catch (mysqli_sql_exception $e ) {
 
@@ -73,7 +73,7 @@ if (isset($_POST['send'])) {
             
             switch ($e->getCode()) {
                 case 1062:
-                 echo "Equipo duplicado";
+                 echo "";
 
                     break;
 

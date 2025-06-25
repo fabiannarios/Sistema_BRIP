@@ -7,6 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cedula = $_POST['cedula'];
     $nombre = $_POST['nombre'];
     $telefono = $_POST['telefono'];
+    $complejo = $_POST['complejo'];
+    $planta = $_POST['planta'];
     $rol = $_POST['id_rol'];
     
    
@@ -15,6 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             SET id_usuario = '".$cedula."', 
                 nombre = '".$nombre."',
                 id_rol = '".$rol."', 
+                id_planta = '". $planta."',
+                nombre_complejo = '". $complejo ."',
                 telefono = '".$telefono."'
             WHERE id_usuario = '".$id."'";
 

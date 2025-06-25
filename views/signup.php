@@ -47,13 +47,43 @@
                             echo "<option value='" . $row['id_rol'] . "'>" . $row['nombre'] . "</option>";
                         }
                     }
-                    $conexion->close();
+                    
                     ?>
                 </select>
             </div>
 
             <div class="input-box">
                 <input class="bg-body-secondary" type="text" placeholder="telefono" name="telefono" required>
+            </div>
+
+            <div class="mb-3">
+            <label for="complejo">Complejo:</label>
+            <select class="form-select" id="complejo" name="complejo" required>
+                <option value="">Seleccionar</option>
+
+                <?php
+                 include("../Sistema_BRIP/config/conecxion_bd.php");
+
+                $sql2 = "SELECT nombre_complejo FROM complejos_petroquimicos";
+                $resultado2 = $conexion->query($sql2);
+                while ($fila = $resultado2->fetch_assoc()) {
+                    echo "<option value='" . $fila['nombre_complejo'] . "'>" . $fila['nombre_complejo'] . "</option>";
+                }
+                   
+
+                ?>
+
+            </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="planta">Planta:</label>
+                <select class="form-select" id="planta" name="planta" required>
+                <option value="">Seleccionar</option>
+
+                
+                </select>
+
             </div>
 
            
@@ -74,6 +104,8 @@
         </form>
 
     </div>
+
+    <script src="../js/peticionplanta.js"></script>
 
 </body>
 

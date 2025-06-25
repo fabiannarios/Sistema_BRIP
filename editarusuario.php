@@ -49,10 +49,51 @@
             </div>
 
                     
-        <div class="col-md-6">
-                    <label for="telefono">Telefono:</label>
+        <div class="col-md-3">
+                    <label for="telefono">Numero de telefono:</label>
                     <input type="text" id="telefono" name="telefono" value="<?php echo $row['telefono'] ?> "  required>
                     </div>
+
+     <?php
+        include("../Sistema_BRIP/config/conecxion_bd.php");
+                $sql2 = "SELECT nombre_complejo FROM complejos_petroquimicos";
+                $resultado2 = $conexion->query($sql2);
+
+                $sql3 = "SELECT nombre_complejo FROM complejos_petroquimicos WHERE nombre_complejo ='". $row['nombre_complejo']."'";
+                $resultado3 = $conexion->query($sql3);
+                $complejo = $resultado3->fetch_assoc();
+                 ?>
+        <div class="col-md-4">
+            <label for="complejo">Complejo:</label>
+            <select class="form-select fs-4" id="complejo" name="complejo" required>
+                <option value="<?php echo $complejo['nombre_complejo'] ?>" selected ><?php echo $complejo['nombre_complejo'] ?></option>
+
+                <?php
+                 
+
+                while ($fila = $resultado2->fetch_assoc()) {
+                    echo "<option value='" . $fila['nombre_complejo'] . "'>" . $fila['nombre_complejo'] . "</option>";
+                }
+                   
+
+                ?>
+
+            </select>
+            </div>
+            <?php
+            $sql4 = "SELECT id_planta, nombre_planta FROM plantas WHERE nombre_complejo='".$row['nombre_complejo'] ."'";
+                $resultado4 = $conexion->query($sql4);
+                $planta = $resultado4->fetch_assoc();
+                 ?>
+
+        <div class="col-md-4">
+            <label for="planta">Planta:</label>
+            <select class="form-select fs-4" id="planta" name="planta" required>
+                <option value="<?php echo $planta['id_planta'] ?>" selected ><?php echo $planta['nombre_planta'] ?></option>
+                
+            </select>
+        </div>
+
 
                     <div class="mb-3">
                 <label for="id_rol" class="form-label"><b>Roles:</b></label>
@@ -86,7 +127,7 @@
 
     </form>
 
-
+<script src="./js/peticionusuario.js"></script>
 </body>
 
 </html>

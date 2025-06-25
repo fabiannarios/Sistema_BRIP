@@ -34,12 +34,14 @@
                 <table id='tabla' class='pequiven-table'>
                     <thead>
                     <tr>
-                    <th scope='col text-center'>TAG</th>
+                    <th scope='col text-center'>Cedula</th>
                     <th scope='col text-center'>Nombre</th>
+                    <th scope='col text-center'>Roles</th>
+                    <th scope='col text-center'>Telefono</th>
                     <th scope='col text-center'>Planta</th>
-                    <th scope='col text-center'>Proceso</th>
-                    <th scope='col text-center'>Observaciones</th>
-                    <th scope='col text-center'>Estado</th>
+                    <th scope='col text-center'>Complejo</th>
+                    <th scope='col text-center'>Fecha de creacion</th>
+                    <th scope='col text-center'>Habilitado/Deshabilitado</th>
                     <th></th>
                     </tr>
                 </thead>
@@ -62,6 +64,33 @@
                         echo $row2['nombre']?></td>
 
                         <td class=" text-center"><?php echo $row['telefono']?> </td>
+
+                        <td class=" text-center"><?php
+                        $sql2 = "SELECT * FROM plantas WHERE id_planta ='". $row['id_planta'] ."'";
+                        $resultado2 = $conexion->query($sql2);
+
+                        $row2 = $resultado2->fetch_assoc();
+                        if (empty($row2['id_planta'])) {
+                            echo 'No asignado';
+                        }else {
+                            echo $row2['nombre_planta'];
+                        }
+                         ?>
+                        
+                    </td>
+
+                        <td class=" text-center"><?php
+                        $sql3 = "SELECT * FROM complejos_petroquimicos WHERE nombre_complejo ='". $row['nombre_complejo'] ."'";
+                        $resultado3 = $conexion->query($sql3);
+
+                        $row3 = $resultado3->fetch_assoc();
+
+                        if (empty($row3['nombre_complejo'])) {
+                           echo 'No asignado';
+                        }else {
+                            echo $row3['nombre_complejo'];
+                        }?>
+                         </td>
 
                         <td class=" text-center"><?php echo $row['fecha_creacion']?></td>
 
