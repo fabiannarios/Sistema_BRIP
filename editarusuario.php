@@ -66,14 +66,11 @@
         <div class="col-md-4">
             <label for="complejo">Complejo:</label>
             <select class="form-select fs-4" id="complejo" name="complejo" required>
-                <?php if (empty($complejo['nombre_complejo'])) { ?>
-                    
-                
-                <option value="<?php echo $complejo['nombre_complejo'] ?>" selected ><?php echo $complejo['nombre_complejo'] ?></option>
-                <?php }
-                else {
-                    echo "<option disabled selected >Seleccione una opcion</option>";
-                }?>
+                <?php if (empty($complejo['nombre_complejo'])) {
+                        echo "<option disabled selected >Seleccione una opcion</option>";
+                }else {?>
+                    <option value="<?php echo $complejo['nombre_complejo'] ?>" selected ><?php echo $complejo['nombre_complejo'] ?></option>
+                <?php }?>
                 
                 <?php
                 
@@ -96,12 +93,12 @@
         <div class="col-md-4">
             <label for="planta">Planta:</label>
             <select class="form-select fs-4" id="planta" name="planta" required>
-                <?php if (empty($planta['nombre_complejo']) ) { ?>
-                <option value="<?php echo $planta['id_planta'] ?>" selected ><?php echo $planta['nombre_planta'] ?></option>
-                   <?php }
-                else {
-                    echo "<option disabled selected >Seleccione una opcion</option>";
-                }?>
+                <?php if (empty($planta['id_planta']) ) { 
+                echo "<option disabled selected >Seleccione una opcion</option>";
+                   }
+                else {?>
+                    <option value="<?php echo $planta['id_planta'] ?>" selected ><?php echo $planta['nombre_planta'] ?></option>
+               <?php }?>
             </select>
         </div>
 
