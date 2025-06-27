@@ -11,9 +11,6 @@ $resultadorepuestos = $conexion->query($consulta1);
 $consulta2 = "SELECT id_incidencia FROM incidencias";
 $resultadoincidencias = $conexion->query($consulta2);
 
-$consulta3 = "SELECT * FROM responsables";
-$resultadoresponsable = $conexion->query($consulta3);
-
 ?>
 
 
@@ -380,7 +377,7 @@ $resultadoresponsable = $conexion->query($consulta3);
                                     <td><?php echo $row['fecha_mantenimiento'] ?></td>
 
 
-                                    <td><?php $sql4 = "SELECT * FROM responsables WHERE id_responsable='" . $row['id_responsable'] . "'";
+                                    <td><?php $sql4 = "SELECT * FROM usuarios WHERE id_usuario='" . $row['responsable_usuario'] . "'";
                                         $resultado4 = $conexion->query($sql4);
 
                                         $row4 = $resultado4->fetch_assoc();

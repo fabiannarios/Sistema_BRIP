@@ -35,21 +35,14 @@
                 <label for="id_rol" class="form-label"><b>Roles:</b></label>
                 <select class="form-select" name="id_rol" required>
                     <option value="" disabled selected>Selecciona un rol</option>
-                    <?php
-                    include "../config/conecxion_bd.php";
-                    if ($conexion->connect_error) {
-                        die("Falló la conexión a la base de datos: " . $conexion->connect_error);
-                    }
-                    $sql = "SELECT * FROM roles";
-                    $result = $conexion->query($sql);
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<option value='" . $row['id_rol'] . "'>" . $row['nombre'] . "</option>";
-                        }
-                    }
-                    
-                    ?>
+                    <option value="trabajador">Trabajador</option>
+                    <option value="administrador">Administrador</option>
+                   
                 </select>
+            </div>
+
+             <div class="input-box">
+                <input class="bg-body-secondary" type="text" placeholder="Departamento" name="departamento" required>
             </div>
 
             <div class="input-box">
@@ -62,7 +55,7 @@
                 <option value="">Seleccionar</option>
 
                 <?php
-                 include("../Sistema_BRIP/config/conecxion_bd.php");
+                 include_once("../config/conecxion_bd.php");
 
                 $sql2 = "SELECT nombre_complejo FROM complejos_petroquimicos";
                 $resultado2 = $conexion->query($sql2);

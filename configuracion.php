@@ -36,7 +36,8 @@
                     <tr>
                     <th scope='col text-center'>Cedula</th>
                     <th scope='col text-center'>Nombre</th>
-                    <th scope='col text-center'>Roles</th>
+                    <th scope='col text-center'>Cargo</th>
+                    <th scope='col text-center'>Departamento</th>
                     <th scope='col text-center'>Telefono</th>
                     <th scope='col text-center'>Planta</th>
                     <th scope='col text-center'>Complejo</th>
@@ -56,12 +57,10 @@
                     <td class=" text-center"><?php echo $row['id_usuario'] ?> </td>
                         <td class=" text-center"><?php echo $row['nombre']?></td>
                        
-                        <td class=" text-center"><?php
-                        $sql2 = "SELECT * FROM roles WHERE id_rol =". $row['id_rol'];
-                        $resultado2 = $conexion->query($sql2);
+                        <td class=" text-center text-uppercase"><?php echo $row['cargo']?></td>
 
-                        $row2 = $resultado2->fetch_assoc();
-                        echo $row2['nombre']?></td>
+                        <td class=" text-center text-uppercase"><?php echo $row['departamento']?></td>
+                
 
                         <td class=" text-center"><?php echo $row['telefono']?> </td>
 
@@ -127,67 +126,7 @@
             ?>
             </table>
 
-           
-</div>
-
-
-<div class="container-fluid">
-            <?php
-           
-
-            $sql = "SELECT * FROM responsables";
-            $result = $conexion->query($sql);
-            if ($result->num_rows > 0) {
-                ?>
-                <table id='tabla2' class='pequiven-table'>
-                    <thead>
-                    <tr>
-                    <th scope='col text-center'>Cedula del responsable</th>
-                    <th scope='col text-center'>Nombre del responsable</th>
-                    <th scope='col text-center'>Departamento del responsable</th>
-                    
-                    <th></th>
-                    </tr>
-                </thead>
-
-
-
-                <tbody class='table-group-divider'>
-                <?php
-                while ($row = $result->fetch_assoc()) {
-                    ?>
-                    <tr>
-                    <td class=" text-center"><?php echo $row['id_responsable'] ?> </td>
-                        
-                    <td class=" text-center"><?php echo $row['nombre'] ?> </td>
-                    <td class=" text-center"><?php echo $row['departamento'] ?> </td>
-                        <td> 
-                            
-                            <a href="editaresponsable.php?id_responsable=<?php echo $row['id_responsable'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
-                            
-                            <a href="./config/eliminaresponsable.php?id_responsable=<?php echo $row['id_responsable'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
-                           
-
-                        </td>
-                        </tr>
-
-
-                  <?php      
-                }?>
-
-                         
-
-                    
-                
-            <?php    
-            }
-            $conexion->close();
-            ?>
-            </table>
-
-           
-</div>
-               
+             
       
 
 

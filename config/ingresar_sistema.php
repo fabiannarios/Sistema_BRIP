@@ -13,7 +13,7 @@ if (isset($_GET["iniciar"])) {
 
 
     // $sql="SELECT * FROM USUARIO WHERE usuario='$id_usuario' AND contraseña='$nombre' AND rol=1";
-    $sql = "SELECT * FROM usuarios, roles where usuarios.id_usuario = '$cedula' AND usuarios.nombre= '$nombre' AND usuarios.id_rol= roles.id_rol"; //Sirve para guardar la informacion de la consulta de la tabla (usuario) y se almacena en la variable $sql
+    $sql = "SELECT * FROM usuarios where id_usuario = '$cedula' AND nombre= '$nombre'"; //Sirve para guardar la informacion de la consulta de la tabla (usuario) y se almacena en la variable $sql
     $resultado = mysqli_query($conexion, $sql);
     $numero_registro = mysqli_num_rows($resultado);
 
@@ -32,7 +32,7 @@ if (isset($_GET["iniciar"])) {
 
             if ($fila['activo'] == 1) {
                 
-            if ($fila["id_rol"] == 1) {
+            if ($fila["cargo"] == "administrador") {
 
                 if ($fila2['frecuencia'] == 0) {
                     $sql1 = "INSERT INTO sesiones (id_usuario, fecha_inicio, fecha_fin) 
@@ -48,9 +48,7 @@ if (isset($_GET["iniciar"])) {
                     $conexion->query($sql1);
                 }
 
-                $_SESSION['rol'] = $fila["id_rol"];
-
-
+                $_SESSION['rol'] = $fila["cargo"];
                 $_SESSION['usuario'] = $fila3["nombre"];
 
                  echo "<script type='text/javascript'>";
@@ -58,7 +56,7 @@ if (isset($_GET["iniciar"])) {
             echo "window.location.href = '../inicio.php';";
             echo "</script>";
             
-            } elseif ($fila["id_rol"] == 2) {
+            } elseif ($fila["cargo"] == "trabajador") {
 
                 if ($fila2['frecuencia'] == 0) {
                     $sql1 = "INSERT INTO sesiones (id_usuario, fecha_inicio, fecha_fin) 
@@ -71,7 +69,7 @@ if (isset($_GET["iniciar"])) {
                              WHERE id_usuario = '" . $cedula . "'";
                     $conexion->query($sql1);
                 }
-                $_SESSION['rol'] = $fila["id_rol"];
+                $_SESSION['rol'] = $fila["cargo"];
                 $_SESSION['usuario'] = $fila3["nombre"];
 
                  echo "<script type='text/javascript'>";

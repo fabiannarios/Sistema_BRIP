@@ -9,15 +9,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefono = $_POST['telefono'];
     $complejo = $_POST['complejo'];
     $planta = $_POST['planta'];
-    $rol = $_POST['id_rol'];
+    $rol = $_POST['cargo'];
+    $departamento = $_POST['departamento'];
     
-   
 
     $sql = "UPDATE usuarios 
             SET id_usuario = '".$cedula."', 
                 nombre = '".$nombre."',
-                id_rol = '".$rol."', 
-                id_planta = '". $planta."',
+                cargo = '".$rol."', 
+                id_planta = '".$planta."',
+                departamento = '".$departamento."',
                 nombre_complejo = '". $complejo ."',
                 telefono = '".$telefono."'
             WHERE id_usuario = '".$id."'";

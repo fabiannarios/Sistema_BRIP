@@ -28,7 +28,7 @@
 
     ?>
 
-<h1 class="text-center display-1 bg-danger-subtle p-4 mb-5">Edicion de Usuario</h1>
+<h1 class="text-center display-1 bg-danger-subtle p-4 mb-5">Edición de Usuario</h1>
 
     <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="./config/actualizarusuario.php" method="POST">
 
@@ -54,6 +54,12 @@
                     <input type="text" id="telefono" name="telefono" value="<?php echo $row['telefono'] ?> "  required>
                     </div>
 
+
+                     <div class="col-md-3">
+                        <label for="departamento">Departamento del usuario:</label>
+                <input class=" mx-2" type="text" placeholder="Departamento" name="departamento" value="<?php echo $row['departamento'] ?>" required>
+            </div>
+
      <?php
         include("../Sistema_BRIP/config/conecxion_bd.php");
                 $sql2 = "SELECT nombre_complejo FROM complejos_petroquimicos";
@@ -69,7 +75,7 @@
                 <?php if (empty($complejo['nombre_complejo'])) {
                         echo "<option disabled selected >Seleccione una opcion</option>";
                 }else {?>
-                    <option value="<?php echo $complejo['nombre_complejo'] ?>" selected ><?php echo $complejo['nombre_complejo'] ?></option>
+                    <option value="<?php echo $complejo['nombre_complejo'] ?>" selected disabled><?php echo $complejo['nombre_complejo'] ?></option>
                 <?php }?>
                 
                 <?php
@@ -97,30 +103,22 @@
                 echo "<option disabled selected >Seleccione una opcion</option>";
                    }
                 else {?>
-                    <option value="<?php echo $planta['id_planta'] ?>" selected ><?php echo $planta['nombre_planta'] ?></option>
+                    <option value="<?php echo $planta['id_planta'] ?>" selected disabled ><?php echo $planta['nombre_planta'] ?></option>
                <?php }?>
             </select>
         </div>
 
 
                     <div class="mb-3">
-                <label for="id_rol" class="form-label"><b>Roles:</b></label>
-                <select class="form-select fs-4" name="id_rol" required>
+                <label for="cargo" class="form-label"><b>Roles:</b></label>
+                <select class="form-select fs-4" name="cargo" required>
+                    <option value="" disabled selected><?php echo $row['cargo']; ?></option>
                     <option value="" disabled selected>Selecciona un rol</option>
-                    <?php
-                    include "../config/conecxion_bd.php";
-                    if ($conexion->connect_error) {
-                        die("Falló la conexión a la base de datos: " . $conexion->connect_error);
-                    }
-                    $sql1 = "SELECT * FROM roles";
-                    $result = $conexion->query($sql1);
-                    if ($result->num_rows > 0) {
-                        while ($row1 = $result->fetch_assoc()) {
-                            echo "<option value='" . $row1['id_rol'] . "'>" . $row1['nombre'] . "</option>";
-                        }
-                    }
-                    $conexion->close();
-                    ?>
+
+                    <option value="trabajador">Trabajador</option>
+                    <option value="administrador">Administrador</option>
+                   
+                    
                 </select>
             </div>
 

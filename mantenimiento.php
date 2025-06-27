@@ -11,8 +11,8 @@ $resultadorepuestos = $conexion->query($consulta1);
 $consulta2 = "SELECT id_incidencia FROM incidencias";
 $resultadoincidencias = $conexion->query($consulta2);
 
-$consulta3 = "SELECT * FROM responsables";
-$resultadoresponsable = $conexion->query($consulta3);
+$consulta3 = "SELECT id_usuario FROM usuarios";
+$resultadousuario = $conexion->query($consulta3);
 
 ?>
 
@@ -123,64 +123,20 @@ $resultadoresponsable = $conexion->query($consulta3);
             <label for="responsable">Cedula del responsable:</label>
             <datalist id="responsable">
                 <?php
-                while ($listaresponsable = $resultadoresponsable->fetch_assoc()) {
-                    echo "<option value='" . $listaresponsable['id_responsable'] . "'>";
+                while ($listaresponsable = $resultadousuario->fetch_assoc()) {
+                    echo "<option value='" . $listaresponsable['id_usuario'] . "'>";
                 }
                 ?>
 
             </datalist>
             <input type="text" id="responsable" name="responsable" list="responsable" required>
-            <button type="button" class="btn btn-primary fs-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Ingresar responsable
-            </button>
         </div>
-
-
 
         <div class="col-12 my-3 text-center">
             <button type="submit" class="btn btn-success fs-4 rounded-pill">Ingresar Mantenmiento</button>
         </div>
     </form>
 
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-1" id="exampleModalLabel">AGREGAR RESPONSABLES</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="./config/ingreso_responsable.php" method="POST">
-
-
-                        <div class="col-md-6">
-                            <label for="cedula">Cedula del responsable:</label>
-                            <input type="text" id="cedula" name="cedula" required>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="nombre">Nombre del responsable:</label>
-                            <input type="text" id="nombre" name="nombre" required>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="departamento">Departamento del responsable:</label>
-                            <input type="text" id="departamento" name="departamento" required>
-                        </div>
-
-                        <div class="col-12 my-3 text-center">
-                            <button type="submit" class="btn btn-primary fs-3 rounded-pill">Guardar responsable</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary fs-3" data-bs-dismiss="modal">Close</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
 
     <?php
     $sql = "SELECT * FROM mantenimiento";
@@ -268,9 +224,9 @@ $resultadoresponsable = $conexion->query($consulta3);
 
                                 <td class=" text-center"><?php echo $row['fecha_mantenimiento'] ?></td>
 
-                                <td class=" text-center"><?php echo $row['id_responsable'] ?></td>
+                                <td class=" text-center"><?php echo $row['responsable_usuario'] ?></td>
 
-                                <td class=" text-center"><?php $sql4 = "SELECT * FROM responsables WHERE id_responsable='" . $row['id_responsable'] . "'";
+                                <td class=" text-center"><?php $sql4 = "SELECT * FROM usuarios WHERE id_usuario='" . $row['responsable_usuario'] . "'";
                                     $resultado4 = $conexion->query($sql4);
 
                                     $row4 = $resultado4->fetch_assoc();

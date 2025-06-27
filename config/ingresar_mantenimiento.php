@@ -14,25 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $responsable = $_POST['responsable'];
 
 
-    $sql1= "SELECT id_repuesto FROM repuesto WHERE id_repuesto = '$repuesto'";
-    $resultado1 = $conexion->query($sql1);
-    $fila1 = $resultado1->fetch_assoc();
-
-    $sql2= "SELECT id_equipo FROM equipos WHERE id_equipo= '$equipo'";
-    $resultado2 = $conexion->query($sql2);
-    $fila2 = $resultado2->fetch_assoc();
-
-    $sql3= "SELECT id_responsable FROM responsables where id_responsable = '$responsable'";
-    $resultado3 = $conexion->query($sql3);
-    $fila3 = $resultado3->fetch_assoc();
-
-    $sql4= "SELECT id_incidencia FROM incidencias where id_incidencia = '$incidencia'";
-    $resultado4 = $conexion->query($sql4);
-    $fila4 = $resultado4->fetch_assoc();
-
-
      try { 
-    $sql = "INSERT INTO mantenimiento (id_repuesto, id_equipo, tipo_mantenimiento, id_incidencia, estado_anterior, estado_nuevo, observacion, fecha_mantenimiento, id_responsable) 
+    $sql = "INSERT INTO mantenimiento (id_repuesto, id_equipo, tipo_mantenimiento, id_incidencia, estado_anterior, estado_nuevo, observacion, fecha_mantenimiento, responsable_usuario) 
              VALUES ('$repuesto', '$equipo', '$mantenimiento', '$incidencia', '$estado_anterior' ,'$estado_nuevo', '$observacion' , '$fecha_mantenimiento', '$responsable')";
 
 
@@ -68,9 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     break;
 
                      case 1452:
-                        
-                        
-                        
+                    
                     echo "<script type='text/javascript'>";
                     echo "alert('Error en los datos');";
                     echo "window.location.href = '../mantenimiento.php';";
