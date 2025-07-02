@@ -10,7 +10,7 @@
         <title> Solicitar Repuestos</title>
 
         <link rel="icon" href="favicon.ico" sizes="any" />
-        <link rel="stylesheet" href="./datatable/datatables1.css">
+        <link rel="stylesheet" href="../datatable/datatables1.css">
         <link href="../css/tabla.css" rel="stylesheet">
         <link href='../css/inicio.css' rel='stylesheet'>
         <link href="../css/header.css" rel="stylesheet">
@@ -77,7 +77,7 @@
         <section>
             <div class="container-fluid">
                 <?php
-                include("../Sistema_BRIP/config/conecxion_bd.php");
+                include("../config/conecxion_bd.php");
 
 
                 $sql = "SELECT * FROM repuesto";
@@ -143,8 +143,8 @@
         </section>
 
 
-        <script src="./jquery/jquery.js"></script>
-        <script src="./datatable/datatables1.js"></script>
+        <script src="../jquery/jquery.js"></script>
+        <script src="../datatable/datatables1.js"></script>
         <script>
             $(document).ready(function() {
                 $('#tabla').DataTable({
