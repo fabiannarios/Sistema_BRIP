@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar componente</title>
     <link rel="icon" href="favicon.ico" sizes="any" />
-    <link rel="stylesheet" href="./datatable/datatables1.css">
+    <link rel="stylesheet" href="../datatable/datatables1.css">
     <link href="../css/tabla.css" rel="stylesheet">
     <link href='../css/inicio.css' rel='stylesheet'>
     <link href="../css/header.css" rel="stylesheet">
@@ -48,7 +48,7 @@
         </div>
 
         <?php
-        include("../Sistema_BRIP/config/conecxion_bd.php");
+        include("../config/conecxion_bd.php");
                 $sql2 = "SELECT id_planta, nombre_planta FROM plantas";
                 $resultado2 = $conexion->query($sql2);
 

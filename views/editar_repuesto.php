@@ -6,7 +6,7 @@
     <title> Editar Repuestos</title>
 
         <link rel="icon" href="favicon.ico" sizes="any" />
-        <link rel="stylesheet" href="./datatable/datatables1.css">
+        <link rel="stylesheet" href="../datatable/datatables1.css">
         <link href="../css/tabla.css" rel="stylesheet">
         <link href='../css/inicio.css' rel='stylesheet'>
         <link href="../css/header.css" rel="stylesheet">

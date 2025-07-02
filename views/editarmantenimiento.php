@@ -11,7 +11,7 @@ $resultadorepuestos = $conexion->query($consulta1);
 $consulta2 = "SELECT id_incidencia FROM incidencias";
 $resultadoincidencias = $conexion->query($consulta2);
 
-$consulta3 = "SELECT * FROM responsables";
+$consulta3 = "SELECT * FROM usuarios";
 $resultadoresponsable = $conexion->query($consulta3);
 
 ?>
@@ -126,12 +126,12 @@ $resultadoresponsable = $conexion->query($consulta3);
             <datalist id="responsable">
                 <?php
                 while ($listaresponsable = $resultadoresponsable->fetch_assoc()) {
-                    echo "<option value='" . $listaresponsable['id_responsable'] . "'>";
+                    echo "<option value='" . $listaresponsable['id_usuario'] . "'>";
                 }
                 ?>
 
             </datalist>
-            <input type="text" id="responsable" name="responsable" list="responsable" value="<?php echo $row['id_responsable'] ?> " required>
+            <input type="text" id="responsable" name="responsable" list="responsable" value="<?php echo $row['responsable_usuario'] ?> " required>
         </div>
 
         <div class="col-12 my-3 text-center">
