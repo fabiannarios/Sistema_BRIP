@@ -11,7 +11,7 @@ if (isset($_GET['id_repuesto'])) {
     if ($conexion->query($sql) === TRUE) {
          echo "<script type='text/javascript'>";
             echo "alert('Repuesto eliminado');";
-            echo "window.location.href = '../repuestos.php';";
+            echo "window.location.href = '../views/repuestos.php';";
             echo "</script>";
     } else {
         echo "Error al eliminar: " . $conexion->error;

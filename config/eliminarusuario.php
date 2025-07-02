@@ -11,7 +11,7 @@ if (isset($_GET['id_usuario'])) {
     if ($conexion->query($sql) === TRUE) {
          echo "<script type='text/javascript'>";
             echo "alert('Usuario eliminado');";
-            echo "window.location.href = '../configuracion.php';";
+            echo "window.location.href = '../views/configuracion.php';";
             echo "</script>";
     } else {
         echo "Error al eliminar: " . $conexion->error;

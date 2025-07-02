@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
             echo "<script type='text/javascript'>";
             echo "alert('Registro de mantenimiento ingresado con exito');";
-            echo "window.location.href = '../mantenimiento.php';";
+            echo "window.location.href = '../views/mantenimiento.php';";
             echo "</script>";
 
     } else {
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             echo "<script type='text/javascript'>";
             echo "alert('Error en el ingreso del mantenimiento');";
-            echo "window.location.href = '../mantenimiento.php';";
+            echo "window.location.href = '../views/mantenimiento.php';";
             echo "</script>";
             } catch (mysqli_sql_exception $e ) {
 
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   
                     echo "<script type='text/javascript'>";
             echo "alert('Registro duplicado');";
-            echo "window.location.href = '../mantenimiento.php';";
+            echo "window.location.href = '../views/mantenimiento.php';";
             echo "</script>";
 
                     break;
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     
                     echo "<script type='text/javascript'>";
                     echo "alert('Error en los datos');";
-                    echo "window.location.href = '../mantenimiento.php';";
+                    echo "window.location.href = '../views/mantenimiento.php';";
                     echo "</script>";
                         
                     break;
@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 default:
                  echo "<script type='text/javascript'>";
                     echo "alert('Error en los datos');";
-                    echo "window.location.href = '../mantenimiento.php';";
+                    echo "window.location.href = '../views/mantenimiento.php';";
                     echo "</script>";
                     break;
             }      

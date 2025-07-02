@@ -26,13 +26,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
            echo "<script type='text/javascript'>";
             echo "alert('Se edito exitosamente');";
-            echo "window.location.href = '../equipos.php';";
+            echo "window.location.href = '../views/equipos.php';";
             echo "</script>";
        
     } else {
         echo "<script type='text/javascript'>";
             echo "alert('Error en los datos');";
-            echo "window.location.href = '../editarequipo.php?id_equipo=".$id."';";
+            echo "window.location.href = '../views/editarequipo.php?id_equipo=".$id."';";
             echo "</script>";
         echo "Error al actualizar: " . $conexion->error;
     }

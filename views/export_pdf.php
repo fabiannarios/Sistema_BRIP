@@ -1,7 +1,7 @@
 <?php 
 
-include("../Sistema_BRIP/config/conecxion_bd.php");
-          require_once 'dompdf/autoload.inc.php';
+include("../config/conecxion_bd.php");
+          require_once '../dompdf/autoload.inc.php';
             use Dompdf\Dompdf;
           ob_start();
 

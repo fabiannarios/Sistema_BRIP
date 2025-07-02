@@ -11,11 +11,11 @@
 
         <link rel="icon" href="favicon.ico" sizes="any" />
         <link rel="stylesheet" href="./datatable/datatables1.css">
-        <link href="./css/tabla.css" rel="stylesheet">
-        <link href='./css/inicio.css' rel='stylesheet'>
-        <link href="./css/header.css" rel="stylesheet">
-        <link href='./css/bootstrap.css' rel='stylesheet'>
-        <link href='./css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
+        <link href="../css/tabla.css" rel="stylesheet">
+        <link href='../css/inicio.css' rel='stylesheet'>
+        <link href="../css/header.css" rel="stylesheet">
+        <link href='../css/bootstrap.css' rel='stylesheet'>
+        <link href='../css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
 
     </head>
 
@@ -25,7 +25,7 @@
 
 
 
-        <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="./config/ingreso_repuesto.php" method="POST">
+        <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="../config/ingreso_repuesto.php" method="POST">
 
             <div class="col-md-6">
                 <label for="codigo">TAG de Repuesto :</label>
@@ -124,7 +124,7 @@
 
                                     <td class=" text-center">
                                     <a href="./editar_repuesto.php?id_repuesto=<?php ECHO $row['id_repuesto'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
-                                    <a href="./config/eliminarrepuesto.php?id_repuesto=<?php ECHO $row['id_repuesto'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
+                                    <a href="../config/eliminarrepuesto.php?id_repuesto=<?php ECHO $row['id_repuesto'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
                                 </td>
 
 

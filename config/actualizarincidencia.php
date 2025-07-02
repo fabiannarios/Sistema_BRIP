@@ -32,7 +32,7 @@ try {
         
        echo "<script type='text/javascript'>";
             echo "alert('Se edito exitosamente');";
-            echo "window.location.href = '../incidencias.php';";
+            echo "window.location.href = '../views/incidencias.php';";
             echo "</script>";
        
     } else {
@@ -47,7 +47,7 @@ try {
                   
                     echo "<script type='text/javascript'>";
             echo "alert('Incidencia duplicada');";
-            echo "window.location.href = '../incidencias.php';";
+            echo "window.location.href = '../views/incidencias.php';";
             echo "</script>";
 
                     break;
@@ -55,7 +55,7 @@ try {
                      case 1452:
                     echo "<script type='text/javascript'>";
                     echo "alert('Error en los datos');";
-                    echo "window.location.href = '../incidencias.php';";
+                    echo "window.location.href = '../views/incidencias.php';";
                     echo "</script>";
                         
                     break;
@@ -63,7 +63,7 @@ try {
                 default:
                  echo "<script type='text/javascript'>";
                     echo "alert('Error en los datos');";
-                    echo "window.location.href = '../incidencias.php';";
+                    echo "window.location.href = '../views/incidencias.php';";
                     echo "</script>";
                     break;
             }      

@@ -1,6 +1,6 @@
 <?php
 
-include('./config/conecxion_bd.php');
+include('../config/conecxion_bd.php');
 
 $consulta = "SELECT * FROM equipos";
 $resultadoequipo = $conexion->query($consulta);
@@ -20,11 +20,11 @@ $resultadousuarios = $conexion->query($consulta1);
     <title>Registrar componente</title>
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="stylesheet" href="./datatable/datatables1.css">
-    <link href="./css/tabla.css" rel="stylesheet">
-    <link href='./css/inicio.css' rel='stylesheet'>
-    <link href="./css/header.css" rel="stylesheet">
-    <link href='./css/bootstrap.css' rel='stylesheet'>
-    <link href='./css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
+    <link href="../css/tabla.css" rel="stylesheet">
+    <link href='../css/inicio.css' rel='stylesheet'>
+    <link href="../css/header.css" rel="stylesheet">
+    <link href='../css/bootstrap.css' rel='stylesheet'>
+    <link href='../css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
 
 </head>
 
@@ -46,7 +46,7 @@ $resultadousuarios = $conexion->query($consulta1);
     </div>
 
 
-    <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="./config/actualizarincidencia.php" method="POST">
+    <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="../config/actualizarincidencia.php" method="POST">
 
         <div class="col-md-6">
             <label for="tag">TAG:</label>

@@ -38,7 +38,7 @@ try {
 
             echo "<script type='text/javascript'>";
             echo "alert('Incidencia ingresada con exito');";
-            echo "window.location.href = '../incidencias.php';";
+            echo "window.location.href = '../views/incidencias.php';";
             echo "</script>";
             
         } else {
@@ -54,7 +54,7 @@ try {
                   
                     echo "<script type='text/javascript'>";
             echo "alert('Incidencia duplicada');";
-            echo "window.location.href = '../incidencias.php';";
+            echo "window.location.href = '../views/incidencias.php';";
             echo "</script>";
 
                     break;
@@ -65,7 +65,7 @@ try {
                         
                     echo "<script type='text/javascript'>";
                     echo "alert('Error en los datos');";
-                    echo "window.location.href = '../incidencias.php';";
+                    echo "window.location.href = '../views/incidencias.php';";
                     echo "</script>";
                         
                     break;
@@ -73,14 +73,14 @@ try {
                 default:
                  echo "<script type='text/javascript'>";
                     echo "alert('Error en los datos');";
-                    echo "window.location.href = '../incidencias.php';";
+                    echo "window.location.href = '../views/incidencias.php';";
                     echo "</script>";
                     break;
             }      
             
         }         
 } else {
-    header("Location:../incidencias.php");
+    header("Location:../views/incidencias.php");
 }
 
         

@@ -16,7 +16,7 @@ const ctx12 = document.getElementById("myChart12");
 const ctx13 = document.getElementById("myChart13");
 const ctx14 = document.getElementById("myChart14");
 
-fetch(" char_servicios/scriptchart.php")
+fetch(" ../char_servicios/scriptchart.php")
   .then((response) => {
     return response.json();
   })
@@ -24,7 +24,7 @@ fetch(" char_servicios/scriptchart.php")
     createChart(datos, "pie");
   });
 
-fetch(" char_servicios/scriptchart1.php")
+fetch(" ../char_servicios/scriptchart1.php")
   .then((response) => {
     return response.json();
   })
@@ -32,7 +32,7 @@ fetch(" char_servicios/scriptchart1.php")
     createChart1(datos, "pie");
   });
 
-fetch(" char_servicios/scriptchart2.php")
+fetch(" ../char_servicios/scriptchart2.php")
   .then((response) => {
     return response.json();
   })
@@ -41,7 +41,7 @@ fetch(" char_servicios/scriptchart2.php")
   });
 
 
-fetch(" char_servicios/scriptchart3.php")
+fetch(" ../char_servicios/scriptchart3.php")
   .then((response) => {
     return response.json();
   })
@@ -49,7 +49,7 @@ fetch(" char_servicios/scriptchart3.php")
     createChart3(datos, "pie");
   });
 
-fetch(" char_servicios/scriptchart4.php")
+fetch(" ../char_servicios/scriptchart4.php")
   .then((response) => {
     return response.json();
   })
@@ -57,7 +57,7 @@ fetch(" char_servicios/scriptchart4.php")
     createChart4(datos, "pie");
   });
 
-fetch(" char_servicios/scriptchart5.php")
+fetch(" ../char_servicios/scriptchart5.php")
   .then((response) => {
     return response.json();
   })
@@ -65,7 +65,7 @@ fetch(" char_servicios/scriptchart5.php")
     createChart5(datos, "pie");
   });
 
-fetch(" char_servicios/scriptchart6.php")
+fetch(" ../char_servicios/scriptchart6.php")
   .then((response) => {
     return response.json();
   })
@@ -73,7 +73,7 @@ fetch(" char_servicios/scriptchart6.php")
     createChart6(datos, "pie");
   });
 
-fetch(" char_servicios/scriptchart7.php")
+fetch(" ../char_servicios/scriptchart7.php")
   .then((response) => {
     return response.json();
   })
@@ -81,7 +81,7 @@ fetch(" char_servicios/scriptchart7.php")
     createChart7(datos, "pie");
   });
 
-fetch(" char_servicios/scriptchart8.php")
+fetch(" ../char_servicios/scriptchart8.php")
   .then((response) => {
     return response.json();
   })
@@ -89,7 +89,7 @@ fetch(" char_servicios/scriptchart8.php")
     createChart8(datos, "pie");
   });
 
-  fetch(" char_servicios/scriptchart9.php")
+  fetch(" ../char_servicios/scriptchart9.php")
   .then((response) => {
     return response.json();
   })
@@ -97,7 +97,7 @@ fetch(" char_servicios/scriptchart8.php")
     createChart9(datos, "pie");
   });
 
-  fetch(" char_servicios/scriptchart10.php")
+  fetch(" ../char_servicios/scriptchart10.php")
   .then((response) => {
     return response.json();
   })
@@ -105,7 +105,7 @@ fetch(" char_servicios/scriptchart8.php")
     createChart10(datos, "pie");
   });
 
-  fetch(" char_servicios/scriptchart11.php")
+  fetch(" ../char_servicios/scriptchart11.php")
   .then((response) => {
     return response.json();
   })
@@ -113,7 +113,7 @@ fetch(" char_servicios/scriptchart8.php")
     createChart11(datos, "pie");
   });
 
-  fetch(" char_servicios/scriptchart12.php")
+  fetch(" ../char_servicios/scriptchart12.php")
   .then((response) => {
     return response.json();
   })
@@ -121,7 +121,7 @@ fetch(" char_servicios/scriptchart8.php")
     createChart12(datos, "pie");
   });
 
-  fetch(" char_servicios/scriptchart13.php")
+  fetch(" ../char_servicios/scriptchart13.php")
   .then((response) => {
     return response.json();
   })
@@ -129,7 +129,7 @@ fetch(" char_servicios/scriptchart8.php")
     createChart13(datos, "pie");
   });
 
-  fetch(" char_servicios/scriptchart14.php")
+  fetch(" ../char_servicios/scriptchart14.php")
   .then((response) => {
     return response.json();
   })

@@ -31,7 +31,7 @@ $sql = "UPDATE
         if ($conexion->query($sql) === TRUE) {
              echo "<script type='text/javascript'>";
             echo "alert('Repuesto editado con exito');";
-            echo "window.location.href = '../repuestos.php';";
+            echo "window.location.href = '../views/repuestos.php';";
             echo "</script>";
         } else {
             echo "Error al registrar el componente: " . $conn->error;

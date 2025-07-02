@@ -1,7 +1,7 @@
 
-<script src="./js/peticionesestado.js"></script>
-    <script src="./jquery/jquery.js"></script>
-    <script src="./datatable/datatables1.js"></script>
+<script src=" ../js/peticionesestado.js"></script>
+    <script src=" ../jquery/jquery.js"></script>
+    <script src=" ../datatable/datatables1.js"></script>
     <script>
         $(document).ready(function() {
             $('#tabla').DataTable({

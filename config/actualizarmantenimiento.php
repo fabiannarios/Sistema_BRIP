@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conexion->query($sql) === TRUE) {
      
-        header("Location:../mantenimiento.php");
+        header("Location:../views/mantenimiento.php");
     } else {
         echo "Error al registrar el componente: " . $conn->error;
     }
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
 echo "<script type='text/javascript'>";
 echo "alert('Error en los datos');";
-echo "window.location.href = '../editarmantenimiento.php?id_mantenimiento=".$id."';";
+echo "window.location.href = '../views/editarmantenimiento.php?id_mantenimiento=".$id."';";
 echo "</script>";
  
 }

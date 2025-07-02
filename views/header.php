@@ -1,17 +1,17 @@
 <?php 
 
-include("./config/ingresar_sistema.php");
+include("../config/ingresar_sistema.php");
 
 
 if ($_SESSION['rol'] == "administrador") {?>
 <header>
-<script src="./css/bootstrap-5.3.5-dist/js/bootstrap.bundle.js"></script>
+<script src="../css/bootstrap-5.3.5-dist/js/bootstrap.bundle.js"></script>
     <div class="header-pequiven">
         <div class="contenedor-header">
 
             <div class="logo-pequiven">
                 <a href="./inicio.php">
-                    <img src="./css/img/logo.png" alt="">
+                    <img src="../css/img/logo.png" alt="">
                     <h2 class="titulo-header">Monitoreo de Incidencias</h2>
                 </a>
             </div>
@@ -41,9 +41,9 @@ if ($_SESSION['rol'] == "administrador") {?>
                        <i class='bx bx-user'></i>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item link-header" href="./config/logout.php">Cerrar sesion</a></li>
+                        <li><a class="dropdown-item link-header" href="../config/logout.php">Cerrar sesion</a></li>
                         <li><a class="dropdown-item link-header" href="configuracion.php">Configuracion</a></li>
-                        <li><a class="dropdown-item link-header" href="./views/signup.php">Agregar usuario</a></li>
+                        <li><a class="dropdown-item link-header" href="../views/signup.php">Agregar usuario</a></li>
                     </ul>
                 
             </nav>
@@ -57,13 +57,13 @@ if ($_SESSION['rol'] == "administrador") {?>
 
 
 <header>
-<script src="./css/bootstrap-5.3.5-dist/js/bootstrap.bundle.js"></script>
+<script src="../css/bootstrap-5.3.5-dist/js/bootstrap.bundle.js"></script>
     <div class="header-pequiven">
         <div class="contenedor-header">
 
             <div class="logo-pequiven">
                 <a href="./inicio.php">
-                    <img src="./css/img/logo.png" alt="">
+                    <img src="../css/img/logo.png" alt="">
                     <h2 class="titulo-header">Monitoreo de Incidencias</h2>
                 </a>
             </div>
@@ -93,7 +93,7 @@ if ($_SESSION['rol'] == "administrador") {?>
                        <i class='bx bx-user'></i>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item link-header" href="./config/logout.php">Cerrar sesion</a></li>
+                        <li><a class="dropdown-item link-header" href="../config/logout.php">Cerrar sesion</a></li>
                         
                     </ul>
                 

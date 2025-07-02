@@ -11,7 +11,7 @@ const ctx7 = document.getElementById("myChart7");
 const ctx8 = document.getElementById("myChart8");
 
 
-fetch(" char_amoniaco/scriptchart.php")
+fetch(" ../char_amoniaco/scriptchart.php")
   .then((response) => {
     return response.json();
   })
@@ -19,7 +19,7 @@ fetch(" char_amoniaco/scriptchart.php")
     createChart(datos, "pie");
   });
 
-fetch(" char_amoniaco/scriptchart1.php")
+fetch(" ../char_amoniaco/scriptchart1.php")
   .then((response) => {
     return response.json();
   })
@@ -27,7 +27,7 @@ fetch(" char_amoniaco/scriptchart1.php")
     createChart1(datos, "pie");
   });
 
-fetch(" char_amoniaco/scriptchart2.php")
+fetch(" ../char_amoniaco/scriptchart2.php")
   .then((response) => {
     return response.json();
   })
@@ -36,7 +36,7 @@ fetch(" char_amoniaco/scriptchart2.php")
   });
 
 
-fetch(" char_amoniaco/scriptchart3.php")
+fetch(" ../char_amoniaco/scriptchart3.php")
   .then((response) => {
     return response.json();
   })
@@ -44,7 +44,7 @@ fetch(" char_amoniaco/scriptchart3.php")
     createChart3(datos, "pie");
   });
 
-fetch(" char_amoniaco/scriptchart4.php")
+fetch(" ../char_amoniaco/scriptchart4.php")
   .then((response) => {
     return response.json();
   })
@@ -52,7 +52,7 @@ fetch(" char_amoniaco/scriptchart4.php")
     createChart4(datos, "pie");
   });
 
-fetch(" char_amoniaco/scriptchart5.php")
+fetch(" ../char_amoniaco/scriptchart5.php")
   .then((response) => {
     return response.json();
   })
@@ -60,7 +60,7 @@ fetch(" char_amoniaco/scriptchart5.php")
     createChart5(datos, "pie");
   });
 
-fetch(" char_amoniaco/scriptchart6.php")
+fetch(" ../char_amoniaco/scriptchart6.php")
   .then((response) => {
     return response.json();
   })
@@ -68,7 +68,7 @@ fetch(" char_amoniaco/scriptchart6.php")
     createChart6(datos, "pie");
   });
 
-fetch(" char_amoniaco/scriptchart7.php")
+fetch(" ../char_amoniaco/scriptchart7.php")
   .then((response) => {
     return response.json();
   })
@@ -76,7 +76,7 @@ fetch(" char_amoniaco/scriptchart7.php")
     createChart7(datos, "pie");
   });
 
-fetch(" char_amoniaco/scriptchart8.php")
+fetch(" ../char_amoniaco/scriptchart8.php")
   .then((response) => {
     return response.json();
   })

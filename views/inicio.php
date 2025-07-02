@@ -1,6 +1,6 @@
 <?php
 
-include('./config/conecxion_bd.php');
+include('../config/conecxion_bd.php');
 
 $consulta = "SELECT * FROM equipos";
 $resultadoequipo = $conexion->query($consulta);
@@ -24,12 +24,12 @@ $resultadoincidencias = $conexion->query($consulta2);
     <title>Inicio</title>
 
     <link rel="icon" href="favicon.ico" sizes="any" />
-    <link rel="stylesheet" href="./datatable/datatables1.css">
-    <link href="./css/tabla.css" rel="stylesheet">
-    <link href='./css/inicio.css' rel='stylesheet'>
-    <link href="./css/header.css" rel="stylesheet">
-    <link href='./css/bootstrap.css' rel='stylesheet'>
-    <link href='./css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../datatable/datatables1.css">
+    <link href="../css/tabla.css" rel="stylesheet">
+    <link href='../css/inicio.css' rel='stylesheet'>
+    <link href="../css/header.css" rel="stylesheet">
+    <link href='../css/bootstrap.css' rel='stylesheet'>
+    <link href='../css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
 
 </head>
 
@@ -103,7 +103,7 @@ $resultadoincidencias = $conexion->query($consulta2);
                         <div class="accordion-body">
 
                             <?php
-                            include("../Sistema_BRIP/config/conecxion_bd.php");
+                            include("../config/conecxion_bd.php");
 
 
                             $sql = "SELECT * FROM equipos WHERE estado = 'verde'";
@@ -168,7 +168,7 @@ $resultadoincidencias = $conexion->query($consulta2);
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
                             <?php
-                            include("../Sistema_BRIP/config/conecxion_bd.php");
+                            include("../config/conecxion_bd.php");
 
 
                             $sql = "SELECT * FROM equipos WHERE estado = 'amarillo'";
@@ -234,7 +234,7 @@ $resultadoincidencias = $conexion->query($consulta2);
                     <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
                             <?php
-                            include("../Sistema_BRIP/config/conecxion_bd.php");
+                            include("../config/conecxion_bd.php");
 
 
                             $sql = "SELECT * FROM equipos WHERE estado = 'rojo'";

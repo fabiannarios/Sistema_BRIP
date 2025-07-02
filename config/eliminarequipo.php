@@ -11,7 +11,7 @@ if (isset($_GET['id_equipo'])) {
     if ($conexion->query($sql) === TRUE) {
          echo "<script type='text/javascript'>";
             echo "alert('Equipo eliminado');";
-            echo "window.location.href = '../equipos.php';";
+            echo "window.location.href = '../views/equipos.php';";
             echo "</script>";
     } else {
         echo "Error al eliminar: " . $conexion->error;

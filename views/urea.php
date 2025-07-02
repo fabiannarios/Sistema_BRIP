@@ -1,6 +1,6 @@
 <?php
 
-include('./config/conecxion_bd.php');
+include('../config/conecxion_bd.php');
 ?>
 
 
@@ -14,12 +14,12 @@ include('./config/conecxion_bd.php');
     <title>Urea</title>
 
     <link rel="icon" href="favicon.ico" sizes="any" />
-    <link rel="stylesheet" href="./datatable/datatables1.css">
-    <link href="./css/tabla.css" rel="stylesheet">
-    <link href='./css/inicio.css' rel='stylesheet'>
-    <link href="./css/header.css" rel="stylesheet">
-    <link href='./css/bootstrap.css' rel='stylesheet'>
-    <link href='./css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../datatable/datatables1.css">
+    <link href="../css/tabla.css" rel="stylesheet">
+    <link href='../css/inicio.css' rel='stylesheet'>
+    <link href="../css/header.css" rel="stylesheet">
+    <link href='../css/bootstrap.css' rel='stylesheet'>
+    <link href='../css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
 
 </head>
 
@@ -137,7 +137,7 @@ include('./config/conecxion_bd.php');
 
                             <td>
                                 <a href="editarequipo.php?id_equipo=<?php echo $row['id_equipo'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
-                                <a href="./config/eliminarequipo.php?id_equipo=<?php echo $row['id_equipo'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
+                                <a href="../config/eliminarequipo.php?id_equipo=<?php echo $row['id_equipo'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
                             </td>
                         </tr>
                     <?php
@@ -158,8 +158,8 @@ include('./config/conecxion_bd.php');
 
 
 
-<script src="./js/scriptchart_urea.js"></script>
-<script src="./node_modules/chart.js/dist/chart.umd.js"></script>
+<script src="../js/scriptchart_urea.js"></script>
+<script src="../node_modules/chart.js/dist/chart.umd.js"></script>
 
 
 </body>

@@ -12,6 +12,7 @@
     <title>Bienvenido</title>
     <link rel="icon" href="../favicon.ico" sizes="any" />
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styless.css">
     <link href='../css/bootstrap.css' rel='stylesheet'>
     <link href='../css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
 </head>

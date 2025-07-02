@@ -18,7 +18,7 @@
 
     <div class="wrapper">
         <form method="POST" action="../config/conexion_registro.php">
-            <a href="../inicio.php">
+            <a href="inicio.php">
             <i class='bx bx-arrow-big-left-line fs-3'  style='color:#000000'></i>  
             </a>
             <h1>Registrate</h1>

@@ -80,7 +80,7 @@ if (isset($_POST['send'])) {
                      case 1452:  
                     echo "<script type='text/javascript'>";
                     echo "alert('Proceso completado');";
-                    echo "window.location.href = '../equipos.php';";
+                    echo "window.location.href = '../views/equipos.php';";
                     echo "</script>";
                         
                     break;
@@ -88,7 +88,7 @@ if (isset($_POST['send'])) {
                 default:
                  echo "<script type='text/javascript'>";
                     echo "alert('Error en los datos');";
-                    echo "window.location.href = '../equipos.php';";
+                    echo "window.location.href = '../views/equipos.php';";
                     echo "</script>";
                     break;
             }      
@@ -99,7 +99,7 @@ if (isset($_POST['send'])) {
             
             echo "<script type='text/javascript'>";
             echo "alert('Equipos ingresados con exito');";
-            echo "window.location.href = '../equipos.php';";
+            echo "window.location.href = '../views/equipos.php';";
             echo "</script>";
     
     }else{

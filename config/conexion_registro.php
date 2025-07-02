@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conexion->query($sql) === TRUE) {
          echo "<script type='text/javascript'>";
             echo "alert('Responsable ingresado con exito');";
-            echo "window.location.href = '../inicio.php';";
+            echo "window.location.href = '../views/inicio.php';";
           echo "</script>";
         exit();
   
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($e->getCode()==1062) {               
               echo "<script type='text/javascript'>";
             echo "alert('Usuario duplicado');";
-            echo "window.location.href = '../configuracion.php';";
+            echo "window.location.href = '../views/configuracion.php';";
             echo "</script>";
         
             } else {

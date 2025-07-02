@@ -22,13 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
            echo "<script type='text/javascript'>";
             echo "alert('Se edito exitosamente');";
-            echo "window.location.href = '../configuracion.php';";
+            echo "window.location.href = '../views/configuracion.php';";
             echo "</script>";
        
     } else {
         echo "<script type='text/javascript'>";
             echo "alert('Error en los datos');";
-            echo "window.location.href = '../configuracion.php?id_usuario=".$id."';";
+            echo "window.location.href = '../views/configuracion.php?id_usuario=".$id."';";
             echo "</script>";
         echo "Error al actualizar: " . $conexion->error;
     }

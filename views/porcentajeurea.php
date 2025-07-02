@@ -1,6 +1,6 @@
 <?php
 
-include('./config/conecxion_bd.php');
+include('../config/conecxion_bd.php');
 
         $sql = "SELECT
             *,

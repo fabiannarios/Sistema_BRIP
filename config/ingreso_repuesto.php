@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($conexion->query($sql) === TRUE) {
              echo "<script type='text/javascript'>";
             echo "alert('Repuesto ingresado con exito');";
-            echo "window.location.href = '../repuestos.php';";
+            echo "window.location.href = '../views/repuestos.php';";
             echo "</script>";
         } else {
             echo "Error al registrar el componente: " . $conn->error;
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   
                     echo "<script type='text/javascript'>";
             echo "alert('Repuesto duplicado');";
-            echo "window.location.href = '../repuestos.php';";
+            echo "window.location.href = '../views/repuestos.php';";
             echo "</script>";
 
                     break;
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         
                     echo "<script type='text/javascript'>";
                     echo "alert('Error en los datos');";
-                    echo "window.location.href = '../repuestos.php';";
+                    echo "window.location.href = '../views/repuestos.php';";
                     echo "</script>";
                         
                     break;
@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 default:
                  echo "<script type='text/javascript'>";
                     echo "alert('Error en los datos');";
-                    echo "window.location.href = '../repuestos.php';";
+                    echo "window.location.href = '../views/repuestos.php';";
                     echo "</script>";
                     break;
             }      

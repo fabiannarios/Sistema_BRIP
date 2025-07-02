@@ -30,7 +30,7 @@ if ($row['id_equipo'] == NULL && $row['nombre'] == NULL) {
           
               echo "<script type='text/javascript'>";
             echo "alert('Equipo ingresado con exito');";
-            echo "window.location.href = '../equipos.php';";
+            echo "window.location.href = '../views/equipos.php';";
             echo "</script>";
         } else {
             echo "Error al registrar el componente: " . $conexion->error;
@@ -38,7 +38,7 @@ if ($row['id_equipo'] == NULL && $row['nombre'] == NULL) {
 } else {
             echo "<script type='text/javascript'>";
             echo "alert('Equipo duplicado');";
-            echo "window.location.href = '../equipos.php';";
+            echo "window.location.href = '../views/equipos.php';";
             echo "</script>";
 }
 } else {

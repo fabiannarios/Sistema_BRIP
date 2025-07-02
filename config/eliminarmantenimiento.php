@@ -11,7 +11,7 @@ if (isset($_GET['id_mantenimiento'])) {
     if ($conexion->query($sql) === TRUE) {
          echo "<script type='text/javascript'>";
             echo "alert('Registro de mantenimiento eliminado');";
-            echo "window.location.href = '../mantenimiento.php';";
+            echo "window.location.href = '../views/mantenimiento.php';";
             echo "</script>";
         exit;
     } else {

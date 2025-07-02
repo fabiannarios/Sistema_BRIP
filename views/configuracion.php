@@ -6,12 +6,12 @@
     <title>Configuracion</title>
 
       <link rel="icon" href="favicon.ico" sizes="any" />
-    <link rel="stylesheet" href="./datatable/datatables1.css">
-    <link href="./css/tabla.css" rel="stylesheet">
-    <link href='./css/inicio.css' rel='stylesheet'>
-    <link href="./css/header.css" rel="stylesheet">
-    <link href='./css/bootstrap.css' rel='stylesheet'>
-    <link href='./css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../datatable/datatables1.css">
+    <link href="../css/tabla.css" rel="stylesheet">
+    <link href='../css/inicio.css' rel='stylesheet'>
+    <link href="../css/header.css" rel="stylesheet">
+    <link href='../css/bootstrap.css' rel='stylesheet'>
+    <link href='../css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
 
 
 </head>
@@ -24,7 +24,7 @@
 
 <div class="container-fluid">
             <?php
-            include("../Sistema_BRIP/config/conecxion_bd.php");
+            include("../config/conecxion_bd.php");
                 ob_start();
 
             $sql = "SELECT * FROM usuarios";
@@ -108,8 +108,8 @@
                         <td> 
                          
                             <a href="editarusuario.php?id_usuario=<?php echo $row['id_usuario'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
-                            <a href="./config/eliminarusuario.php?id_usuario=<?php echo $row['id_usuario'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
-                            <a href="./config/habilitarusuario.php?id_usuario=<?php echo $row['id_usuario'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0 p-2"> DESHABILITAR/HABILITAR</a>
+                            <a href="../config/eliminarusuario.php?id_usuario=<?php echo $row['id_usuario'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
+                            <a href="../config/habilitarusuario.php?id_usuario=<?php echo $row['id_usuario'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0 p-2"> DESHABILITAR/HABILITAR</a>
 
                         </td>
                         </tr>

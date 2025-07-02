@@ -18,7 +18,7 @@ if (isset($_GET['id_usuario'])) {
 
          echo "<script type='text/javascript'>";
             echo "alert('Usuario Inhabilitado');";
-            echo "window.location.href = '../configuracion.php';";
+            echo "window.location.href = '../views/configuracion.php';";
             echo "</script>";
 
     } else {
@@ -32,7 +32,7 @@ if (isset($_GET['id_usuario'])) {
              if ($conexion->query($sql) === TRUE) {
          echo "<script type='text/javascript'>";
             echo "alert('Usuario habilitado');";
-            echo "window.location.href = '../configuracion.php';";
+            echo "window.location.href = '../views/configuracion.php';";
             echo "</script>";
     } else {
         echo "Error al eliminar: " . $conexion->error;

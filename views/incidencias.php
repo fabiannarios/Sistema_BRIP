@@ -1,6 +1,6 @@
 <?php
 
-include('./config/conecxion_bd.php');
+include('../config/conecxion_bd.php');
 
 $consulta = "SELECT * FROM equipos";
 $resultadoequipo = $conexion->query($consulta);
@@ -19,12 +19,12 @@ $resultadousuarios = $conexion->query($consulta1);
     <title>Incidencias</title>
 
     <link rel="icon" href="favicon.ico" sizes="any" />
-    <link rel="stylesheet" href="./datatable/datatables1.css">
-    <link href="./css/tabla.css" rel="stylesheet">
-    <link href='./css/inicio.css' rel='stylesheet'>
-    <link href="./css/header.css" rel="stylesheet">
-    <link href='./css/bootstrap.css' rel='stylesheet'>
-    <link href='./css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../datatable/datatables1.css">
+    <link href="../css/tabla.css" rel="stylesheet">
+    <link href='../css/inicio.css' rel='stylesheet'>
+    <link href="../css/header.css" rel="stylesheet">
+    <link href='../css/bootstrap.css' rel='stylesheet'>
+    <link href='../css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
 
 
 <body>
@@ -33,7 +33,7 @@ $resultadousuarios = $conexion->query($consulta1);
 
     <h1 class="text-center  mt-4 border-bottom-4">INCIDENCIAS</h1>
 
-    <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="./config/ingreso_incidencia.php" method="POST">
+    <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="../config/ingreso_incidencia.php" method="POST">
 
         <div class="col-md-6">
             <label for="codigo">TAG:</label>
@@ -179,7 +179,7 @@ $resultadousuarios = $conexion->query($consulta1);
 
                                  <td class=" text-center"> 
                             <a href="editarincidencia.php?id_incidencia=<?php echo $row['id_incidencia'] ?>" class="btn btn-warning fs-5 text-white link-underline link-underline-opacity-0"> EDITAR</a>
-                            <a href="./config/eliminarincidencia.php?id_incidencia=<?php echo $row['id_incidencia'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
+                            <a href="../config/eliminarincidencia.php?id_incidencia=<?php echo $row['id_incidencia'] ?>" class="btn btn-danger fs-5 text-white link-underline link-underline-opacity-0"> ELIMINAR</a>
                         </td>
 
                             </tr>
@@ -198,8 +198,8 @@ $resultadousuarios = $conexion->query($consulta1);
 
 
 
-    <script src="./jquery/jquery.js"></script>
-    <script src="./datatable/datatables1.js"></script>
+    <script src="../jquery/jquery.js"></script>
+    <script src="../datatable/datatables1.js"></script>
     <script>
         $(document).ready(function() {
             $('#tabla').DataTable({

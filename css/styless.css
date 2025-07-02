@@ -14,7 +14,7 @@ html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.4rem;
     line-height: 2;
-    background: no-repeat url("../css/img/1.png") ;
+    background: no-repeat url("./img/1.png") ;
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;

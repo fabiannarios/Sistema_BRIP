@@ -7,16 +7,16 @@
 
         <link rel="icon" href="favicon.ico" sizes="any" />
         <link rel="stylesheet" href="./datatable/datatables1.css">
-        <link href="./css/tabla.css" rel="stylesheet">
-        <link href='./css/inicio.css' rel='stylesheet'>
-        <link href="./css/header.css" rel="stylesheet">
-        <link href='./css/bootstrap.css' rel='stylesheet'>
-        <link href='./css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
+        <link href="../css/tabla.css" rel="stylesheet">
+        <link href='../css/inicio.css' rel='stylesheet'>
+        <link href="../css/header.css" rel="stylesheet">
+        <link href='../css/bootstrap.css' rel='stylesheet'>
+        <link href='../css/boxicons/fonts/basic/boxicons.css' rel='stylesheet'>
 
  </head>
 
  <body>
-    <?php include_once('./config/conecxion_bd.php');
+    <?php include_once('../config/conecxion_bd.php');
     include_once('./header.php');
     $sql = "SELECT * FROM repuesto WHERE id_repuesto ='" . $_GET['id_repuesto']."'";
 
@@ -26,7 +26,7 @@
     ?>
         <h1 class="text-center  mt-4 border-bottom-4">Solicitar Repuestos</h1>
 
- <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="./config/actualizarrepuesto.php" method="POST">
+ <form class="row g-3 container-sm mt-4 mx-auto px-4 py-3 shadow p-3 mb-5 bg-body-tertiary rounded form-registro" action="../config/actualizarrepuesto.php" method="POST">
 
             <div class="col-md-6">
                 <label for="codigo">TAG de Repuesto :</label>

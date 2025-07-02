@@ -13,7 +13,7 @@ const ctx9 = document.getElementById("myChart9");
 const ctx10 = document.getElementById("myChart10");
 const ctx11 = document.getElementById("myChart11");
 
-fetch(" char_urea/scriptchart.php")
+fetch(" ../char_urea/scriptchart.php")
   .then((response) => {
     return response.json();
   })
@@ -21,7 +21,7 @@ fetch(" char_urea/scriptchart.php")
     createChart(datos, "pie");
   });
 
-fetch(" char_urea/scriptchart1.php")
+fetch(" ../char_urea/scriptchart1.php")
   .then((response) => {
     return response.json();
   })
@@ -29,7 +29,7 @@ fetch(" char_urea/scriptchart1.php")
     createChart1(datos, "pie");
   });
 
-fetch(" char_urea/scriptchart2.php")
+fetch(" ../char_urea/scriptchart2.php")
   .then((response) => {
     return response.json();
   })
@@ -38,7 +38,7 @@ fetch(" char_urea/scriptchart2.php")
   });
 
 
-fetch(" char_urea/scriptchart3.php")
+fetch(" ../char_urea/scriptchart3.php")
   .then((response) => {
     return response.json();
   })
@@ -46,7 +46,7 @@ fetch(" char_urea/scriptchart3.php")
     createChart3(datos, "pie");
   });
 
-fetch(" char_urea/scriptchart4.php")
+fetch(" ../char_urea/scriptchart4.php")
   .then((response) => {
     return response.json();
   })
@@ -54,7 +54,7 @@ fetch(" char_urea/scriptchart4.php")
     createChart4(datos, "pie");
   });
 
-fetch(" char_urea/scriptchart5.php")
+fetch(" ../char_urea/scriptchart5.php")
   .then((response) => {
     return response.json();
   })
@@ -62,7 +62,7 @@ fetch(" char_urea/scriptchart5.php")
     createChart5(datos, "pie");
   });
 
-fetch(" char_urea/scriptchart6.php")
+fetch(" ../char_urea/scriptchart6.php")
   .then((response) => {
     return response.json();
   })
@@ -70,7 +70,7 @@ fetch(" char_urea/scriptchart6.php")
     createChart6(datos, "pie");
   });
 
-fetch(" char_urea/scriptchart7.php")
+fetch(" ../char_urea/scriptchart7.php")
   .then((response) => {
     return response.json();
   })
@@ -78,7 +78,7 @@ fetch(" char_urea/scriptchart7.php")
     createChart7(datos, "pie");
   });
 
-fetch(" char_urea/scriptchart8.php")
+fetch(" ../char_urea/scriptchart8.php")
   .then((response) => {
     return response.json();
   })
@@ -86,7 +86,7 @@ fetch(" char_urea/scriptchart8.php")
     createChart8(datos, "pie");
   });
 
-  fetch(" char_urea/scriptchart9.php")
+  fetch(" ../char_urea/scriptchart9.php")
   .then((response) => {
     return response.json();
   })
@@ -94,7 +94,7 @@ fetch(" char_urea/scriptchart8.php")
     createChart9(datos, "pie");
   });
 
-  fetch(" char_urea/scriptchart10.php")
+  fetch(" ../char_urea/scriptchart10.php")
   .then((response) => {
     return response.json();
   })
@@ -102,7 +102,7 @@ fetch(" char_urea/scriptchart8.php")
     createChart10(datos, "pie");
   });
 
-  fetch(" char_urea/scriptchart11.php")
+  fetch(" ../char_urea/scriptchart11.php")
   .then((response) => {
     return response.json();
   })

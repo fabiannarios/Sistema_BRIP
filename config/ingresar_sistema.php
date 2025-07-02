@@ -53,7 +53,7 @@ if (isset($_GET["iniciar"])) {
 
                  echo "<script type='text/javascript'>";
             echo "alert('Usuario ingresado con exito');";
-            echo "window.location.href = '../inicio.php';";
+            echo "window.location.href = '../views/inicio.php';";
             echo "</script>";
             
             } elseif ($fila["cargo"] == "trabajador") {
@@ -74,7 +74,7 @@ if (isset($_GET["iniciar"])) {
 
                  echo "<script type='text/javascript'>";
             echo "alert('Usuario ingresado con exito');";
-            echo "window.location.href = '../inicio.php';";
+            echo "window.location.href = '../views/inicio.php';";
             echo "</script>";
             }
 
