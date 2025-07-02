@@ -61,7 +61,7 @@
             </div>
 
      <?php
-        include("../Sistema_BRIP/config/conecxion_bd.php");
+        include("../config/conecxion_bd.php");
                 $sql2 = "SELECT nombre_complejo FROM complejos_petroquimicos";
                 $resultado2 = $conexion->query($sql2);
 
@@ -133,7 +133,7 @@
 
     </form>
 
-<script src="./js/peticionusuario.js"></script>
+<script src="../js/peticionusuario.js"></script>
 </body>
 
 </html>

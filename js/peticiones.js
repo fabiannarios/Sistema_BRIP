@@ -18,7 +18,7 @@ function fetchandsetdata(url, formData, targetElement) {
 
 function getprocesos() {
   let planta = cbxplanta.value;
-  let url = "config/getprocesos.php";
+  let url = " ../config/getprocesos.php";
   let formData = new FormData();
   formData.append("id_planta", planta);
 

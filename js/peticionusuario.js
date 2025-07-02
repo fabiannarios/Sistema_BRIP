@@ -18,7 +18,7 @@ function fetchandsetdata(url, formData, targetElement) {
 
 function getplanta() {
   let complejo = cbxcomplejo.value;
-  let url = "config/getplanta.php";
+  let url = " ../config/getplanta.php";
   let formData = new FormData();
   formData.append("complejo", complejo);
 
