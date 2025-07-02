@@ -59,7 +59,7 @@ include('./config/conecxion_bd.php');
             <div class="card card-body">
             
             <div class="container-fluid parent_urea w-100">
-            <div class="div7"> <h4 class="text-center text-uppercase">SECCION DE CONSENTRACION</h4> <canvas id="myChart7"> </div>
+            <div class="div7"> <h4 class="text-center text-uppercase">SECCION DE CONCENTRACION</h4> <canvas id="myChart7"> </div>
             <div class="div8"> <h4 class="text-center text-uppercase">TRATAMIENTO DE CONDENSADO DE PROCESO -PCT</h4> <canvas id="myChart8"> </div>
             <div class="div9"> <h4 class="text-center text-uppercase">SECCION DE GRANULACION</h4> <canvas id="myChart9"> </div>
             <div class="div10"> <h4 class="text-center text-uppercase"> RECICLO GRANULADOS </h4> <canvas id="myChart10"> </div>
