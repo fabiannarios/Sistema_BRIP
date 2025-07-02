@@ -18,7 +18,7 @@ include("../config/conecxion_bd.php");
               <meta name='viewport' content='width=device-width, initial-scale=1'>
 
       
-              <link rel='shortcut icon' href='favicon.ico'>
+              <link rel='shortcut icon' href='../css/img/favicon.ico'>
               <link rel='stylesheet' href='libraries/bootstrap/css/bootstrap.min.css'>
               <link rel='stylesheet' href='libraries/bootstrap/css/bootstrap-theme.min.css'>
               <link rel='stylesheet' href='libraries/select2/css/select2.min.css' />

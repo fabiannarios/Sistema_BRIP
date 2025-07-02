@@ -22,7 +22,7 @@ $resultadoresponsable = $conexion->query($consulta3);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mantenimiento</title>
-    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" href="../css/img/favicon.ico" sizes="any" />
     <link rel="stylesheet" href="./datatable/datatables1.css">
     <link href="../css/tabla.css" rel="stylesheet">
     <link href='../css/inicio.css' rel='stylesheet'>
