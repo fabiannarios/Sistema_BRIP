@@ -15,24 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $responsable = $_POST['responsable'];
 
 
-    $sql1= "SELECT id_repuesto FROM repuesto WHERE id_repuesto = '$repuesto'";
-    $resultado1 = $conexion->query($sql1);
-    $fila1 = $resultado1->fetch_assoc();
 
-    $sql2= "SELECT id_equipo FROM equipos WHERE id_equipo= '$equipo'";
-    $resultado2 = $conexion->query($sql2);
-    $fila2 = $resultado2->fetch_assoc();
-
-    $sql3= "SELECT id_responsable FROM responsables where id_responsable = '$responsable'";
-    $resultado3 = $conexion->query($sql3);
-    $fila3 = $resultado3->fetch_assoc();
-
-    $sql4= "SELECT id_incidencia FROM incidencias where id_incidencia = '$incidencia'";
-    $resultado4 = $conexion->query($sql4);
-    $fila4 = $resultado4->fetch_assoc();
-
-
-    if ($fila1['id_repuesto'] != NULL && $fila2['id_equipo'] != NULL && $fila3['id_responsable'] != NULL && $fila4['id_incidencia'] != NULL) {
      
                     $sql = "UPDATE
                     mantenimiento SET
@@ -44,23 +27,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     estado_nuevo = '".$estado_nuevo."',
                     observacion ='".$observacion."',
                     fecha_mantenimiento ='".$fecha_mantenimiento."',
-                    id_responsable ='".$responsable."'
+                    responsable_usuario ='".$responsable."'
                     WHERE id_mantenimiento = '".$id." ' ";
-
+try { 
     if ($conexion->query($sql) === TRUE) {
      
-        header("Location:../views/mantenimiento.php");
+       echo "<script type='text/javascript'>";
+            echo "alert('Se edito exitosamente');";
+            echo "window.location.href = '../views/mantenimiento.php';";
+            echo "</script>";
+       
     } else {
         echo "Error al registrar el componente: " . $conn->error;
     }
-} else{
- 
-echo "<script type='text/javascript'>";
-echo "alert('Error en los datos');";
-echo "window.location.href = '../views/editarmantenimiento.php?id_mantenimiento=".$id."';";
-echo "</script>";
- 
-}
+
+    } catch (mysqli_sql_exception $e ) {
+
+             $conexion->rollback();
+            
+            switch ($e->getCode()) {
+                case 1062:
+                  
+                    echo "<script type='text/javascript'>";
+            echo "alert('Incidencia duplicada');";
+           echo "window.location.href = '../views/editarmantenimiento.php?id_mantenimiento=".$id."';";
+            echo "</script>";
+
+                    break;
+
+                     case 1452:
+                    echo "<script type='text/javascript'>";
+                    echo "alert('Error en los datos');";
+                    echo "window.location.href = '../views/editarmantenimiento.php?id_mantenimiento=".$id."';";
+                    echo "</script>";
+                        
+                    break;
+                
+                default:
+                 echo "<script type='text/javascript'>";
+                    echo "alert('Error en los datos');";
+                    echo "window.location.href = '../views/editarmantenimiento.php?id_mantenimiento=".$id."';";
+                    echo "</script>";
+                    break;
+            }      
+            
+        }         
 
 
 
